@@ -31,7 +31,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         email: email,
         data: { full_name: name },
-        redirect_to: `${SITE_URL}/portal.html`,
+        redirect_to: `${SITE_URL}/set-password.html`,
       }),
     });
 
@@ -54,3 +54,4 @@ exports.handler = async (event) => {
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Error interno: ' + err.message }) };
   }
 };
+
