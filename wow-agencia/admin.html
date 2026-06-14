@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin · Academia WoW</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue-deep:#0F2D6B;--blue-mid:#1B4FAB;--blue-accent:#90B8F8;
+  --white:#fff;--gold:#F5C842;
+  --glass:rgba(255,255,255,0.05);--glass-border:rgba(144,184,248,0.15);
+  --success:#6BCB77;--error:#FF6B6B;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--blue-deep);color:var(--white);min-height:100vh}
+.bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(144,184,248,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(144,184,248,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+
+/* ── AUTH SCREEN ── */
+#authScreen{
+  position:fixed;inset:0;background:var(--blue-deep);
+  display:flex;align-items:center;justify-content:center;z-index:99;
+}
+.auth-box{
+  background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;
+  padding:2.5rem 2rem;width:100%;max-width:360px;margin:1rem;text-align:center;
+}
+.auth-box h1{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:0.3rem}
+.auth-box p{color:rgba(255,255,255,0.5);font-size:0.88rem;margin-bottom:1.5rem}
+.auth-box input{
+  width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--glass-border);
+  border-radius:10px;padding:0.8rem 1rem;color:var(--white);font-size:0.95rem;
+  font-family:'DM Sans',sans-serif;outline:none;margin-bottom:0.8rem;transition:border-color 0.2s;
+}
+.auth-box input:focus{border-color:var(--blue-accent)}
+.auth-box input::placeholder{color:rgba(255,255,255,0.3)}
+.btn-auth{
+  width:100%;background:var(--blue-accent);color:var(--blue-deep);padding:0.85rem;
+  border-radius:10px;border:none;cursor:pointer;font-family:'Syne',sans-serif;
+  font-weight:700;font-size:1rem;transition:all 0.2s;
+}
+.btn-auth:hover{background:var(--white)}
+.auth-error{
+  background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);
+  color:#FF9999;padding:0.6rem 0.8rem;border-radius:8px;font-size:0.85rem;
+  margin-top:0.8rem;display:none;
+}
+
+/* ── MAIN APP ── */
+#mainApp{display:none}
+nav{
+  padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(15,45,107,0.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--glass-border);position:sticky;top:0;z-index:10;
+}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--white)}
+.nav-logo span{color:var(--blue-accent)}
+.nav-logo small{color:rgba(255,255,255,0.4);font-weight:400;font-size:0.75rem;margin-left:0.5rem;vertical-align:middle}
+.btn-logout{background:none;border:1px solid var(--glass-border);color:rgba(255,255,255,0.5);padding:0.4rem 0.9rem;border-radius:8px;font-size:0.82rem;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.btn-logout:hover{border-color:rgba(255,107,107,0.4);color:#FF9999}
+
+.container{max-width:900px;margin:0 auto;padding:2rem}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
+.stat-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:14px;padding:1.2rem;text-align:center}
+.stat-card .num{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--blue-accent)}
+.stat-card .lbl{font-size:0.78rem;color:rgba(255,255,255,0.5);margin-top:0.2rem}
+
+/* ── ADD STUDENT ── */
+.panel{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.5rem;margin-bottom:1.5rem}
+.panel h2{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem}
+.panel h2 i{color:var(--blue-accent)}
+.form-row{display:flex;gap:0.8rem;flex-wrap:wrap}
+.form-row input{
+  flex:1;min-width:180px;background:rgba(255,255,255,0.06);border:1px solid var(--glass-border);
+  border-radius:10px;padding:0.75rem 1rem;color:var(--white);font-size:0.9rem;
+  font-family:'DM Sans',sans-serif;outline:none;transition:border-color 0.2s;
+}
+.form-row input:focus{border-color:var(--blue-accent)}
+.form-row input::placeholder{color:rgba(255,255,255,0.3)}
+.btn-add{
+  background:var(--blue-accent);color:var(--blue-deep);padding:0.75rem 1.5rem;
+  border-radius:10px;border:none;cursor:pointer;font-weight:700;font-size:0.9rem;
+  font-family:'DM Sans',sans-serif;transition:all 0.2s;white-space:nowrap;
+  display:flex;align-items:center;gap:0.4rem;
+}
+.btn-add:hover:not(:disabled){background:var(--white)}
+.btn-add:disabled{opacity:0.5;cursor:not-allowed}
+.msg-box{
+  margin-top:0.8rem;padding:0.7rem 1rem;border-radius:10px;font-size:0.87rem;
+  display:none;align-items:center;gap:0.5rem;
+}
+.msg-box.ok{background:rgba(107,203,119,0.1);border:1px solid rgba(107,203,119,0.3);color:#6BCB77;display:flex}
+.msg-box.err{background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);color:#FF9999;display:flex}
+
+/* ── STUDENTS TABLE ── */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+thead tr{border-bottom:1px solid var(--glass-border)}
+thead th{padding:0.8rem 0.6rem;text-align:left;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+tbody tr{border-bottom:1px solid rgba(144,184,248,0.06);transition:background 0.15s}
+tbody tr:hover{background:rgba(144,184,248,0.04)}
+tbody td{padding:0.9rem 0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.8)}
+.badge{display:inline-flex;align-items:center;gap:0.3rem;padding:0.25rem 0.65rem;border-radius:20px;font-size:0.75rem;font-weight:600}
+.badge.active{background:rgba(107,203,119,0.12);color:#6BCB77;border:1px solid rgba(107,203,119,0.25)}
+.badge.pending{background:rgba(245,200,66,0.1);color:var(--gold);border:1px solid rgba(245,200,66,0.25)}
+.btn-del{background:none;border:1px solid rgba(255,107,107,0.2);color:rgba(255,107,107,0.6);padding:0.3rem 0.7rem;border-radius:7px;cursor:pointer;font-size:0.78rem;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.btn-del:hover{background:rgba(255,107,107,0.1);border-color:rgba(255,107,107,0.5);color:#FF9999}
+.empty{text-align:center;padding:2rem;color:rgba(255,255,255,0.3);font-size:0.9rem}
+
+/* ── NOTA INFO ── */
+.info-note{
+  background:rgba(144,184,248,0.07);border:1px solid rgba(144,184,248,0.2);
+  border-radius:10px;padding:0.8rem 1rem;font-size:0.84rem;color:rgba(255,255,255,0.55);
+  margin-bottom:1rem;display:flex;gap:0.5rem;align-items:flex-start;line-height:1.5;
+}
+.info-note i{color:var(--blue-accent);margin-top:0.15rem;flex-shrink:0}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(15,45,107,0.4);border-top-color:var(--blue-deep);border-radius:50%;animation:spin 0.7s linear infinite}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+
+<!-- AUTH SCREEN -->
+<div id="authScreen">
+  <div class="auth-box">
+    <h1>Panel Admin</h1>
+    <p>Academia WoW · Acceso exclusivo</p>
+    <input type="email" id="adminEmail" placeholder="Tu correo de admin">
+    <input type="password" id="adminPass" placeholder="Contraseña">
+    <button class="btn-auth" id="adminLoginBtn">Entrar</button>
+    <div class="auth-error" id="authError"></div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="mainApp">
+  <nav>
+    <div class="nav-logo">W<span>o</span>W <small>· Admin</small></div>
+    <button class="btn-logout" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Salir</button>
+  </nav>
+
+  <div class="container">
+
+    <!-- STATS -->
+    <div class="stats-row">
+      <div class="stat-card"><div class="num" id="totalCount">0</div><div class="lbl">Estudiantes totales</div></div>
+      <div class="stat-card"><div class="num" id="activeCount">0</div><div class="lbl">Activos</div></div>
+      <div class="stat-card"><div class="num" id="revenue">$0</div><div class="lbl">Ingresos estimados</div></div>
+    </div>
+
+    <!-- ADD STUDENT -->
+    <div class="panel">
+      <h2><i class="fa-solid fa-user-plus"></i> Agregar nuevo estudiante</h2>
+      <div class="info-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Al agregarlo aquí, Supabase le enviará automáticamente un correo para que cree su contraseña y acceda al curso.
+      </div>
+      <div class="form-row">
+        <input type="text" id="newName" placeholder="Nombre completo">
+        <input type="email" id="newEmail" placeholder="Correo electrónico">
+        <button class="btn-add" id="addBtn"><i class="fa-solid fa-plus"></i> Agregar</button>
+      </div>
+      <div class="msg-box" id="addMsg"></div>
+    </div>
+
+    <!-- STUDENTS LIST -->
+    <div class="panel">
+      <h2><i class="fa-solid fa-users"></i> Estudiantes</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="studentsBody">
+            <tr><td colspan="5" class="empty"><i class="fa-solid fa-spinner fa-spin"></i> Cargando…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── CONFIGURACIÓN ──
+const SUPABASE_URL = 'https://zqkofhreflxkspsbzqxl.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpxa29maHJlZmx4a3Nwc2J6cXhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE0NDgzMjksImV4cCI6MjA5NzAyNDMyOX0.F2hKBE164i0dADK9MZGr4-rul7wFxuwHYnKAPDHy-4E';
+const ADMIN_EMAIL = 'wowagenciacreativa2026@gmail.com';
+// La función de Netlify (no necesitas cambiar esto)
+const INVITE_FUNCTION = '/.netlify/functions/invite-student';
+
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ── AUTH ──
+async function checkAuth() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (session && session.user.email === ADMIN_EMAIL) showApp();
+}
+checkAuth();
+
+document.getElementById('adminLoginBtn').addEventListener('click', async () => {
+  const email = document.getElementById('adminEmail').value.trim();
+  const pass = document.getElementById('adminPass').value;
+  const errEl = document.getElementById('authError');
+  errEl.style.display = 'none';
+
+  if (email !== ADMIN_EMAIL) {
+    errEl.textContent = 'No tienes permisos de administrador.';
+    errEl.style.display = 'block'; return;
+  }
+
+  const { error } = await sb.auth.signInWithPassword({ email, password: pass });
+  if (error) {
+    errEl.textContent = 'Correo o contraseña incorrectos.';
+    errEl.style.display = 'block';
+  } else {
+    showApp();
+  }
+});
+
+[document.getElementById('adminEmail'), document.getElementById('adminPass')].forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') document.getElementById('adminLoginBtn').click(); });
+});
+
+function showApp() {
+  document.getElementById('authScreen').style.display = 'none';
+  document.getElementById('mainApp').style.display = 'block';
+  loadStudents();
+}
+
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+  await sb.auth.signOut();
+  location.reload();
+});
+
+// ── STUDENTS — guardados en Supabase tabla "students" ──
+// La tabla tiene: id, name, email, created_at, active (boolean)
+
+async function loadStudents() {
+  const { data, error } = await sb
+    .from('students')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    // Si la tabla no existe aún, mostramos tabla vacía
+    renderTable([]);
+    updateStats([]);
+    return;
+  }
+
+  updateStats(data);
+  renderTable(data);
+}
+
+function updateStats(students) {
+  document.getElementById('totalCount').textContent = students.length;
+  document.getElementById('activeCount').textContent = students.filter(s => s.active !== false).length;
+  document.getElementById('revenue').textContent = '$' + (students.length * 20);
+}
+
+function renderTable(students) {
+  const tbody = document.getElementById('studentsBody');
+  if (!students.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty">Aún no hay estudiantes registrados</td></tr>';
+    return;
+  }
+  tbody.innerHTML = students.map(s => `
+    <tr>
+      <td><strong>${s.name}</strong></td>
+      <td style="color:var(--blue-accent)">${s.email}</td>
+      <td>${new Date(s.created_at).toLocaleDateString('es-ES')}</td>
+      <td><span class="badge active"><i class="fa-solid fa-circle" style="font-size:0.5rem"></i> Activo</span></td>
+      <td><button class="btn-del" onclick="removeStudent('${s.id}', '${s.name}')"><i class="fa-solid fa-trash"></i></button></td>
+    </tr>
+  `).join('');
+}
+
+// ── AGREGAR ESTUDIANTE ──
+// 1. Llama a la Netlify Function → Supabase crea el usuario y le manda el email
+// 2. Guarda en la tabla "students" de Supabase para tu registro
+document.getElementById('addBtn').addEventListener('click', async () => {
+  const name = document.getElementById('newName').value.trim();
+  const email = document.getElementById('newEmail').value.trim();
+  const msgEl = document.getElementById('addMsg');
+  const btn = document.getElementById('addBtn');
+  msgEl.style.display = 'none';
+
+  if (!name || !email) {
+    msgEl.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Por favor completa nombre y correo.';
+    msgEl.className = 'msg-box err';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Agregando…';
+
+  try {
+    // PASO 1: Invitar al usuario vía Netlify Function
+    const res = await fetch(INVITE_FUNCTION, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email }),
+    });
+
+    const result = await res.json();
+
+    if (!res.ok) {
+      throw new Error(result.error || 'Error al invitar al usuario.');
+    }
+
+    // PASO 2: Guardar en tabla students de Supabase
+    const { error: dbError } = await sb
+      .from('students')
+      .insert([{ name, email, active: true }]);
+
+    if (dbError && !dbError.message.includes('duplicate')) {
+      console.warn('No se pudo guardar en tabla students:', dbError.message);
+      // No bloqueamos — el usuario fue creado en Supabase Auth igual
+    }
+
+    // ✅ Éxito
+    document.getElementById('newName').value = '';
+    document.getElementById('newEmail').value = '';
+    msgEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>${name}</strong> agregado. Recibirá un correo para crear su contraseña.`;
+    msgEl.className = 'msg-box ok';
+    loadStudents();
+
+  } catch (err) {
+    msgEl.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> ${err.message}`;
+    msgEl.className = 'msg-box err';
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<i class="fa-solid fa-plus"></i> Agregar';
+});
+
+// ── ELIMINAR ESTUDIANTE ──
+async function removeStudent(id, name) {
+  if (!confirm(`¿Eliminar a ${name}? Perderá acceso al curso.`)) return;
+
+  const { error } = await sb.from('students').delete().eq('id', id);
+  if (error) {
+    alert('Error al eliminar: ' + error.message);
+    return;
+  }
+  loadStudents();
+}
+</script>
+</body>
+</html>

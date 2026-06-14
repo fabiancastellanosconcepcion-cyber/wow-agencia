@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="512x512" href="/ICON.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/ICON.png" />
+<meta name="theme-color" content="#0F2D6B" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 — Página no encontrada · WoW Agencia</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue-deep:#0F2D6B;
+  --blue-mid:#1B4FAB;
+  --blue-accent:#90B8F8;
+  --white:#ffffff;
+}
+html,body{height:100%}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--blue-deep);
+  color:var(--white);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  position:relative;
+}
+
+/* BACKGROUND */
+.bg-grid{
+  position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(144,184,248,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(144,184,248,0.05) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  pointer-events:none;
+}
+.bg-orb-1{
+  position:fixed;
+  width:700px;height:700px;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(27,79,171,0.45) 0%, transparent 65%);
+  border-radius:50%;
+  pointer-events:none;
+  animation:pulse 5s ease-in-out infinite;
+}
+.bg-orb-2{
+  position:fixed;
+  width:400px;height:400px;
+  right:-100px;bottom:-100px;
+  background:radial-gradient(circle, rgba(144,184,248,0.08) 0%, transparent 65%);
+  border-radius:50%;
+  pointer-events:none;
+  animation:pulse 4s 1s ease-in-out infinite;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;
+  padding:1.2rem 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(15,45,107,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(144,184,248,0.1);
+  z-index:10;
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;
+  letter-spacing:0.05em;color:var(--white);text-decoration:none;
+}
+.nav-logo span{color:var(--blue-accent)}
+
+/* CONTENT */
+.container{
+  position:relative;z-index:2;
+  text-align:center;
+  padding:2rem;
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  animation:fadeUp 0.7s ease both;
+}
+
+/* 404 NUMBER */
+.error-number{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(7rem,20vw,13rem);
+  font-weight:800;
+  line-height:1;
+  letter-spacing:-0.04em;
+  background:linear-gradient(135deg, var(--white) 0%, var(--blue-accent) 60%, rgba(144,184,248,0.4) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  position:relative;
+  margin-bottom:0.1em;
+  animation:fadeUp 0.6s ease both;
+}
+.error-number::after{
+  content:'404';
+  position:absolute;
+  inset:0;
+  font-family:'Syne',sans-serif;
+  font-size:inherit;
+  font-weight:800;
+  letter-spacing:-0.04em;
+  background:none;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke:1px rgba(144,184,248,0.15);
+  transform:translate(4px,4px);
+  z-index:-1;
+}
+
+/* DIVIDER LINE */
+.divider{
+  width:60px;height:2px;
+  background:linear-gradient(90deg, transparent, var(--blue-accent), transparent);
+  margin:1.5rem auto;
+  animation:fadeUp 0.6s 0.1s ease both;
+}
+
+/* TEXTS */
+.error-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.4rem,3vw,2rem);
+  font-weight:700;
+  margin-bottom:0.8rem;
+  animation:fadeUp 0.6s 0.15s ease both;
+}
+.error-sub{
+  color:rgba(255,255,255,0.55);
+  font-size:1rem;
+  line-height:1.7;
+  max-width:420px;
+  margin:0 auto 2.5rem;
+  animation:fadeUp 0.6s 0.2s ease both;
+}
+
+/* ACTIONS */
+.actions{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  justify-content:center;
+  animation:fadeUp 0.6s 0.3s ease both;
+}
+.btn-primary{
+  background:var(--blue-accent);color:var(--blue-deep);
+  padding:0.85rem 2rem;border-radius:50px;
+  font-weight:600;text-decoration:none;font-size:1rem;
+  transition:all 0.25s;display:inline-flex;align-items:center;gap:0.5rem;
+}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 30px rgba(144,184,248,0.3)}
+.btn-secondary{
+  background:transparent;color:var(--white);
+  padding:0.85rem 2rem;border-radius:50px;
+  font-weight:500;text-decoration:none;font-size:1rem;
+  border:1px solid rgba(255,255,255,0.2);
+  transition:all 0.25s;display:inline-flex;align-items:center;gap:0.5rem;
+}
+.btn-secondary:hover{border-color:var(--blue-accent);color:var(--blue-accent);transform:translateY(-2px)}
+
+/* FOOTER TAG */
+.footer-tag{
+  position:fixed;bottom:2rem;left:0;right:0;
+  text-align:center;
+  font-size:0.78rem;
+  color:rgba(255,255,255,0.25);
+  animation:fadeUp 0.6s 0.5s ease both;
+}
+.footer-tag a{color:rgba(144,184,248,0.5);text-decoration:none;transition:color 0.2s}
+.footer-tag a:hover{color:var(--blue-accent)}
+
+/* FLOATING SIGNAL — decorative */
+.signal{
+  position:fixed;right:5%;bottom:30%;
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  opacity:0.2;
+  animation:fadeUp 1s 0.8s ease both;
+}
+.signal-bar{
+  width:3px;border-radius:2px;
+  background:var(--blue-accent);
+  animation:signalBlink 2s ease-in-out infinite;
+}
+.signal-bar:nth-child(1){height:8px;animation-delay:0s}
+.signal-bar:nth-child(2){height:14px;animation-delay:0.2s}
+.signal-bar:nth-child(3){height:20px;animation-delay:0.4s}
+.signal-bar:nth-child(4){height:26px;animation-delay:0.6s}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.7}50%{transform:translate(-50%,-50%) scale(1.06);opacity:1}}
+@keyframes signalBlink{0%,100%{opacity:0.3}50%{opacity:1}}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .actions{flex-direction:column;align-items:center;width:100%}
+  .btn-primary,.btn-secondary{width:100%;max-width:300px;justify-content:center}
+  .signal{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms !important;
+    transition-duration:0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-orb-1"></div>
+<div class="bg-orb-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">W<span>o</span>W <span style="color:rgba(255,255,255,0.45);font-weight:400">Agencia</span></a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container" role="main">
+  <div class="error-number" aria-label="Error 404">404</div>
+  <div class="divider"></div>
+  <h1 class="error-title">Página no encontrada</h1>
+  <p class="error-sub">La página que buscas no existe o fue movida. Pero no te preocupes — desde aquí puedes volver al inicio o contactarnos.</p>
+  <div class="actions">
+    <a href="/" class="btn-primary"><i class="fa-solid fa-house"></i> Ir al inicio</a>
+    <a href="https://wa.me/5359394935" class="btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Contactar</a>
+  </div>
+</main>
+
+<!-- DECORATIVE SIGNAL BARS -->
+<div class="signal" aria-hidden="true">
+  <div class="signal-bar"></div>
+  <div class="signal-bar"></div>
+  <div class="signal-bar"></div>
+  <div class="signal-bar"></div>
+</div>
+
+<!-- FOOTER -->
+<p class="footer-tag">
+  © <span id="year"></span> <a href="/">WoW Agencia de Marketing</a> · La Habana, Cuba
+</p>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

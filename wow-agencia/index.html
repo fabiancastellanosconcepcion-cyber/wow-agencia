@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<!-- FAVICONS multi-tamaño -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="512x512" href="/ICON.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="/ICON-192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/ICON-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/ICON-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/ICON.png" />
+<meta name="theme-color" content="#0F2D6B" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WoW Agencia de Marketing — La Habana, Cuba</title>
+<meta name="description" content="WoW Agencia de Marketing en La Habana, Cuba. Diseñamos páginas web, gestionamos redes sociales, creamos contenido visual y ofrecemos WoWPOS — sistema de punto de venta para negocios cubanos.">
+<meta name="google-site-verification" content="GQs5t2QPgf3RrLNTnBwf4JIlFb02WmA9kzXlec0eMeY" />
+
+<!-- SEO -->
+<meta name="keywords" content="agencia de marketing La Habana, diseño web Cuba, redes sociales Cuba, WoW Agencia, agencia creativa Cuba, WoWPOS, marketing digital Cuba">
+<meta name="author" content="WoW Agencia de Marketing">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://wowcreativa.com/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wowcreativa.com/">
+<meta property="og:title" content="WoW Agencia de Marketing — La Habana, Cuba">
+<meta property="og:description" content="Agencia creativa en La Habana. Páginas web, contenido visual, redes sociales, diseño gráfico y WoWPOS. Convertimos negocios en marcas que impactan.">
+<meta property="og:image" content="https://wowcreativa.com/og-image.png">
+<meta property="og:locale" content="es_419">
+<meta property="og:site_name" content="WoW Agencia">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@_wow_agencia_">
+<meta name="twitter:title" content="WoW Agencia de Marketing — La Habana, Cuba">
+<meta name="twitter:description" content="Agencia creativa en La Habana. Páginas web, contenido visual, redes sociales y WoWPOS.">
+<meta name="twitter:image" content="https://wowcreativa.com/og-image.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "name": "WoW Agencia de Marketing",
+  "alternateName": "WoW Agencia Creativa",
+  "url": "https://wowcreativa.com",
+  "logo": "https://wowcreativa.com/ICON.png",
+  "description": "Agencia creativa en La Habana, Cuba. Ofrecemos diseño web, gestión de redes sociales, contenido visual, diseño gráfico, branding y WoWPOS — sistema de punto de venta para negocios cubanos.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "La Habana",
+    "addressCountry": "CU"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+53-5939-4935",
+      "contactType": "customer service",
+      "availableLanguage": "Spanish"
+    }
+  ],
+  "sameAs": [
+    "https://instagram.com/_wow_agencia_"
+  ],
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Cuba y clientes internacionales"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de marketing digital",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño de páginas web profesionales"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gestión de redes sociales"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contenido visual y fotografía"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diseño gráfico y branding"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "WoWPOS — sistema de punto de venta"}}
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6.5.1 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue-deep:#0F2D6B;
+  --blue-mid:#1B4FAB;
+  --blue-accent:#90B8F8;
+  --white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--blue-deep);color:var(--white);overflow-x:hidden}
+
+/* ===================== ACCESIBILIDAD ===================== */
+
+/* Skip link — salta al contenido principal (visible solo con Tab) */
+.skip-link{
+  position:absolute;top:-100px;left:1rem;
+  background:var(--blue-accent);color:var(--blue-deep);
+  padding:0.6rem 1.2rem;border-radius:0 0 8px 8px;
+  font-weight:700;font-size:0.9rem;text-decoration:none;
+  z-index:9999;transition:top 0.2s;
+}
+.skip-link:focus{top:0}
+
+/* Focus visible global — anillo de foco claro para teclado */
+:focus-visible{
+  outline:2px solid var(--blue-accent);
+  outline-offset:3px;
+  border-radius:4px;
+}
+/* Suprimir outline solo para mouse (no teclado) */
+:focus:not(:focus-visible){outline:none}
+
+/* ===================== NAV ===================== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(15,45,107,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(144,184,248,0.1)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:0.05em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--blue-accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--blue-accent)}
+.nav-cta{background:var(--blue-accent);color:var(--blue-deep);padding:0.5rem 1.4rem;border-radius:50px;font-weight:600;text-decoration:none;font-size:0.9rem;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem}
+.nav-cta:hover{background:var(--white);transform:scale(1.03)}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:6px;border-radius:8px;transition:background 0.2s}
+.hamburger:hover{background:rgba(144,184,248,0.1)}
+.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s ease}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;background:rgba(10,26,62,0.98);backdrop-filter:blur(20px);padding:100px 2rem 2rem;flex-direction:column;gap:0;overflow-y:auto}
+.mobile-menu.open{display:flex}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:0}
+.mobile-menu ul li{border-bottom:1px solid rgba(144,184,248,0.08)}
+.mobile-menu ul li:first-child{border-top:1px solid rgba(144,184,248,0.08)}
+.mobile-menu ul li a{display:block;padding:1.2rem 0.5rem;font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;letter-spacing:0.02em}
+.mobile-menu ul li a:hover{color:var(--blue-accent)}
+.mobile-menu-cta{margin-top:2rem;padding:0 0.5rem}
+.mobile-menu-cta a{display:flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--blue-accent);color:var(--blue-deep);padding:1rem 2rem;border-radius:50px;font-weight:700;text-decoration:none;font-size:1rem;width:100%;transition:all 0.2s}
+.mobile-menu-cta a:hover{background:var(--white)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:0 5%;padding-top:80px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 50%, rgba(27,79,171,0.5) 0%, transparent 70%);pointer-events:none}
+.hero-orb{position:absolute;width:600px;height:600px;right:-100px;top:50%;transform:translateY(-50%);background:radial-gradient(circle, rgba(144,184,248,0.12) 0%, transparent 65%);border-radius:50%;animation:pulse 4s ease-in-out infinite;pointer-events:none;aria-hidden:true}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(144,184,248,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(144,184,248,0.05) 1px, transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:640px}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(144,184,248,0.1);border:1px solid rgba(144,184,248,0.25);padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;color:var(--blue-accent);margin-bottom:1.5rem;animation:fadeUp 0.6s ease both}
+.hero-badge-dot{width:6px;height:6px;background:var(--blue-accent);border-radius:50%;animation:blink 1.5s infinite;display:inline-block}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5.5vw,4.2rem);font-weight:800;line-height:1.08;margin-bottom:1.2rem;animation:fadeUp 0.6s 0.1s ease both}
+h1 .accent{color:var(--blue-accent)}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:2rem;font-weight:300;max-width:520px;animation:fadeUp 0.6s 0.2s ease both}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.6s 0.3s ease both}
+.btn-primary{background:var(--blue-accent);color:var(--blue-deep);padding:0.85rem 2rem;border-radius:50px;font-weight:600;text-decoration:none;font-size:1rem;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-primary:hover{background:var(--white);transform:translateY(-2px);box-shadow:0 8px 30px rgba(144,184,248,0.3)}
+.btn-secondary{background:transparent;color:var(--white);padding:0.85rem 2rem;border-radius:50px;font-weight:500;text-decoration:none;font-size:1rem;border:1px solid rgba(255,255,255,0.25);transition:all 0.25s;display:inline-flex;align-items:center;gap:0.5rem}
+.btn-secondary:hover{border-color:var(--blue-accent);color:var(--blue-accent);transform:translateY(-2px)}
+
+/* SECTIONS */
+section{padding:6rem 5%}
+.section-tag{font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--blue-accent);font-weight:500;margin-bottom:0.8rem}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;line-height:1.15;margin-bottom:1rem}
+.section-sub{color:rgba(255,255,255,0.6);font-size:1rem;line-height:1.7;max-width:560px}
+
+/* SERVICES */
+.services-grid{margin-top:3.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.service-card{background:rgba(27,79,171,0.15);border:1px solid rgba(144,184,248,0.12);border-radius:16px;padding:2rem;transition:all 0.3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue-accent),transparent);transform:scaleX(0);transition:transform 0.3s}
+.service-card:hover{border-color:rgba(144,184,248,0.3);background:rgba(27,79,171,0.25);transform:translateY(-4px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{font-size:1.6rem;margin-bottom:1.2rem;display:block;color:var(--blue-accent)}
+.service-card h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.8rem}
+.service-card p{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.65}
+
+/* WHY US */
+.why-section{background:rgba(27,79,171,0.1);border-top:1px solid rgba(144,184,248,0.08);border-bottom:1px solid rgba(144,184,248,0.08)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.why-points{margin-top:2.5rem;display:flex;flex-direction:column;gap:1.2rem}
+.why-point{display:flex;gap:1rem;align-items:flex-start}
+.why-point-icon{color:var(--blue-accent);font-size:1rem;margin-top:2px;flex-shrink:0;width:20px;text-align:center}
+.why-point p{color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.6}
+.why-point strong{color:var(--white)}
+.why-visual{position:relative}
+.why-card{background:rgba(15,45,107,0.8);border:1px solid rgba(144,184,248,0.15);border-radius:20px;padding:2.5rem;text-align:center}
+.why-card-icon{font-size:3rem;margin-bottom:1.2rem;color:var(--blue-accent)}
+.why-card h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--blue-accent);margin-bottom:0.5rem}
+.why-card p{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6}
+.floating-badge{position:absolute;background:var(--blue-accent);color:var(--blue-deep);padding:0.6rem 1.2rem;border-radius:50px;font-weight:700;font-size:0.85rem;white-space:nowrap;display:flex;align-items:center;gap:0.5rem}
+.badge-1{top:-15px;right:10%;animation:float 3s ease-in-out infinite}
+.badge-2{bottom:-15px;left:5%;animation:float 3s 1s ease-in-out infinite}
+
+/* POS SECTION */
+.pos-section{background:linear-gradient(135deg, rgba(15,45,107,0.95) 0%, rgba(27,79,171,0.4) 100%)}
+.pos-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.pos-screen{background:#0a1a3e;border:1px solid rgba(144,184,248,0.2);border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.pos-titlebar{background:rgba(27,79,171,0.5);padding:0.8rem 1rem;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(144,184,248,0.1)}
+.pos-dot{width:10px;height:10px;border-radius:50%}
+.pos-name{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-left:0.5rem;font-family:'Syne',sans-serif;font-weight:600}
+.pos-item{background:rgba(27,79,171,0.3);border:1px solid rgba(144,184,248,0.1);border-radius:8px;padding:1rem;text-align:center}
+.pos-item-icon{font-size:1.2rem;display:block;margin-bottom:0.5rem;color:var(--blue-accent)}
+.pos-item-name{font-size:0.7rem;color:rgba(255,255,255,0.7)}
+.pos-item-price{font-size:0.85rem;color:var(--blue-accent);font-weight:600;font-family:'Syne',sans-serif}
+.pos-cart{background:rgba(144,184,248,0.1);border:1px solid rgba(144,184,248,0.15);border-radius:8px;padding:1rem;margin-top:0.8rem}
+.pos-cart-row{display:flex;justify-content:space-between;font-size:0.75rem;color:rgba(255,255,255,0.7);padding:0.2rem 0}
+.pos-total{display:flex;justify-content:space-between;font-size:0.9rem;font-weight:700;color:var(--white);border-top:1px solid rgba(144,184,248,0.2);margin-top:0.5rem;padding-top:0.5rem;font-family:'Syne',sans-serif}
+.pos-btn{background:var(--blue-accent);color:var(--blue-deep);border:none;border-radius:8px;padding:0.7rem;width:100%;font-weight:700;font-size:0.85rem;cursor:pointer;margin-top:0.8rem;font-family:'Syne',sans-serif;display:flex;align-items:center;justify-content:center;gap:0.5rem}
+.pos-features{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-top:2rem}
+.pos-feat{display:flex;align-items:center;gap:0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.75)}
+.pos-feat i{color:var(--blue-accent);font-size:0.75rem;flex-shrink:0}
+.coming-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(144,184,248,0.1);border:1px solid rgba(144,184,248,0.2);padding:0.4rem 1rem;border-radius:50px;font-size:0.8rem;color:var(--blue-accent);margin-bottom:1.2rem}
+
+/* CONTACT */
+.contact-section{text-align:center}
+.contact-cards{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:3rem}
+.contact-card{background:rgba(27,79,171,0.2);border:1px solid rgba(144,184,248,0.15);border-radius:16px;padding:2rem 2.5rem;text-decoration:none;color:var(--white);transition:all 0.3s;display:flex;flex-direction:column;align-items:center;gap:0.8rem;min-width:200px}
+.contact-card:hover{background:rgba(27,79,171,0.4);border-color:var(--blue-accent);transform:translateY(-4px)}
+.contact-icon{font-size:1.8rem;color:var(--blue-accent)}
+.contact-label{font-size:0.8rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em}
+.contact-value{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
+.location-tag{margin-top:3rem;color:rgba(255,255,255,0.45);font-size:0.9rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;flex-wrap:wrap;text-align:center;padding:0 1rem}
+.location-tag strong{color:rgba(255,255,255,0.7)}
+
+/* FOOTER */
+footer{padding:2rem 5%;border-top:1px solid rgba(144,184,248,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem}
+.footer-logo span{color:var(--blue-accent)}
+.footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.35);display:flex;align-items:center;gap:0.4rem}
+.footer-copy i{color:var(--blue-accent)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{transform:translateY(-50%) scale(1);opacity:0.6}50%{transform:translateY(-50%) scale(1.08);opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease, transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ======= RESPONSIVE ======= */
+@media(max-width:900px){
+  .why-inner{gap:3rem}
+  .pos-inner{gap:2.5rem}
+  .why-card h3{font-size:1.3rem}
+}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .hamburger{display:flex}
+
+  .hero{padding-top:100px;padding-bottom:3rem;min-height:100svh}
+  h1{font-size:clamp(2.2rem,8vw,3rem)}
+  .hero-sub{font-size:1rem}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .btn-primary, .btn-secondary{width:100%;justify-content:center}
+  .hero-orb{width:300px;height:300px;right:-80px;opacity:0.5}
+
+  section{padding:4rem 5%}
+
+  .services-grid{grid-template-columns:1fr;margin-top:2.5rem}
+
+  .why-inner{grid-template-columns:1fr;gap:2rem}
+  .why-visual{display:none}
+
+  .pos-inner{grid-template-columns:1fr;gap:2.5rem}
+  .pos-features{grid-template-columns:1fr 1fr}
+
+  .contact-cards{flex-direction:column;align-items:center}
+  .contact-card{width:100%;max-width:320px}
+
+  footer{flex-direction:column;text-align:center}
+}
+
+@media(max-width:400px){
+  nav{padding:1rem 4%}
+  .pos-features{grid-template-columns:1fr}
+  .hero-actions .btn-primary, .hero-actions .btn-secondary{font-size:0.92rem;padding:0.8rem 1.5rem}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SKIP LINK — accesibilidad teclado -->
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu"
+     id="mobileMenu"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Menú de navegación"
+     aria-hidden="true">
+  <nav aria-label="Menú móvil">
+    <ul>
+      <li><a href="#servicios" class="mobile-nav-link">Servicios</a></li>
+      <li><a href="#nosotros" class="mobile-nav-link">Nosotros</a></li>
+      <li><a href="#pos" class="mobile-nav-link">WoWPOS</a></li>
+      <li><a href="/academia.html" class="mobile-nav-link">Academia WoW</a></li>
+      <li><a href="#contacto" class="mobile-nav-link">Contacto</a></li>
+    </ul>
+    <div class="mobile-menu-cta">
+      <a href="https://wa.me/5359394935"
+         class="mobile-nav-link"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Hablar ahora por WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Hablar ahora
+      </a>
+    </div>
+  </nav>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav aria-label="Navegación principal">
+    <a href="#inicio" class="nav-logo" aria-label="WoW Agencia — inicio">W<span>o</span>W <span style="color:rgba(255,255,255,0.5);font-weight:400">Agencia</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#pos">WoWPOS</a></li>
+      <li><a href="/academia.html">Academia WoW</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/5359394935"
+       class="nav-cta"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Hablar ahora por WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Hablar ahora
+    </a>
+    <button class="hamburger"
+            id="hamburger"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="mobileMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MAIN -->
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="inicio" aria-label="Presentación de WoW Agencia">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge" aria-hidden="true"><span class="hero-badge-dot"></span> Agencia creativa · La Habana, Cuba</div>
+    <h1>Tu marca <span class="accent">merece</span><br>crecer en grande</h1>
+    <p class="hero-sub">Convertimos negocios en marcas que impactan. Contenido visual, estrategia digital y presencia real en redes sociales — todo en un solo equipo.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5359394935"
+         class="btn-primary"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Pide tu diagnóstico gratis por WhatsApp">
+        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Pide tu diagnóstico gratis
+      </a>
+      <a href="#servicios" class="btn-secondary">Ver servicios <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" aria-labelledby="servicios-titulo">
+  <div class="reveal">
+    <p class="section-tag" aria-hidden="true">Lo que hacemos</p>
+    <h2 class="section-title" id="servicios-titulo">Todo lo que tu negocio<br>necesita para brillar</h2>
+    <p class="section-sub">Un solo equipo cubre cada aspecto de tu presencia digital — sin costos ocultos ni sorpresas.</p>
+  </div>
+  <div class="services-grid" role="list">
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+      <h3>Páginas web profesionales</h3>
+      <p>Diseñamos y desarrollamos sitios web modernos, rápidos y optimizados que convierten visitantes en clientes.</p>
+    </article>
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-clapperboard"></i></span>
+      <h3>Contenido visual impactante</h3>
+      <p>Fotografía, video, edición creativa y montajes de escenario. Tu marca merece contenido que deja sin palabras.</p>
+    </article>
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></span>
+      <h3>Diseño gráfico y branding</h3>
+      <p>Posts, banners, identidad visual. Cada pieza diseñada para que tu marca sea reconocida al instante.</p>
+    </article>
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-hashtag"></i></span>
+      <h3>Gestión de redes sociales</h3>
+      <p>Administramos tus cuentas desde cero si es necesario. Analizamos tu público y definimos la frecuencia ideal de publicación.</p>
+    </article>
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+      <h3>Crecimiento orgánico real</h3>
+      <p>Nada de trucos. Estrategia, constancia y creatividad para que tu comunidad crezca de verdad con resultados demostrables.</p>
+    </article>
+    <article class="service-card reveal" role="listitem">
+      <span class="service-icon" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
+      <h3>Asesoría informática</h3>
+      <p>Optimización técnica y soluciones digitales para que tu negocio funcione mejor y más eficientemente.</p>
+    </article>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="nosotros" aria-labelledby="nosotros-titulo">
+  <div class="why-inner">
+    <div>
+      <div class="reveal">
+        <p class="section-tag" aria-hidden="true">Por qué elegirnos</p>
+        <h2 class="section-title" id="nosotros-titulo">Somos parte de<br>tu equipo</h2>
+        <p class="section-sub">No somos una agencia más. Somos una agencia creativa habanera que entiende el pulso del mercado cubano y piensa globalmente.</p>
+      </div>
+      <ul class="why-points reveal" aria-label="Razones para elegirnos">
+        <li class="why-point">
+          <i class="fa-solid fa-circle-check why-point-icon" aria-hidden="true"></i>
+          <p><strong>Estrategia adaptada a ti:</strong> Analizamos tu negocio específico antes de proponer cualquier solución.</p>
+        </li>
+        <li class="why-point">
+          <i class="fa-solid fa-circle-check why-point-icon" aria-hidden="true"></i>
+          <p><strong>Portafolio demostrable:</strong> Te enviamos ejemplos reales de cuentas que gestionamos — nada de promesas vacías.</p>
+        </li>
+        <li class="why-point">
+          <i class="fa-solid fa-circle-check why-point-icon" aria-hidden="true"></i>
+          <p><strong>Sin pagos adicionales:</strong> Todo lo que necesitas dentro de la gestión está incluido desde el primer día.</p>
+        </li>
+        <li class="why-point">
+          <i class="fa-solid fa-circle-check why-point-icon" aria-hidden="true"></i>
+          <p><strong>Empezamos desde cero:</strong> Si aún no tienes redes sociales, las creamos y gestionamos nosotros.</p>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual reveal" aria-hidden="true">
+      <div class="why-card">
+        <div class="why-card-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>WoW</h3>
+        <p>Agencia creativa en La Habana con visión digital de vanguardia. Donde cada proyecto es una oportunidad de hacer algo extraordinario.</p>
+      </div>
+      <div class="floating-badge badge-1"><i class="fa-solid fa-star" aria-hidden="true"></i> Resultados reales</div>
+      <div class="floating-badge badge-2"><i class="fa-solid fa-bullseye" aria-hidden="true"></i> 100% personalizado</div>
+    </div>
+  </div>
+</section>
+
+<!-- POS SECTION -->
+<section class="pos-section" id="pos" aria-labelledby="pos-titulo">
+  <div class="pos-inner">
+    <div class="reveal">
+      <div class="coming-badge" aria-label="WoWPOS ya disponible">
+        <i class="fa-solid fa-circle-check" aria-hidden="true"></i> Ya disponible
+      </div>
+      <p class="section-tag" aria-hidden="true">Nuestro software</p>
+      <h2 class="section-title" id="pos-titulo">WoWPOS — el sistema de ventas<br>hecho en Cuba</h2>
+      <p class="section-sub">Un punto de venta completo diseñado para negocios cubanos. Control de inventario, turnos, reportes y más — todo en tu navegador.</p>
+      <ul class="pos-features" aria-label="Funcionalidades de WoWPOS">
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Control de inventario</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Gestión de turnos</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Reportes y gráficas</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Promociones 2x1</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Scanner de barras</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Múltiples cajeros</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Transfermóvil + QR</li>
+        <li class="pos-feat"><i class="fa-solid fa-check" aria-hidden="true"></i> Devoluciones</li>
+      </ul>
+      <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="https://wa.me/5359394935?text=Hola,%20quiero%20saber%20más%20sobre%20WoWPOS"
+           class="btn-primary"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Consultar precio de WoWPOS por WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Quiero saber el precio
+        </a>
+      </div>
+      <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.4)">Escríbenos para conocer planes y precios</p>
+    </div>
+    <div class="reveal" aria-hidden="true">
+      <div class="pos-screen" role="img" aria-label="Vista previa de la interfaz de WoWPOS">
+        <div class="pos-titlebar">
+          <div class="pos-dot" style="background:#ff5f57"></div>
+          <div class="pos-dot" style="background:#febc2e"></div>
+          <div class="pos-dot" style="background:#28c840"></div>
+          <span class="pos-name">WoWPOS · Turno activo</span>
+        </div>
+        <div style="padding:1.2rem">
+          <div style="display:flex;gap:0.5rem;margin-bottom:1rem">
+            <div style="flex:1;background:rgba(144,184,248,0.1);border:1px solid rgba(144,184,248,0.15);border-radius:6px;padding:0.5rem 0.8rem;font-size:0.75rem;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:0.5rem"><i class="fa-solid fa-magnifying-glass" style="color:rgba(144,184,248,0.5)"></i> Buscar producto...</div>
+          </div>
+          <div style="font-size:0.7rem;color:rgba(144,184,248,0.7);margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.08em">Catálogo</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem">
+            <div class="pos-item"><span class="pos-item-icon"><i class="fa-solid fa-bottle-water"></i></span><div class="pos-item-name">Refresco Cola</div><div class="pos-item-price">$45.00</div></div>
+            <div class="pos-item" style="border-color:rgba(144,184,248,0.3)"><span class="pos-item-icon"><i class="fa-solid fa-tag"></i></span><div class="pos-item-name">Chocolate · PROMO</div><div class="pos-item-price">$80.00</div></div>
+            <div class="pos-item"><span class="pos-item-icon"><i class="fa-solid fa-bread-slice"></i></span><div class="pos-item-name">Pan tostado</div><div class="pos-item-price">$20.00</div></div>
+            <div class="pos-item"><span class="pos-item-icon"><i class="fa-solid fa-mug-hot"></i></span><div class="pos-item-name">Café molido</div><div class="pos-item-price">$120.00</div></div>
+          </div>
+          <div class="pos-cart">
+            <div style="font-size:0.7rem;color:rgba(144,184,248,0.7);margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em">Carrito</div>
+            <div class="pos-cart-row"><span>Refresco Cola ×2</span><span>$90.00</span></div>
+            <div class="pos-cart-row"><span>Chocolate ×1</span><span>$80.00</span></div>
+            <div class="pos-total"><span>TOTAL</span><span style="color:var(--blue-accent)">$170.00</span></div>
+          </div>
+          <button class="pos-btn"><i class="fa-solid fa-credit-card"></i> COBRAR · Efectivo / Tarjeta / Transfermóvil</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contacto" aria-labelledby="contacto-titulo">
+  <div class="reveal">
+    <p class="section-tag" aria-hidden="true">Hablemos</p>
+    <h2 class="section-title" id="contacto-titulo" style="text-align:center">¿Listo para crecer?</h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center">Cuéntanos sobre tu negocio y te enviamos una propuesta personalizada — sin compromiso.</p>
+  </div>
+  <div class="contact-cards reveal">
+    <a href="https://wa.me/5359394935"
+       class="contact-card"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp al +53 5939 4935">
+      <span class="contact-icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></span>
+      <span class="contact-label">WhatsApp</span>
+      <span class="contact-value">+53 5939 4935</span>
+    </a>
+    <a href="https://instagram.com/_wow_agencia_"
+       class="contact-card"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Ver perfil de Instagram @_wow_agencia_">
+      <span class="contact-icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></span>
+      <span class="contact-label">Instagram</span>
+      <span class="contact-value">@_wow_agencia_</span>
+    </a>
+  </div>
+  <p class="location-tag reveal">
+    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+    Ubicados en <strong>La Habana, Cuba</strong> · Trabajamos con negocios dentro y fuera de Cuba
+  </p>
+</section>
+
+</main><!-- /main -->
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-logo">W<span>o</span>W <span style="color:rgba(255,255,255,0.4);font-weight:400">Agencia de Marketing</span></div>
+  <p class="footer-copy">© <span id="year"></span> WoW Agencia · La Habana · Hecho con <i class="fa-solid fa-heart" aria-hidden="true"></i><span class="sr-only">amor</span></p>
+</footer>
+
+<!-- JS EXTERNO — sin código inline (CSP segura) -->
+<script src="/main.js" defer></script>
+</body>
+</html>
