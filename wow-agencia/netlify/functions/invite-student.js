@@ -20,8 +20,13 @@ exports.handler = async (event) => {
     const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
     const SITE_URL = process.env.SITE_URL;
 
+    // IMPORTANTE: el endpoint /auth/v1/invite de Supabase (GoTrue) espera
+    // "redirect_to" como parámetro de la URL (query string), no en el body.
+    const redirectTo = `${SITE_URL}/set-password.html`;
+    const inviteUrl = `${SUPABASE_URL}/auth/v1/invite?redirect_to=${encodeURIComponent(redirectTo)}`;
+
     // Llamada directa a la API REST de Supabase usando fetch nativo de Node 18+
-    const response = await fetch(`${SUPABASE_URL}/auth/v1/invite`, {
+    const response = await fetch(inviteUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +36,6 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         email: email,
         data: { full_name: name },
-        redirect_to: `${SITE_URL}/set-password.html`,
       }),
     });
 
