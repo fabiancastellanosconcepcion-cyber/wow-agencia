@@ -307,6 +307,90 @@ footer a:hover{color:var(--blue-accent)}
 }
 .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.5)}
 
+/* ── HERO IMAGE DECORATION ── */
+.hero-visual{
+  position:absolute;right:0;top:0;bottom:0;width:38%;
+  pointer-events:none;overflow:hidden;
+  display:none;
+}
+@media(min-width:1100px){.hero-visual{display:block}}
+.hero-visual img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  opacity:0.18;
+  mask-image:linear-gradient(to left,rgba(0,0,0,0.6) 0%,transparent 100%),
+             linear-gradient(to bottom,transparent 0%,black 15%,black 80%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to left,rgba(0,0,0,0.6) 0%,transparent 100%),
+             linear-gradient(to bottom,transparent 0%,black 15%,black 80%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-composite:intersect;
+}
+.hero-visual-frame{
+  position:absolute;right:5%;top:50%;transform:translateY(-50%);
+  width:clamp(280px,28vw,420px);
+  border-radius:24px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(144,184,248,0.1);
+  animation:fadeUp 0.7s 0.5s ease both;
+}
+.hero-visual-frame img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;
+  filter:brightness(0.92) saturate(1.05);
+}
+.hero-visual-frame::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,var(--blue-deep) 0%,transparent 30%);
+  border-radius:24px;
+}
+
+/* ── INSTRUCTOR SECTION ── */
+.instructor{
+  max-width:1000px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.instructor-img{
+  position:relative;border-radius:24px;overflow:hidden;
+  box-shadow:0 40px 80px rgba(0,0,0,0.4);
+  flex-shrink:0;
+}
+.instructor-img img{width:100%;display:block;border-radius:24px;filter:brightness(0.95)}
+.instructor-img::before{
+  content:'';position:absolute;inset:-2px;z-index:-1;
+  background:linear-gradient(135deg,var(--blue-accent),var(--blue-mid));
+  border-radius:26px;opacity:0.3;
+}
+.instructor-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:35%;
+  background:linear-gradient(to top,var(--blue-deep),transparent);
+  border-radius:0 0 24px 24px;
+}
+.instructor-badge-float{
+  position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);
+  background:rgba(15,45,107,0.85);backdrop-filter:blur(12px);
+  border:1px solid rgba(144,184,248,0.2);border-radius:12px;
+  padding:0.8rem 1.4rem;text-align:center;white-space:nowrap;z-index:2;
+}
+.instructor-badge-float strong{
+  display:block;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;
+}
+.instructor-badge-float span{
+  font-size:0.78rem;color:rgba(255,255,255,0.5);
+}
+.instructor-content .section-label{margin-bottom:0.8rem}
+.instructor-content h2{margin-bottom:1.2rem}
+.instructor-content p{color:rgba(255,255,255,0.65);line-height:1.8;font-size:0.98rem;margin-bottom:1rem}
+.instructor-proof{
+  display:flex;gap:1.5rem;margin-top:1.8rem;flex-wrap:wrap;
+}
+.proof-item{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.88rem;color:rgba(255,255,255,0.55);
+}
+.proof-item i{color:var(--blue-accent);font-size:0.9rem}
+@media(max-width:860px){
+  .instructor{grid-template-columns:1fr;gap:2.5rem;max-width:520px}
+  .instructor-img{max-width:100%}
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:768px){
   .nav-links{display:none}
@@ -363,7 +447,18 @@ footer a:hover{color:var(--blue-accent)}
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="position:relative;overflow:hidden">
+  <!-- Foto decorativa flotante (desktop) -->
+  <div class="hero-visual-frame" style="position:absolute;right:5%;top:50%;transform:translateY(-50%);width:clamp(240px,24vw,380px);border-radius:24px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,0.5),0 0 0 1px rgba(144,184,248,0.1);animation:fadeUp 0.7s 0.5s ease both;display:none" id="heroFrame">
+    <img src="IMG_8879.PNG" alt="Chavelys Lao — Instructora UGC" style="width:100%;display:block;object-fit:cover;object-position:center top;filter:brightness(0.9) saturate(1.05)">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,45,107,0.85) 0%,transparent 35%);border-radius:24px"></div>
+    <div style="position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);background:rgba(15,45,107,0.8);backdrop-filter:blur(12px);border:1px solid rgba(144,184,248,0.2);border-radius:10px;padding:0.65rem 1.2rem;text-align:center;white-space:nowrap">
+      <strong style="display:block;font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700">Chavelys Lao</strong>
+      <span style="font-size:0.75rem;color:rgba(255,255,255,0.5)">Tu instructora UGC</span>
+    </div>
+  </div>
+  <style>@media(min-width:1000px){#heroFrame{display:block!important}}</style>
+
   <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Nuevo curso disponible</div>
   <h1>Crea contenido UGC y <span class="accent">monetiza tus redes</span> desde cero</h1>
   <p class="hero-sub">Aprende a crear contenido que las marcas pagan por usar. Sin cámara profesional, sin seguidores, sin experiencia previa.</p>
@@ -421,6 +516,31 @@ footer a:hover{color:var(--blue-accent)}
       <div class="learn-icon"><i class="fa-solid fa-briefcase"></i></div>
       <h3>Arma tu portfolio desde cero</h3>
       <p>Crea videos de muestra sin necesidad de contratos reales para atraer a tus primeros clientes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTORA -->
+<section id="instructora">
+  <div class="instructor reveal">
+    <div class="instructor-img">
+      <img src="IMG_8884.PNG" alt="Guía UGC — Gana Dinero con tus Redes Sociales por Chavelys Lao">
+      <div style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:rgba(15,45,107,0.85);backdrop-filter:blur(12px);border:1px solid rgba(144,184,248,0.2);border-radius:12px;padding:0.8rem 1.4rem;text-align:center;white-space:nowrap;z-index:2">
+        <strong style="display:block;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700">Chavelys Lao</strong>
+        <span style="font-size:0.78rem;color:rgba(255,255,255,0.5)">Creadora UGC · Instructora</span>
+      </div>
+    </div>
+    <div class="instructor-content">
+      <p class="section-label">Tu instructora</p>
+      <h2 class="section-title">Aprendes de alguien que ya lo hace</h2>
+      <p>Chavelys lleva años generando ingresos desde sus redes sociales colaborando con marcas reales, sin ser una influencer famosa y sin miles de seguidores.</p>
+      <p>Todo lo que enseña en este curso lo ha aplicado ella misma: desde conseguir su primera colaboración hasta recibir productos gratis y cobrar por videos desde casa.</p>
+      <div class="instructor-proof">
+        <div class="proof-item"><i class="fa-solid fa-box-open"></i> Productos recibidos de marcas</div>
+        <div class="proof-item"><i class="fa-solid fa-handshake"></i> Contratos UGC reales</div>
+        <div class="proof-item"><i class="fa-solid fa-house"></i> Ingresos desde casa</div>
+        <div class="proof-item"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i> Soporte directo contigo</div>
+      </div>
     </div>
   </div>
 </section>
