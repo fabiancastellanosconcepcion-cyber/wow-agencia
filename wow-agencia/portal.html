@@ -7,7 +7,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/ICON.png" />
 <meta name="theme-color" content="#0F2D6B" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Curso UGC · Academia WoW</title>
+<title>UGC 360° · Academia WoW</title>
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -280,7 +280,7 @@ body{
     <header class="topbar">
       <div style="display:flex;align-items:center;gap:0.8rem">
         <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
-        <span class="topbar-title">Curso UGC</span>
+        <span class="topbar-title">UGC 360° — Gana Dinero con tus Redes Sociales</span>
       </div>
       <div class="topbar-right">
         <div class="user-badge">
@@ -311,137 +311,610 @@ const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // ── LECCIONES DEL CURSO ──
 // Cuando tengas tus videos: reemplaza videoId con el ID de YouTube o Vimeo
 const LESSONS = [
+  // ── PARTE I · FUNDAMENTOS ──
   {
     id: 1,
-    module: 'Módulo 1 · Fundamentos',
-    title: '¿Qué es el UGC y por qué las marcas lo necesitan?',
-    duration: '12 min',
-    videoId: null, // Ej: 'dQw4w9WgXcQ' para YouTube
+    module: 'Parte I · Fundamentos del UGC',
+    title: 'Mi historia y por qué decidí crear esta guía',
+    duration: 'Lectura',
+    videoId: null,
     content: `
-      <h3>¿Qué es el UGC?</h3>
-      <p>El <strong>User Generated Content</strong> (Contenido Generado por el Usuario) es cualquier tipo de contenido — videos, fotos, reseñas — creado por personas reales sobre productos o servicios. Las marcas lo usan en sus anuncios porque se percibe como más auténtico y efectivo que la publicidad tradicional.</p>
-      <div class="highlight">💡 No necesitas miles de seguidores. Las marcas buscan creatividad y autenticidad, no audiencia.</div>
-      <h3>¿Por qué las marcas pagan por UGC?</h3>
-      <ul>
-        <li>Convierte 4x más que el contenido producido por la propia marca</li>
-        <li>Es más económico que contratar una agencia de publicidad</li>
-        <li>Se siente natural y genera confianza en el consumidor</li>
-        <li>Puede reutilizarse en múltiples plataformas (TikTok, Instagram, Meta Ads)</li>
-      </ul>
-      <h3>Tu rol como creador UGC</h3>
-      <p>Tú produces el video, la marca lo usa en sus anuncios. No necesitas publicarlo en tus propias redes. Solo crear el contenido y entregarlo.</p>
+      <h3>Por Chavelys Lao — Fundadora de WOW Agencia de Marketing</h3>
+      <p>No escribí este libro desde una oficina en Silicon Valley. No lo escribí después de construir una audiencia de millones de seguidores. Lo escribí porque conozco perfectamente la sensación de empezar desde cero.</p>
+      <p>Soy cubana. Y durante mucho tiempo acceder a información actualizada sobre marketing digital, creación de contenido y colaboraciones con marcas fue extremadamente difícil.</p>
+      <p>Recuerdo enviar correos. Enviar solicitudes. Preguntar. Investigar. Y una y otra vez encontrar obstáculos. Algunas plataformas me rechazaron. Algunas oportunidades nunca llegaron.</p>
+      <div class="highlight">💡 Cada rechazo me estaba enseñando algo. Cada intento me acercaba un poco más. Cada error me ayudaba a mejorar.</div>
+      <h3>¿Qué pasaría si reuniera toda esta información en un solo lugar?</h3>
+      <p>Así nació este proyecto. No como una promesa de dinero fácil. No como una fórmula mágica. Sino como un mapa. Una guía que ayude a otras personas a avanzar más rápido.</p>
+      <p>Hoy también dirijo junto a mi novio una agencia de marketing y publicidad llamada WOW. Ayudamos a negocios a mejorar su imagen, su contenido y su presencia digital.</p>
+      <div class="highlight">✨ No importa desde dónde empieces. No importa cuántas veces te rechacen. Lo único que realmente importa es que sigas avanzando. Las oportunidades aparecen para quienes se atreven a intentarlo.</div>
     `
   },
   {
     id: 2,
-    module: 'Módulo 1 · Fundamentos',
-    title: 'El modelo de negocio: cómo y cuánto se cobra',
-    duration: '10 min',
+    module: 'Parte I · Fundamentos del UGC',
+    title: 'Qué es el UGC y por qué las marcas están pagando por él',
+    duration: 'Lectura',
     videoId: null,
     content: `
-      <h3>¿Cuánto gana un creador UGC?</h3>
-      <p>Los precios varían según experiencia y tipo de contenido, pero aquí tienes rangos reales del mercado:</p>
+      <h3>¿Qué significa UGC?</h3>
+      <p><strong>User Generated Content</strong> — Contenido Generado por Usuarios. Hoy las empresas pagan a creadores para producir videos y fotografías que parecen naturales, auténticos y reales.</p>
+      <p>Las marcas descubrieron algo importante: las personas ya no confían tanto en la publicidad tradicional. Confían más en otras personas.</p>
+      <div class="highlight">💡 Por eso un video grabado con un teléfono muchas veces genera mejores resultados que un anuncio producido con miles de dólares.</div>
+      <h3>La diferencia entre un influencer y un creador UGC</h3>
       <ul>
-        <li><strong>Principiante:</strong> $50 – $150 por video</li>
-        <li><strong>Intermedio:</strong> $150 – $400 por video</li>
-        <li><strong>Avanzado:</strong> $400 – $1,000+ por video</li>
+        <li><strong>Influencer:</strong> vende acceso a su audiencia. La marca le paga porque tiene seguidores.</li>
+        <li><strong>Creador UGC:</strong> vende contenido. La marca le paga por producir videos, fotos y testimonios. <em>No importa cuántos seguidores tenga.</em></li>
       </ul>
-      <div class="highlight">📌 Con 3-4 videos al mes para distintas marcas puedes generar $300–$600 USD extras desde tu teléfono.</div>
-      <h3>Tipos de contratos</h3>
+      <h3>¿Por qué las marcas prefieren UGC?</h3>
       <ul>
-        <li><strong>Por video:</strong> Precio fijo por cada pieza entregada</li>
-        <li><strong>Por paquete:</strong> 3, 5 o 10 videos con descuento</li>
-        <li><strong>Retainer mensual:</strong> La marca te contrata fijo por X videos/mes</li>
+        <li>El contenido parece real y auténtico</li>
+        <li>Genera más confianza que la publicidad tradicional</li>
+        <li>Convierte mejor en ventas</li>
+        <li>Miles de marcas destinan presupuestos cada vez mayores a este tipo de contenido</li>
       </ul>
+      <div class="highlight">🎯 Las marcas no están comprando popularidad. <strong>Están comprando confianza.</strong> Y eso significa que tú también puedes participar.</div>
     `
   },
   {
     id: 3,
-    module: 'Módulo 2 · Producción',
-    title: 'Equipo mínimo para empezar a grabar',
-    duration: '8 min',
+    module: 'Parte I · Fundamentos del UGC',
+    title: 'Cómo conseguir tus primeras colaboraciones',
+    duration: 'Lectura',
     videoId: null,
     content: `
-      <h3>Lo que sí necesitas</h3>
-      <ul>
-        <li>Un teléfono con cámara decente (iPhone 11+ o Android equivalente)</li>
-        <li>Buena luz natural O un aro de luz básico ($10-$30)</li>
-        <li>Trípode para teléfono ($5-$15)</li>
-        <li>Micrófono lavalier si vas a hablar ($10-$25)</li>
-      </ul>
-      <div class="highlight">💡 Inversión total mínima: menos de $50 USD. La cámara más cara es la que ya tienes.</div>
-      <h3>Lo que NO necesitas</h3>
-      <ul>
-        <li>Cámara profesional</li>
-        <li>Estudio de grabación</li>
-        <li>Equipo de iluminación profesional</li>
-        <li>Muchos seguidores</li>
-      </ul>
+      <h3>El error más común: esperar</h3>
+      <p>Uno de los errores más comunes es pensar: <em>"Voy a esperar hasta tener más experiencia."</em> La realidad es que la experiencia se construye trabajando. No esperando.</p>
+      <h3>Paso 1: Crea ejemplos de contenido</h3>
+      <p>No necesitas esperar a que una marca te contrate. Puedes crear contenido de práctica con productos que ya tengas en casa: un perfume, un champú, una aplicación, una agenda, un libro, un café.</p>
+      <h3>Paso 2: Construye un portafolio</h3>
+      <p>Tu portafolio es tu carta de presentación. Ahí mostrarás videos, fotografías, testimonios y ejemplos de contenido.</p>
+      <div class="highlight">📌 No tiene que ser perfecto. <strong>Tiene que existir.</strong></div>
+      <h3>Paso 3: Aplica constantemente</h3>
+      <p>Muchas personas aplican una vez y se rinden. Los creadores exitosos aplican decenas o incluso cientos de veces. Un rechazo no significa que no eres buena. Significa que esa oportunidad no era para ti en ese momento.</p>
+      <h3>Paso 4: Aprende de cada intento</h3>
+      <p>Cada aplicación te enseña algo. Cada correo mejora tus habilidades. Cada video aumenta tu experiencia. La clave está en mantenerte en movimiento.</p>
+      <div class="highlight">✨ No midas tu progreso por las respuestas que recibes. Mídelo por las acciones que realizas.</div>
     `
   },
   {
     id: 4,
-    module: 'Módulo 2 · Producción',
-    title: 'Cómo estructurar un video que vende',
-    duration: '15 min',
+    module: 'Parte I · Fundamentos del UGC',
+    title: 'Las mejores plataformas para conseguir campañas UGC',
+    duration: 'Lectura',
     videoId: null,
     content: `
-      <h3>La estructura que funciona</h3>
-      <p>Todo video UGC exitoso sigue una estructura básica que engancha al espectador y lleva al cliente a tomar acción.</p>
+      <h3>Plataformas que conectan marcas con creadores</h3>
+      <p>Existen plataformas creadas específicamente para conectar marcas con creadores. Las marcas publican campañas, los creadores aplican, y si son seleccionados, reciben productos o pagos.</p>
       <ul>
-        <li><strong>Gancho (0-3s):</strong> La primera frase decide si siguen viendo o no</li>
-        <li><strong>Problema (3-8s):</strong> Presenta el dolor o necesidad del cliente ideal</li>
-        <li><strong>Solución (8-20s):</strong> Muestra el producto como la respuesta</li>
-        <li><strong>Prueba (20-35s):</strong> Demostración, resultado, testimonial</li>
-        <li><strong>CTA (últimos 3s):</strong> Dile al espectador exactamente qué hacer</li>
+        <li><strong>KALE</strong> — Ideal para principiantes. Permite aplicar a campañas de diferentes categorías.</li>
+        <li><strong>JOINBRANDS</strong> — Una de las más conocidas. Las marcas publican campañas constantemente.</li>
+        <li><strong>INSENSE</strong> — Muy utilizada por marcas que necesitan contenido para publicidad.</li>
+        <li><strong>COHLEY</strong> — Trabaja con marcas reconocidas de diferentes perfiles.</li>
+        <li><strong>BILLO</strong> — Especializada en contenido en video, reseñas y demostraciones.</li>
+        <li><strong>AMAZON INFLUENCER</strong> — Ofrece oportunidades de monetización muy interesantes.</li>
+        <li><strong>AFLUENCER</strong> — Diseñada para conectar marcas con creadores de contenido.</li>
+        <li><strong>SOCIALPUBLI</strong> — Popular entre creadores hispanohablantes.</li>
+        <li><strong>ASPIRE</strong> — Utilizada por muchas marcas para gestionar colaboraciones.</li>
+        <li><strong>INFLUENSTER</strong> — Excelente para conseguir productos y generar reseñas.</li>
       </ul>
-      <div class="highlight">🎯 Ganchos que funcionan: "Lo que nadie te dice sobre…", "Probé X por 30 días y…", "¿Por qué todos están comprando…?"</div>
+      <div class="highlight">📌 Consejo: No dependas de una sola plataforma. Crea perfiles en varias, actualízalos y aplica constantemente.</div>
+      <h3>Ejercicio del capítulo</h3>
+      <p>Haz una lista de las plataformas donde abrirás perfil esta semana. Objetivo mínimo: ✅ 5 plataformas registradas.</p>
     `
   },
+
+  // ── PARTE II · PRESENCIA PROFESIONAL ──
   {
     id: 5,
-    module: 'Módulo 3 · Conseguir clientes',
-    title: 'Dónde encontrar tus primeras marcas',
-    duration: '12 min',
+    module: 'Parte II · Presencia Profesional',
+    title: 'Cómo crear un portafolio profesional desde cero',
+    duration: 'Lectura',
     videoId: null,
     content: `
-      <h3>Plataformas para encontrar trabajo UGC</h3>
+      <h3>¿Para qué sirve el portafolio?</h3>
+      <p>Tu portafolio es la prueba visual de lo que eres capaz de hacer. Responde una pregunta importante: <em>"¿Por qué una marca debería contratarte?"</em></p>
+      <div class="highlight">💡 Necesitas un portafolio para conseguir marcas. Crea tu portafolio para conseguir experiencia.</div>
+      <h3>¿Qué debe incluir?</h3>
       <ul>
-        <li><strong>Billo.app</strong> — Plataforma especializada en UGC, acepta creadores de varios países</li>
-        <li><strong>Fiverr / Upwork</strong> — Crea un perfil ofreciendo videos UGC</li>
-        <li><strong>Instagram DMs</strong> — Contacta directamente a marcas pequeñas</li>
-        <li><strong>TikTok Creator Marketplace</strong> — Conecta creadores con marcas</li>
-        <li><strong>LinkedIn</strong> — Ideal para marcas B2B</li>
+        <li><strong>Presentación personal:</strong> Una breve descripción sobre quién eres. Ej: "Soy Chavelys Lao, creadora de contenido UGC especializada en videos auténticos para marcas."</li>
+        <li><strong>Ejemplos de videos:</strong> Aunque sean de práctica — unboxing, reseña, tutorial, testimonio, problema y solución.</li>
+        <li><strong>Fotografías:</strong> Limpias y profesionales. No necesitas una cámara costosa.</li>
+        <li><strong>Información de contacto:</strong> Correo, Instagram, TikTok, portafolio digital.</li>
       </ul>
-      <div class="highlight">📌 Estrategia de inicio: elige 3 productos que ya usas y crea videos de muestra sin contrato. Eso será tu portfolio inicial.</div>
+      <h3>¿Dónde crear tu portafolio?</h3>
+      <ul>
+        <li><strong>Canva</strong> — Simple, visual y fácil de actualizar. Ideal para principiantes.</li>
+        <li>Google Drive</li>
+        <li>Notion</li>
+        <li>Sitio web personal</li>
+        <li>PDF profesional</li>
+      </ul>
+      <div class="highlight">✨ No esperes a tener experiencia. Crea tu portafolio para conseguir experiencia.</div>
     `
   },
   {
     id: 6,
-    module: 'Módulo 3 · Conseguir clientes',
-    title: 'Arma tu portfolio y cierra tu primer contrato',
-    duration: '14 min',
+    module: 'Parte II · Presencia Profesional',
+    title: 'Cómo grabar UGC usando solamente tu teléfono',
+    duration: 'Lectura',
     videoId: null,
     content: `
-      <h3>Tu portfolio sin experiencia previa</h3>
-      <p>Nadie nace con portfolio. Aquí está la estrategia:</p>
+      <h3>No necesitas una cámara profesional</h3>
+      <p>Miles de campañas UGC exitosas son grabadas únicamente con teléfonos móviles. Las marcas no están buscando una producción de Hollywood. <strong>Están buscando autenticidad.</strong></p>
+      <h3>Lo que sí necesitas</h3>
       <ul>
-        <li>Elige 3-5 productos que ya tienes en casa</li>
-        <li>Graba un video de 30-60 segundos para cada uno siguiendo la estructura del módulo anterior</li>
-        <li>Súbelos a Google Drive o Dropbox en carpeta organizada</li>
-        <li>Eso es tu portfolio. Listo.</li>
+        <li><strong>Buena iluminación:</strong> ✅ Graba cerca de una ventana. ✅ Aprovecha la luz natural. ❌ Evita habitaciones oscuras.</li>
+        <li><strong>Audio claro:</strong> Busca una habitación silenciosa, cierra ventanas, reduce el ruido de fondo.</li>
+        <li><strong>Estabilidad:</strong> Un trípode económico, una pila de libros, o una mesa estable.</li>
+        <li><strong>Fondo limpio:</strong> Elimina distracciones. La atención debe estar en ti o en el producto.</li>
       </ul>
-      <h3>Cómo escribir tu primer pitch</h3>
+      <h3>Tipos de videos UGC que debes practicar</h3>
+      <ul>
+        <li><strong>Unboxing</strong> — Mostrando la apertura de un producto</li>
+        <li><strong>Testimonio</strong> — Contando tu experiencia</li>
+        <li><strong>Tutorial</strong> — Enseñando cómo funciona algo</li>
+        <li><strong>Problema y solución</strong> — Uno de los formatos más efectivos</li>
+        <li><strong>Antes y después</strong> — Muy utilizado por marcas</li>
+      </ul>
+      <div class="highlight">🎯 Regla de oro: No busques perfección. Busca claridad. La autenticidad vende más que la perfección.</div>
+    `
+  },
+  {
+    id: 7,
+    module: 'Parte II · Presencia Profesional',
+    title: 'Cómo contactar marcas correctamente',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Outbound UGC: tú tomas la iniciativa</h3>
+      <p>Los creadores profesionales también buscan a las marcas. Esta estrategia se conoce como Outbound UGC — tú tomas la iniciativa. Y puede convertirse en una de las formas más rentables de conseguir colaboraciones.</p>
+      <h3>¿Cómo encontrar marcas?</h3>
+      <p>Busca marcas en Instagram, TikTok, Amazon, tiendas online y plataformas de UGC. Busca marcas que publiquen contenido frecuentemente, inviertan en publicidad y tengan presencia digital activa.</p>
+      <h3>Ejemplo de mensaje</h3>
       <div class="highlight">
-        "Hola [Marca], soy creadora de contenido UGC especializada en [nicho]. He preparado un video de muestra similar al tipo de contenido que crearía para ustedes. ¿Puedo enviártelo? Mi tarifa es de $X por video. Encantada de hablar."
+        📧 <strong>Asunto:</strong> Colaboración UGC para [Nombre de la Marca]<br><br>
+        Hola equipo de [Marca]. Mi nombre es [Tu Nombre] y soy creadora de contenido UGC. Me encanta su marca y me gustaría crear contenido auténtico para ayudarles a conectar con más clientes. Adjunto mi portafolio. Quedo atenta. Muchas gracias.
       </div>
-      <h3>Cierra el trato</h3>
+      <h3>Errores comunes</h3>
       <ul>
-        <li>Envía propuesta breve por email o DM</li>
-        <li>Adjunta 1-2 videos de muestra</li>
-        <li>Propón una videollamada de 15 minutos</li>
-        <li>Ten claro tu precio mínimo antes de negociar</li>
+        <li><strong>Error #1:</strong> Hablar demasiado de ti. La marca quiere saber cómo puedes ayudarla.</li>
+        <li><strong>Error #2:</strong> Enviar mensajes genéricos. Personaliza cada propuesta.</li>
+        <li><strong>Error #3:</strong> Rendirse después de un correo. Muchas marcas responden después de varios días.</li>
       </ul>
+      <h3>Seguimiento</h3>
+      <p>Si no recibes respuesta, espera entre 5 y 7 días y envía: <em>"Hola, quería dar seguimiento a mi mensaje anterior por si tuvieron oportunidad de revisarlo."</em></p>
+      <div class="highlight">✨ Ejercicio: Haz una lista de 20 marcas. Objetivo: Enviar tus primeros 5 correos esta semana.</div>
+    `
+  },
+  {
+    id: 8,
+    module: 'Parte II · Presencia Profesional',
+    title: 'Cómo conseguir PR y productos gratis',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Qué es el PR?</h3>
+      <p><strong>PR = Public Relations (Relaciones Públicas).</strong> Cuando una marca te envía un producto para que lo pruebes y compartas tu experiencia, estás participando en una estrategia de PR.</p>
+      <p>Miles de marcas envían productos todos los días a creadores de contenido. Pero los productos gratuitos no son un regalo — son una inversión de marketing. La empresa espera recibir contenido a cambio.</p>
+      <h3>¿Necesito muchos seguidores?</h3>
+      <p>No necesariamente. Muchas marcas pequeñas buscan microcreadores, nuevos creadores, personas auténticas y nichos específicos. Por eso es posible conseguir colaboraciones incluso con cuentas pequeñas.</p>
+      <h3>Cómo aumentar tus posibilidades</h3>
+      <ul>
+        <li><strong>Mantén tus perfiles actualizados:</strong> Las marcas revisan tu contenido, foto de perfil, biografía y estilo visual.</li>
+        <li><strong>Publica contenido relacionado:</strong> Si quieres colaborar con marcas de belleza, publica contenido de belleza.</li>
+        <li><strong>Regístrate en plataformas:</strong> Kale, JoinBrands, Influenster, Cohley, Insense, Aspire.</li>
+      </ul>
+      <div class="highlight">📌 Importante: No persigas únicamente productos gratis. Tu objetivo principal debe ser construir experiencia y generar ingresos. Los productos son un beneficio adicional.</div>
+    `
+  },
+
+  // ── PARTE III · INGRESOS ──
+  {
+    id: 9,
+    module: 'Parte III · Convirtiendo en Ingresos',
+    title: 'Cómo trabajar con marcas aunque tengas pocos seguidores',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>El mito más grande del UGC</h3>
+      <p>Existe una creencia que limita a miles de personas: <em>"Necesito 10,000 seguidores para trabajar con marcas."</em> <strong>Eso es falso.</strong></p>
+      <p>Muchas campañas UGC ni siquiera preguntan cuántos seguidores tienes. ¿Por qué? Porque las marcas están comprando contenido. No audiencia.</p>
+      <h3>Lo que realmente buscan las marcas</h3>
+      <ul>
+        <li><strong>Buena comunicación:</strong> Una persona que responda mensajes de manera profesional.</li>
+        <li><strong>Cumplimiento:</strong> Alguien que entregue el contenido a tiempo.</li>
+        <li><strong>Calidad:</strong> No perfección. Calidad.</li>
+        <li><strong>Creatividad:</strong> Ideas nuevas y perspectivas diferentes.</li>
+      </ul>
+      <h3>Ventajas de ser una creadora pequeña</h3>
+      <ul>
+        <li><strong>Mayor autenticidad:</strong> Las audiencias perciben a los microcreadores como más reales.</li>
+        <li><strong>Más cercanía:</strong> Generan mayor confianza.</li>
+        <li><strong>Menor competencia:</strong> Muchas marcas buscan específicamente creadores emergentes.</li>
+      </ul>
+      <div class="highlight">✨ No te compares constantemente con cuentas gigantes. Compárate con quien eras ayer. La acción siempre enseña más que la espera.</div>
+    `
+  },
+  {
+    id: 10,
+    module: 'Parte III · Convirtiendo en Ingresos',
+    title: 'Cómo cobrar por tu trabajo',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Tu tiempo tiene valor</h3>
+      <p>Uno de los mayores errores de los nuevos creadores es regalar su trabajo por demasiado tiempo. Al principio es normal aceptar colaboraciones para construir experiencia. Pero llega un momento donde debes aprender a cobrar.</p>
+      <h3>¿Qué estás vendiendo realmente?</h3>
+      <p>No estás vendiendo un video. Estás vendiendo: tiempo, experiencia, creatividad, estrategia y resultados potenciales.</p>
+      <h3>Factores que influyen en el precio</h3>
+      <ul>
+        <li><strong>Tiempo de grabación</strong></li>
+        <li><strong>Edición</strong> — ¿Cuántas horas requiere?</li>
+        <li><strong>Complejidad</strong> — No todos los videos tienen la misma dificultad</li>
+        <li><strong>Derechos de uso</strong> — Si la marca usará el contenido en anuncios pagados, el precio debe aumentar</li>
+      </ul>
+      <h3>Cómo responder cuando preguntan tu tarifa</h3>
+      <div class="highlight">
+        "Muchas gracias por su interés. Mis tarifas dependen del tipo de contenido, duración del video y derechos de uso. Estaré encantada de enviar una propuesta adaptada a sus necesidades."
+      </div>
+      <h3>Antes de dar precio, pregunta:</h3>
+      <ul>
+        <li>¿Cuántos videos necesitan?</li>
+        <li>¿Duración? ¿Plataforma?</li>
+        <li>¿Uso orgánico o anuncios?</li>
+        <li>¿Fecha de entrega?</li>
+      </ul>
+      <div class="highlight">🎯 No pienses: "¿Quién va a pagarme?" Piensa: "¿Cómo puedo aportar valor?" Lo importante es comenzar a pensar como profesional.</div>
+    `
+  },
+  {
+    id: 11,
+    module: 'Parte III · Convirtiendo en Ingresos',
+    title: 'Tarifas para principiantes',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Cuánto debo cobrar?</h3>
+      <p>Depende de tu experiencia, el tipo de contenido, la marca, el tiempo invertido y el valor que aportes. Uno de los mayores errores de los principiantes es cobrar demasiado poco por miedo a perder oportunidades.</p>
+      <div class="highlight">💡 Las marcas tienen presupuestos. No esperan que trabajes gratis para siempre. Cuando cobras demasiado poco, algunas empresas pueden percibir tu trabajo como menos profesional.</div>
+      <h3>Tarifas orientativas para principiantes (USD)</h3>
+      <ul>
+        <li><strong>Video UGC básico:</strong> $50 – $150</li>
+        <li><strong>Paquete de 3 videos:</strong> $150 – $400</li>
+        <li><strong>Paquete de 5 videos:</strong> $250 – $700</li>
+        <li><strong>Fotografías UGC (por foto):</strong> $15 – $50</li>
+        <li><strong>Canvas UGC (por proyecto):</strong> $50 – $300</li>
+      </ul>
+      <h3>Cuándo aumentar tus precios</h3>
+      <ul>
+        <li>✅ Cuando tengas mejores resultados</li>
+        <li>✅ Cuando tengas más experiencia</li>
+        <li>✅ Cuando tengas más demanda</li>
+        <li>✅ Cuando trabajas con marcas más grandes</li>
+      </ul>
+      <div class="highlight">🎯 Regla importante: No vendas tu tiempo. Vende el valor que generas. Las marcas no compran videos. Compran resultados.</div>
+    `
+  },
+  {
+    id: 12,
+    module: 'Parte III · Convirtiendo en Ingresos',
+    title: 'Cómo construir una marca personal fuerte',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Por qué necesitas una marca personal?</h3>
+      <p>Tu marca personal es la percepción que las personas tienen de ti. Es lo que recuerdan cuando escuchan tu nombre. Es tu reputación digital.</p>
+      <p>Las marcas prefieren trabajar con personas que transmiten confianza. Cuando tu perfil comunica claramente quién eres y qué haces, resulta más fácil conseguir colaboraciones, clientes y ventas.</p>
+      <h3>Define tu mensaje</h3>
+      <p>Pregúntate: <em>¿Qué quiero que las personas recuerden de mí?</em> Ejemplo: "Chavelys Lao ayuda a personas comunes a descubrir oportunidades reales para generar ingresos a través del contenido digital."</p>
+      <h3>Optimiza tu perfil</h3>
+      <p>Tu perfil debe responder tres preguntas: ¿Quién eres? ¿Qué haces? ¿Cómo puedes ayudar? Si alguien entra a tu cuenta y no entiende eso en menos de 10 segundos, necesitas simplificar tu mensaje.</p>
+      <h3>Publica con intención</h3>
+      <ul>
+        <li>Cada contenido debe educir, inspirar, entretener o generar confianza.</li>
+        <li><strong>La estrategia que más funciona en 2026:</strong> Aprender en público. No necesitas aparentar ser experta. Las personas conectan con quienes comparten su proceso.</li>
+      </ul>
+      <div class="highlight">✨ Los seguidores pueden cambiar. Las plataformas pueden cambiar. Los algoritmos pueden cambiar. Pero una marca personal sólida puede acompañarte durante años.</div>
+    `
+  },
+  {
+    id: 13,
+    module: 'Parte III · Convirtiendo en Ingresos',
+    title: 'Errores que te hacen perder campañas',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Errores que las marcas detectan rápidamente</h3>
+      <ul>
+        <li><strong>Error #1: No responder rápido</strong> — Las marcas trabajan con plazos cortos. Si tardas demasiado, eligen a otra persona.</li>
+        <li><strong>Error #2: No leer las instrucciones</strong> — Lee todo antes de comenzar. Dos veces si es necesario.</li>
+        <li><strong>Error #3: Entregar tarde</strong> — La puntualidad es una ventaja competitiva. Las marcas recuerdan a las personas confiables.</li>
+        <li><strong>Error #4: Copiar a otros creadores</strong> — Inspirarse es válido. Copiar no. Las marcas buscan autenticidad.</li>
+        <li><strong>Error #5: Tener perfiles descuidados</strong> — Antes de contratarte, muchas marcas revisarán tu biografía, contenido e imagen.</li>
+        <li><strong>Error #6: No hacer seguimiento</strong> — Muchas oportunidades se pierden porque el creador nunca volvió a escribir.</li>
+        <li><strong>Error #7: Rendirse demasiado pronto</strong> — Este es probablemente el error más costoso.</li>
+      </ul>
+      <div class="highlight">✨ No midas tu progreso por los rechazos. Mídelo por tu capacidad para seguir avanzando. Las personas que finalmente consiguen resultados rara vez son las más talentosas. Normalmente son las más persistentes.</div>
+    `
+  },
+
+  // ── PARTE IV · HERRAMIENTAS AVANZADAS ──
+  {
+    id: 14,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'Cómo crear videos UGC que las marcas aman',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>La pregunta correcta</h3>
+      <p>No es: <em>"¿Cómo hago videos más bonitos?"</em> La verdadera pregunta es: <em>"¿Cómo hago videos que ayuden a vender?"</em> Un video bonito llama la atención. <strong>Un video estratégico genera ventas.</strong></p>
+      <h3>La estructura que utilizan las marcas</h3>
+      <ul>
+        <li><strong>🎣 Gancho:</strong> Los primeros segundos son los más importantes. Ejemplos: "Desearía haber conocido esto antes." / "Este producto me sorprendió." / "No esperaba que funcionara tan bien."</li>
+        <li><strong>⚠️ Problema:</strong> Presenta una situación con la que las personas puedan identificarse.</li>
+        <li><strong>✅ Solución:</strong> Presenta el producto o servicio como respuesta.</li>
+        <li><strong>🏆 Resultado:</strong> Muestra el beneficio obtenido.</li>
+        <li><strong>📢 Llamado a la acción:</strong> Invita a la audiencia a actuar.</li>
+      </ul>
+      <h3>Tipos de videos que las marcas solicitan</h3>
+      <ul>
+        <li>Unboxing, Testimonio, Tutorial, Antes y después, Problema y solución</li>
+      </ul>
+      <h3>Lo que las marcas valoran</h3>
+      <ul>
+        <li>Naturalidad, buena iluminación, audio claro, entusiasmo auténtico, capacidad para conectar.</li>
+      </ul>
+      <div class="highlight">🎯 Las marcas no buscan actores. Buscan personas reales.</div>
+    `
+  },
+  {
+    id: 15,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'Inteligencia Artificial para creadores UGC',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>La IA no reemplaza la creatividad. La potencia.</h3>
+      <p>La inteligencia artificial está transformando la manera en que trabajamos. Los creadores que aprendan a utilizarla tendrán una enorme ventaja competitiva.</p>
+      <h3>Cómo puede ayudarte la IA</h3>
+      <ul>
+        <li><strong>Ideas de contenido:</strong> Guiones, hooks, ideas virales, estructuras de video.</li>
+        <li><strong>Redacción:</strong> Correos para marcas, biografías, descripciones, portafolios.</li>
+        <li><strong>Investigación:</strong> Analizar nichos, encontrar tendencias, organizar información.</li>
+        <li><strong>Automatización:</strong> Ahorrar tiempo — uno de los recursos más valiosos para un creador.</li>
+      </ul>
+      <h3>Herramientas recomendadas</h3>
+      <ul>
+        <li><strong>ChatGPT</strong> — Para ideas, investigación y redacción.</li>
+        <li><strong>Canva AI</strong> — Para diseños rápidos.</li>
+        <li><strong>CapCut AI</strong> — Para edición de video.</li>
+        <li><strong>Gemini</strong> — Para investigación y organización.</li>
+        <li><strong>Claude</strong> — Para organización de documentos y maquetación avanzada.</li>
+      </ul>
+      <div class="highlight">💡 No compitas contra la inteligencia artificial. Aprende a trabajar con ella. Quienes aprendan primero tendrán una ventaja enorme durante los próximos años.</div>
+    `
+  },
+  {
+    id: 16,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'Amazon Influencer paso a paso',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Qué es Amazon Influencer?</h3>
+      <p>Es un programa que permite a los creadores generar ingresos recomendando productos disponibles en Amazon. No necesitas ser una celebridad para intentarlo.</p>
+      <h3>Beneficios principales</h3>
+      <ul>
+        <li><strong>Comisiones:</strong> Puedes ganar dinero cuando las personas compran productos recomendados.</li>
+        <li><strong>Credibilidad:</strong> Amazon es una plataforma reconocida mundialmente.</li>
+        <li><strong>Miles de productos:</strong> Siempre existen nuevas oportunidades.</li>
+      </ul>
+      <h3>Cómo comenzar</h3>
+      <ul>
+        <li>Solicita acceso al programa.</li>
+        <li>Conecta tus redes sociales.</li>
+        <li>Espera la evaluación.</li>
+        <li>Si eres aceptada, comienza a crear contenido.</li>
+      </ul>
+      <h3>Consejos importantes</h3>
+      <ul>
+        <li>Sé constante — los resultados mejoran con el tiempo.</li>
+        <li>Habla de productos que realmente te gusten — la autenticidad genera confianza.</li>
+        <li>Aprende las políticas del programa.</li>
+      </ul>
+      <div class="highlight">📌 No pongas todos tus ingresos en una sola plataforma. Amazon Influencer puede ser una fuente adicional, pero diversificar es clave para construir una carrera sostenible.</div>
+    `
+  },
+  {
+    id: 17,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'Programas de afiliados y cómo generar ingresos adicionales',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Qué es un programa de afiliados?</h3>
+      <p>Es un sistema donde una empresa te paga una comisión cuando alguien compra utilizando tu enlace o código personalizado. Tú recomiendas → La empresa vende → Recibes una comisión.</p>
+      <h3>Ejemplos de programas de afiliados</h3>
+      <ul>
+        <li>Amazon Influencer / Amazon Associates</li>
+        <li>Programas de software</li>
+        <li>Aplicaciones móviles y cursos online</li>
+        <li>Plataformas digitales y herramientas de IA</li>
+        <li>Impact, PartnerStack</li>
+      </ul>
+      <h3>Cómo promocionar correctamente</h3>
+      <p>No se trata de publicar enlaces todo el día. <strong>Se trata de generar confianza.</strong> Comparte experiencias reales: lo que te gustó, lo que aprendiste, cómo te ayudó.</p>
+      <h3>El programa de afiliados de esta guía</h3>
+      <ul>
+        <li>Compras la guía → La estudias → Creas un video compartiendo tu experiencia</li>
+        <li>Solicitas acceso al programa → Recibes tu enlace personalizado</li>
+        <li>✅ <strong>50% de comisión</strong> por cada venta realizada</li>
+        <li>✅ Material promocional, actualizaciones futuras, recursos adicionales</li>
+      </ul>
+      <div class="highlight">🎯 Los creadores más estratégicos construyen múltiples fuentes de ingresos. Los afiliados son una de ellas.</div>
+    `
+  },
+  {
+    id: 18,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'Canvas UGC y las oportunidades digitales del futuro',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>¿Qué es Canvas UGC?</h3>
+      <p>Es la creación de contenido para aplicaciones, software, plataformas digitales, herramientas online, inteligencia artificial y cursos digitales. Aquí no necesitas recibir paquetes en tu casa.</p>
+      <h3>¿Por qué es tan interesante?</h3>
+      <ul>
+        <li><strong>No esperas envíos</strong> — Puedes comenzar inmediatamente.</li>
+        <li><strong>Trabajas desde cualquier lugar</strong> — Solo necesitas acceso a internet.</li>
+        <li><strong>Gran demanda</strong> — Cada día aparecen nuevas aplicaciones que necesitan contenido.</li>
+        <li><strong>Pagos atractivos</strong> — Muchas empresas tecnológicas destinan presupuestos importantes al marketing.</li>
+      </ul>
+      <h3>Tipos de contenido Canvas UGC</h3>
+      <ul>
+        <li>Tutoriales, grabación de pantalla, testimonios, comparaciones, problema y solución.</li>
+      </ul>
+      <h3>Plataformas donde encontrar oportunidades</h3>
+      <ul>
+        <li>Fiverr, Upwork, Contra, JoinBrands, Insense, Billo, Cohley.</li>
+      </ul>
+      <div class="highlight">💡 El Canvas UGC será una de las categorías con mayor crecimiento en los próximos años. El número de aplicaciones y herramientas digitales continúa aumentando. Y todas necesitan contenido.</div>
+    `
+  },
+  {
+    id: 19,
+    module: 'Parte IV · Herramientas Avanzadas',
+    title: 'UGC para hombres: una oportunidad poco aprovechada',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>El UGC no tiene género</h3>
+      <p>Muchas personas creen que el UGC es una industria exclusivamente femenina. La realidad es muy diferente. Las marcas también necesitan creadores hombres. Y en muchos nichos existe menos competencia.</p>
+      <h3>Nichos con gran potencial para hombres</h3>
+      <ul>
+        <li><strong>Tecnología:</strong> Aplicaciones, computadoras, gadgets, accesorios.</li>
+        <li><strong>Gaming:</strong> Videojuegos, equipos, accesorios.</li>
+        <li><strong>Fitness:</strong> Suplementos, equipamiento, aplicaciones deportivas.</li>
+        <li><strong>Barbería:</strong> Productos para barba, cuidado personal, estilo masculino.</li>
+        <li><strong>Perfumes:</strong> Uno de los sectores con mayor crecimiento.</li>
+        <li><strong>Automóviles:</strong> Accesorios y mantenimiento vehicular.</li>
+        <li><strong>Herramientas</strong> y <strong>Finanzas / Productividad.</strong></li>
+      </ul>
+      <h3>Ventaja competitiva</h3>
+      <p>Al existir menos creadores masculinos en algunos nichos, muchas marcas tienen dificultades para encontrar perfiles adecuados. Eso genera oportunidades.</p>
+      <div class="highlight">✨ El UGC no tiene género. Tiene creatividad. Tiene estrategia. Tiene autenticidad. Lo importante es comenzar.</div>
+    `
+  },
+
+  // ── PARTE V · PLAN DE CRECIMIENTO ──
+  {
+    id: 20,
+    module: 'Parte V · Tu Plan de Crecimiento',
+    title: 'Plan de acción de 30 días para conseguir tu primera campaña',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Un plan simple. No perfecto. Simple.</h3>
+      <div class="highlight">💡 La acción imperfecta siempre supera a la perfección que nunca se ejecuta.</div>
+      <h3>📅 Semana 1: Preparación — Construye tus bases</h3>
+      <ul>
+        <li>Día 1: Define tu nicho (Belleza, Tecnología, Hogar, Fitness, Apps, Estilo de vida)</li>
+        <li>Día 2: Optimiza tu perfil de Instagram (foto, biografía, contacto)</li>
+        <li>Día 3: Crea tu portafolio básico</li>
+        <li>Días 4-5: Graba tus primeros dos videos de práctica</li>
+        <li>Día 6: Edita ambos videos</li>
+        <li>Día 7: Publícalos</li>
+      </ul>
+      <h3>📅 Semana 2: Visibilidad — Comenzar a aparecer</h3>
+      <p>Publica contenido mostrando tu proceso, tus aprendizajes y tus pruebas. No necesitas parecer experta. <strong>Necesitas parecer auténtica.</strong></p>
+      <h3>📅 Semana 3: Oportunidades — Buscar campañas</h3>
+      <p>Regístrate en Kale, JoinBrands, Cohley, Insense, Aspire. Aplica diariamente aunque no te sientas lista.</p>
+      <h3>📅 Semana 4: Acción masiva — Multiplicar oportunidades</h3>
+      <p>Haz una lista de 20 marcas con sus correos y redes. Envía propuestas. Haz seguimiento. Aprende. Mejora. Repite.</p>
+      <h3>Resultado esperado al día 30</h3>
+      <ul>
+        <li>✅ Portafolio creado</li>
+        <li>✅ Contenido publicado</li>
+        <li>✅ Perfiles optimizados</li>
+        <li>✅ Aplicaciones enviadas</li>
+        <li>✅ Contactos con marcas</li>
+        <li>✅ Más experiencia que el día uno</li>
+      </ul>
+      <div class="highlight">🏆 Y eso ya representa una victoria enorme.</div>
+    `
+  },
+  {
+    id: 21,
+    module: 'Parte V · Tu Plan de Crecimiento',
+    title: 'Cómo mantener tu crecimiento a largo plazo',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Piensa como una marca, no como una campaña</h3>
+      <p>Conseguir una campaña es emocionante. Pero construir una carrera sostenible es aún mejor. Muchos creadores consiguen una colaboración y luego desaparecen, porque no construyeron un sistema.</p>
+      <p>Una campaña dura días. <strong>Una marca personal puede durar años.</strong></p>
+      <h3>Construye activos</h3>
+      <ul>
+        <li>Portafolio, redes sociales, correo electrónico, contactos, reputación.</li>
+      </ul>
+      <h3>Sigue aprendiendo</h3>
+      <p>El marketing cambia. Las plataformas cambian. Las tendencias cambian. Quien deja de aprender se queda atrás.</p>
+      <h3>Invierte en ti</h3>
+      <p>Los mejores retornos suelen venir de educación, herramientas y experiencia. Nunca subestimes el valor de seguir creciendo.</p>
+      <h3>Rodéate de personas que también estén creciendo</h3>
+      <p>Las comunidades correctas aceleran los resultados. Te permiten aprender de los errores y aciertos de otros.</p>
+      <div class="highlight">✨ Mi filosofía: No busco crecer rápido. Busco crecer de manera sostenible. Los resultados sólidos se construyen paso a paso.</div>
+    `
+  },
+  {
+    id: 22,
+    module: 'Parte V · Tu Plan de Crecimiento',
+    title: 'Autenticidad: tu mayor ventaja competitiva',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Lo que la IA no puede copiar completamente</h3>
+      <p>Vivimos en una época donde la inteligencia artificial puede crear imágenes, videos y textos. Pero existe algo que sigue siendo imposible de copiar completamente: <strong>Tu historia. Tu experiencia. Tu perspectiva.</strong></p>
+      <h3>Las personas conectan con personas</h3>
+      <p>No conectan con perfección. Conectan con humanidad. Por eso las marcas valoran tanto el contenido UGC — porque se siente real.</p>
+      <h3>Tu historia importa</h3>
+      <p>Tal vez creciste enfrentando dificultades. Tal vez comenzaste desde cero. Tal vez has sido rechazada muchas veces. Todo eso forma parte de tu historia. <strong>Y tu historia tiene valor.</strong></p>
+      <h3>Mi experiencia</h3>
+      <p>Soy cubana. He enfrentado limitaciones. He enfrentado rechazos. He tenido que investigar mucho más que otras personas. Y aun así sigo adelante. Porque mis dificultades no me hacen menos capaz. <strong>Me hacen más resiliente.</strong></p>
+      <h3>Lo que las marcas realmente buscan</h3>
+      <p>Confianza. Credibilidad. Autenticidad.</p>
+      <div class="highlight">✨ Y eso no se puede comprar. Se construye.</div>
+    `
+  },
+  {
+    id: 23,
+    module: 'Parte V · Tu Plan de Crecimiento',
+    title: 'El futuro del UGC y tu próximo nivel',
+    duration: 'Lectura',
+    videoId: null,
+    content: `
+      <h3>Ya sabes más que la mayoría</h3>
+      <p>Si has llegado hasta aquí, ya sabes más que la mayoría de las personas que quieren comenzar. Ahora viene la parte más importante: <strong>Aplicar.</strong></p>
+      <h3>Hacia dónde se dirige la industria</h3>
+      <p>Todo indica que el UGC seguirá creciendo. Cada vez más empresas buscan creadores, testimonios, videos auténticos y contenido para anuncios. La demanda continúa aumentando.</p>
+      <h3>Nuevas oportunidades en los próximos años</h3>
+      <ul>
+        <li><strong>Inteligencia Artificial</strong> — Herramientas que necesitarán creadores.</li>
+        <li><strong>Aplicaciones móviles</strong> — Miles de nuevas apps aparecen cada año.</li>
+        <li><strong>Software</strong> — Las empresas tecnológicas necesitan contenido constantemente.</li>
+        <li><strong>Educación online</strong> — Cursos y plataformas digitales seguirán creciendo.</li>
+        <li><strong>Afiliados</strong> — Cada vez más marcas crean programas de comisiones.</li>
+      </ul>
+      <h3>Imagina dónde podrías estar dentro de un año</h3>
+      <ul>
+        <li>✅ Un portafolio sólido</li>
+        <li>✅ Colaboraciones constantes</li>
+        <li>✅ Nuevas habilidades</li>
+        <li>✅ Una marca personal fuerte</li>
+        <li>✅ Varias fuentes de ingresos</li>
+      </ul>
+      <div class="highlight">🚀 Todo eso es posible. Pero comienza con una decisión: la decisión de actuar.<br><br><strong>— Chavelys Lao, Fundadora de WOW Agencia de Marketing</strong><br>Instagram: @chavelyslao__ | TikTok: @chavelys_lao | wowcreativa.com</div>
     `
   }
 ];
