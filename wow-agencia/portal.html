@@ -88,6 +88,20 @@ body{
   border:1px solid rgba(144,184,248,0.2);
 }
 .sidebar-nav li a i,.sidebar-nav li button i{width:18px;text-align:center;font-size:0.85rem}
+.sidebar-resources{
+  padding:0 0.7rem 1rem;border-top:1px solid var(--glass-border);
+}
+.resource-item{
+  display:flex;align-items:center;gap:0.6rem;
+  padding:0.65rem 0.8rem;border-radius:10px;
+  background:rgba(144,184,248,0.06);border:1px solid rgba(144,184,248,0.12);
+  color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;
+  transition:all 0.2s;margin-top:0.3rem;
+}
+.resource-item:hover{background:rgba(144,184,248,0.13);border-color:rgba(144,184,248,0.3);color:var(--white)}
+.resource-item .fa-file-pdf{color:#FF6B6B;font-size:1rem;flex-shrink:0}
+.resource-item span{flex:1;line-height:1.35}
+.resource-item .resource-dl{font-size:0.75rem;color:var(--blue-accent);flex-shrink:0}
 .sidebar-progress{
   padding:1rem 1.2rem;border-top:1px solid var(--glass-border);
 }
@@ -269,6 +283,14 @@ body{
     <div class="sidebar-progress">
       <div class="progress-label"><span>Tu progreso</span><span id="progressPct">0%</span></div>
       <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div class="sidebar-resources">
+      <p class="sidebar-label" style="padding-top:0.8rem;padding-bottom:0.4rem">Material de estudio</p>
+      <a href="/Libro_No_es_Marketing__Es_Percepcio_n_2.pdf" download="No_es_Marketing_Es_Percepcion-WoW.pdf" class="resource-item">
+        <i class="fa-solid fa-file-pdf"></i>
+        <span>No es Marketing,<br>Es Percepción</span>
+        <i class="fa-solid fa-download resource-dl"></i>
+      </a>
     </div>
   </aside>
 
