@@ -168,6 +168,7 @@ tbody td{padding:0.9rem 0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.8)}
         <input type="text" id="newName" placeholder="Nombre completo">
         <input type="email" id="newEmail" placeholder="Correo electrónico">
         <button class="btn-add" id="addBtn"><i class="fa-solid fa-plus"></i> Agregar</button>
+        <input type="text" id="newReferredBy" placeholder="Código referido (opcional)" style="max-width:220px">
       </div>
       <div class="msg-box" id="addMsg"></div>
     </div>
@@ -182,7 +183,9 @@ tbody td{padding:0.9rem 0.6rem;font-size:0.88rem;color:rgba(255,255,255,0.8)}
               <th>Nombre</th>
               <th>Email</th>
               <th>Fecha</th>
-              <th>Estado</th>
+              <th>Código</th>
+              <th>Comisión</th>
+              <th>Pagado</th>
               <th></th>
             </tr>
           </thead>
@@ -278,18 +281,23 @@ function updateStats(students) {
 function renderTable(students) {
   const tbody = document.getElementById('studentsBody');
   if (!students.length) {
-    tbody.innerHTML = '<tr><td colspan="5" class="empty">Aún no hay estudiantes registrados</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" class="empty">Aún no hay estudiantes registrados</td></tr>';
     return;
   }
   tbody.innerHTML = students.map(s => `
-    <tr>
-      <td><strong>${s.name}</strong></td>
-      <td style="color:var(--blue-accent)">${s.email}</td>
-      <td>${new Date(s.created_at).toLocaleDateString('es-ES')}</td>
-      <td><span class="badge active"><i class="fa-solid fa-circle" style="font-size:0.5rem"></i> Activo</span></td>
-      <td><button class="btn-del" onclick="removeStudent('${s.id}', '${s.name}')"><i class="fa-solid fa-trash"></i></button></td>
-    </tr>
-  `).join('');
+  <tr>
+    <td><strong>${s.name}</strong></td>
+    <td style="color:var(--blue-accent)">${s.email}</td>
+    <td>${new Date(s.created_at).toLocaleDateString('es-ES')}</td>
+    <td style="font-family:monospace;color:#F5C842">${s.referral_code || '—'}</td>
+    <td style="color:#6BCB77">$${s.commission_earned || 0}</td>
+    <td style="color:rgba(255,255,255,0.4)">$${s.commission_paid || 0}</td>
+    <td>
+      <button onclick="markPaid('${s.id}', ${s.commission_earned || 0})" style="background:none;border:1px solid rgba(107,203,119,0.3);color:#6BCB77;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;font-size:0.75rem;margin-right:0.4rem">Pagar</button>
+      <button class="btn-del" onclick="removeStudent('${s.id}', '${s.name}')"><i class="fa-solid fa-trash"></i></button>
+    </td>
+  </tr>
+`).join('');
 }
 
 // ── AGREGAR ESTUDIANTE ──
@@ -298,6 +306,7 @@ function renderTable(students) {
 document.getElementById('addBtn').addEventListener('click', async () => {
   const name = document.getElementById('newName').value.trim();
   const email = document.getElementById('newEmail').value.trim();
+  const referred_by = document.getElementById('newReferredBy').value.trim().toUpperCase() || null;
   const msgEl = document.getElementById('addMsg');
   const btn = document.getElementById('addBtn');
   msgEl.style.display = 'none';
@@ -316,7 +325,7 @@ document.getElementById('addBtn').addEventListener('click', async () => {
     const res = await fetch(INVITE_FUNCTION, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email }),
+      body: JSON.stringify({ name, email, referred_by }),
     });
 
     const result = await res.json();
@@ -328,7 +337,7 @@ document.getElementById('addBtn').addEventListener('click', async () => {
     // PASO 2: Guardar en tabla students de Supabase
     const { error: dbError } = await sb
       .from('students')
-      .insert([{ name, email, active: true }]);
+      .insert([{ name, email, active: true, referred_by: referred_by || null }]);
 
     if (dbError && !dbError.message.includes('duplicate')) {
       console.warn('No se pudo guardar en tabla students:', dbError.message);
@@ -338,6 +347,7 @@ document.getElementById('addBtn').addEventListener('click', async () => {
     // ✅ Éxito
     document.getElementById('newName').value = '';
     document.getElementById('newEmail').value = '';
+    document.getElementById('newReferredBy').value = '';
     msgEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>${name}</strong> agregado. Recibirá un correo para crear su contraseña.`;
     msgEl.className = 'msg-box ok';
     loadStudents();
@@ -360,6 +370,15 @@ async function removeStudent(id, name) {
     alert('Error al eliminar: ' + error.message);
     return;
   }
+  loadStudents();
+}
+async function markPaid(id, amount) {
+  if (!amount || amount <= 0) { alert('No hay comisión pendiente.'); return; }
+  if (!confirm(`¿Marcar $${amount} como pagado?`)) return;
+  await sb.from('students').update({
+    commission_paid: amount,
+    commission_earned: 0
+  }).eq('id', id);
   loadStudents();
 }
 </script>
