@@ -10,7 +10,9 @@ exports.handler = async (event) => {
   };
 
   try {
-    const { name, email } = JSON.parse(event.body);
+    const { name, email, referred_by } = JSON.parse(event.body);
+    const referralCode = Math.random().toString(36).substring(2,6).toUpperCase() +
+                     Math.random().toString(36).substring(2,6).toUpperCase();
 
     if (!name || !email) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'Nombre y correo son requeridos.' }) };
@@ -20,12 +22,9 @@ exports.handler = async (event) => {
     const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
     const SITE_URL = process.env.SITE_URL;
 
-    // IMPORTANTE: el endpoint /auth/v1/invite de Supabase (GoTrue) espera
-    // "redirect_to" como parámetro de la URL (query string), no en el body.
     const redirectTo = `${SITE_URL}/set-password.html`;
     const inviteUrl = `${SUPABASE_URL}/auth/v1/invite?redirect_to=${encodeURIComponent(redirectTo)}`;
 
-    // Llamada directa a la API REST de Supabase usando fetch nativo de Node 18+
     const response = await fetch(inviteUrl, {
       method: 'POST',
       headers: {
@@ -48,6 +47,36 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers, body: JSON.stringify({ error: result.msg || result.error_description || 'Error al invitar.' }) };
     }
 
+    // Guardar código de referido y datos en tabla students
+await fetch(`${SUPABASE_URL}/rest/v1/students`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'apikey': SUPABASE_SERVICE_KEY,
+    'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
+    'Prefer': 'resolution=merge-duplicates',
+  },
+  body: JSON.stringify({
+    name,
+    email,
+    active: true,
+    referral_code: referralCode,
+    referred_by: referred_by || null,
+  }),
+});
+    // Si vino referido, sumar $10 de comisión al afiliado
+    if (referred_by) {
+      await fetch(`${SUPABASE_URL}/rest/v1/rpc/add_commission`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_SERVICE_KEY,
+          'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
+        },
+        body: JSON.stringify({ referral_code_input: referred_by, amount: 10 }),
+      });
+    }
+
     return {
       statusCode: 200,
       headers,
@@ -58,4 +87,3 @@ exports.handler = async (event) => {
     return { statusCode: 500, headers, body: JSON.stringify({ error: 'Error interno: ' + err.message }) };
   }
 };
-
