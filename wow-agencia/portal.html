@@ -292,6 +292,20 @@ body{
         <i class="fa-solid fa-download resource-dl"></i>
       </a>
     </div>
+    <div id="affiliateBox" style="display:none;padding:0 0.7rem 1rem;border-top:1px solid rgba(144,184,248,0.15)">
+  <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+     color:rgba(255,255,255,0.3);padding:0.8rem 0.5rem 0.4rem">Mis afiliados</p>
+  <div style="background:rgba(245,200,66,0.06);border:1px solid rgba(245,200,66,0.2);
+       border-radius:10px;padding:0.8rem 1rem">
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-bottom:0.2rem">Tu código de referido</p>
+    <p id="affiliateCode" style="font-family:monospace;font-size:1.1rem;font-weight:700;
+       color:#F5C842;letter-spacing:0.12em;margin-bottom:0.6rem"></p>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.45)">Comisiones pendientes</p>
+    <p id="affiliateEarned" style="font-size:1rem;font-weight:700;color:#6BCB77;margin-bottom:0.4rem"></p>
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.45)">Total cobrado</p>
+    <p id="affiliatePaid" style="font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.5)"></p>
+  </div>
+</div>
   </aside>
 
   <!-- OVERLAY -->
@@ -1325,7 +1339,18 @@ async function init() {
   const email = session.user.email;
   document.getElementById('userEmail').textContent = email;
   document.getElementById('avatarInitial').textContent = email[0].toUpperCase();
+  const { data: studentData } = await sb
+  .from('students')
+  .select('referral_code, commission_earned, commission_paid')
+  .eq('email', email)
+  .single();
 
+if (studentData?.referral_code) {
+  document.getElementById('affiliateCode').textContent = studentData.referral_code;
+  document.getElementById('affiliateEarned').textContent = '$' + (studentData.commission_earned || 0);
+  document.getElementById('affiliatePaid').textContent = '$' + (studentData.commission_paid || 0);
+  document.getElementById('affiliateBox').style.display = 'block';
+}
   buildSidebar();
   loadLesson(0);
 }
