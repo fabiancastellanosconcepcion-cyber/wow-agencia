@@ -413,7 +413,10 @@ footer a:hover{color:var(--blue-accent)}
 <body>
 
 <div class="bg-grid"></div>
-
+<!-- BANNER REFERIDO (se muestra solo si hay ?ref= en la URL) -->
+<div id="refBanner" style="display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:linear-gradient(90deg,#1a6b3a,#25a85a);padding:0.7rem 1.5rem;text-align:center;font-size:0.9rem;font-weight:600;color:#fff;letter-spacing:0.02em">
+  <i class="fa-solid fa-tag"></i> ¡Tienes un descuento especial! El curso cuesta solo <strong>$18 USD</strong> gracias a tu invitación
+</div>
 <!-- WHATSAPP FLOTANTE -->
 <a href="https://wa.me/5359394935" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
@@ -466,10 +469,11 @@ footer a:hover{color:var(--blue-accent)}
     <a href="#inscribirse" class="btn-primary"><i class="fa-solid fa-graduation-cap"></i> Quiero inscribirme</a>
     <a href="#temario" class="btn-ghost"><i class="fa-solid fa-list"></i> Ver temario</a>
   </div>
-  <div class="price-tag">
+  <div class="price-tag" id="priceTag">
+    <span id="oldPrice" style="display:none;font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:700;color:rgba(255,255,255,0.35);text-decoration:line-through;margin-right:0.5rem">$20</span>
     <span class="currency">$</span>
-    <span class="amount">20</span>
-    <span class="note">USD · Pago único · Acceso de por vida</span>
+    <span class="amount" id="priceAmount">20</span>
+    <span class="note" id="priceNote">USD · Pago único · Acceso de por vida</span>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">En línea</div></div>
@@ -660,6 +664,33 @@ footer a:hover{color:var(--blue-accent)}
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// ── SISTEMA DE REFERIDOS ──
+const params = new URLSearchParams(window.location.search);
+const refCode = params.get('ref');
+const PRECIO_NORMAL = 20;
+const PRECIO_REF = 18;
+
+if (refCode) {
+  document.getElementById('refBanner').style.display = 'block';
+  document.querySelector('nav').style.top = '42px';
+  document.getElementById('priceAmount').textContent = PRECIO_REF;
+  document.getElementById('oldPrice').style.display = 'inline';
+  document.getElementById('priceNote').textContent = 'USD · Precio especial por invitación';
+  document.querySelector('.enroll-price').innerHTML = '<sup>$</sup>18 USD';
+  sessionStorage.setItem('refCode', refCode);
+}
+
+const activeRef = refCode || sessionStorage.getItem('refCode');
+
+if (activeRef) {
+  const msg = encodeURIComponent(
+    `Hola, quiero inscribirme en el curso UGC. Me llegó la invitación con el código: ${activeRef}`
+  );
+  document.querySelector('.wa-float').href = `https://wa.me/5359394935?text=${msg}`;
+  const waFallback = document.querySelector('.pay-whatsapp');
+  if (waFallback) waFallback.href = `https://wa.me/5359394935?text=${msg}`;
+}
 
 // SCROLL REVEAL
 const observer = new IntersectionObserver((entries) => {
