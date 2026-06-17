@@ -300,6 +300,21 @@ body{
     <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-bottom:0.2rem">Tu código de referido</p>
     <p id="affiliateCode" style="font-family:monospace;font-size:1.1rem;font-weight:700;
        color:#F5C842;letter-spacing:0.12em;margin-bottom:0.6rem"></p>
+
+    <p style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-bottom:0.3rem">Tu enlace para compartir</p>
+    <div style="display:flex;gap:0.4rem;align-items:center;margin-bottom:0.8rem">
+      <input id="affiliateLink" readonly
+        style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(144,184,248,0.2);
+               border-radius:7px;padding:0.4rem 0.6rem;color:rgba(255,255,255,0.7);
+               font-size:0.7rem;font-family:monospace;outline:none;min-width:0">
+      <button id="copyLinkBtn" onclick="copyAffiliateLink()"
+        style="flex-shrink:0;background:rgba(144,184,248,0.15);border:1px solid rgba(144,184,248,0.3);
+               color:var(--blue-accent);border-radius:7px;padding:0.4rem 0.7rem;
+               font-size:0.78rem;cursor:pointer;white-space:nowrap;transition:all 0.2s">
+        <i class="fa-solid fa-copy"></i> Copiar
+      </button>
+    </div>
+
     <p style="font-size:0.72rem;color:rgba(255,255,255,0.45)">Comisiones pendientes</p>
     <p id="affiliateEarned" style="font-size:1rem;font-weight:700;color:#6BCB77;margin-bottom:0.4rem"></p>
     <p style="font-size:0.72rem;color:rgba(255,255,255,0.45)">Total cobrado</p>
@@ -1390,6 +1405,7 @@ if (studentData?.referral_code) {
   document.getElementById('affiliateCode').textContent = studentData.referral_code;
   document.getElementById('affiliateEarned').textContent = '$' + (studentData.commission_earned || 0);
   document.getElementById('affiliatePaid').textContent = '$' + (studentData.commission_paid || 0);
+  document.getElementById('affiliateLink').value = 'https://wowcreativa.com/academia.html?ref=' + studentData.referral_code;
   document.getElementById('affiliateBox').style.display = 'block';
 }
   buildSidebar();
@@ -1517,6 +1533,20 @@ document.getElementById('overlay').addEventListener('click', () => {
 });
 
 init();
+function copyAffiliateLink() {
+  const input = document.getElementById('affiliateLink');
+  navigator.clipboard.writeText(input.value).then(() => {
+    const btn = document.getElementById('copyLinkBtn');
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copiado';
+    btn.style.color = '#6BCB77';
+    btn.style.borderColor = '#6BCB77';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar';
+      btn.style.color = '';
+      btn.style.borderColor = '';
+    }, 2000);
+  });
+}
 </script>
 </body>
 </html>
