@@ -47,40 +47,72 @@ exports.handler = async (event) => {
       return { statusCode: 400, headers, body: JSON.stringify({ error: result.msg || result.error_description || 'Error al invitar.' }) };
     }
 
-    // Guardar código de referido y datos en tabla students
-await fetch(`${SUPABASE_URL}/rest/v1/students`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'apikey': SUPABASE_SERVICE_KEY,
-    'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
-    'Prefer': 'resolution=merge-duplicates',
-  },
-  body: JSON.stringify({
-    name,
-    email,
-    active: true,
-    referral_code: referralCode,
-    referred_by: referred_by || null,
-  }),
-});
-    // Si vino referido, sumar $10 de comisión al afiliado
+    /// Validar el código de referido ANTES de guardar al estudiante,
+    // para saber qué precio anotar (20 normal, 18 con referido válido)
+    let referrerInfo = null;
     if (referred_by) {
-      await fetch(`${SUPABASE_URL}/rest/v1/rpc/add_commission`, {
-        method: 'POST',
+      const checkRes = await fetch(`${SUPABASE_URL}/rest/v1/students?referral_code=eq.${encodeURIComponent(referred_by)}&select=id,name`, {
         headers: {
-          'Content-Type': 'application/json',
           'apikey': SUPABASE_SERVICE_KEY,
           'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
         },
-        body: JSON.stringify({ referral_code_input: referred_by, amount: 10 }),
       });
+      const checkData = await checkRes.json();
+      if (checkRes.ok && Array.isArray(checkData) && checkData.length > 0) {
+        referrerInfo = checkData[0];
+      }
+    }
+
+    const amountPaid = referrerInfo ? 18 : 20;
+
+    // Guardar al nuevo estudiante en la tabla students
+    await fetch(`${SUPABASE_URL}/rest/v1/students`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_SERVICE_KEY,
+        'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
+        'Prefer': 'resolution=merge-duplicates',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        active: true,
+        referral_code: referralCode,
+        referred_by: referred_by || null,
+        amount_paid: amountPaid,
+      }),
+    });
+
+    // Si el código era válido, sumar $10 de comisión al afiliado
+    let commissionStatus = null;
+    if (referred_by) {
+      if (!referrerInfo) {
+        commissionStatus = { ok: false, reason: `El código "${referred_by}" no corresponde a ningún estudiante. No se asignó comisión.` };
+      } else {
+        const commRes = await fetch(`${SUPABASE_URL}/rest/v1/rpc/add_commission`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_SERVICE_KEY,
+            'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
+          },
+          body: JSON.stringify({ referral_code_input: referred_by, amount: 10 }),
+        });
+
+        if (!commRes.ok) {
+          const commErr = await commRes.json().catch(() => ({}));
+          commissionStatus = { ok: false, reason: 'Error al sumar la comisión: ' + (commErr.message || 'desconocido') };
+        } else {
+          commissionStatus = { ok: true, referrerName: referrerInfo.name, amount: 10 };
+        }
+      }
     }
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ ok: true, userId: result.id }),
+      body: JSON.stringify({ ok: true, userId: result.id, commissionStatus }),
     };
 
   } catch (err) {
