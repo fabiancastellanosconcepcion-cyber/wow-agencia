@@ -275,7 +275,8 @@ async function loadStudents() {
 function updateStats(students) {
   document.getElementById('totalCount').textContent = students.length;
   document.getElementById('activeCount').textContent = students.filter(s => s.active !== false).length;
-  document.getElementById('revenue').textContent = '$' + (students.length * 20);
+  const totalRevenue = students.reduce((sum, s) => sum + (s.amount_paid != null ? Number(s.amount_paid) : 20), 0);
+  document.getElementById('revenue').textContent = '$' + totalRevenue;
 }
 
 function renderTable(students) {
@@ -293,7 +294,7 @@ function renderTable(students) {
     <td style="color:#6BCB77">$${s.commission_earned || 0}</td>
     <td style="color:rgba(255,255,255,0.4)">$${s.commission_paid || 0}</td>
     <td>
-      <button onclick="markPaid('${s.id}', ${s.commission_earned || 0})" style="background:none;border:1px solid rgba(107,203,119,0.3);color:#6BCB77;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;font-size:0.75rem;margin-right:0.4rem">Pagar</button>
+      <button onclick="markPaid('${s.id}', ${s.commission_earned || 0}, ${s.commission_paid || 0})" style="background:none;border:1px solid rgba(107,203,119,0.3);color:#6BCB77;padding:0.25rem 0.6rem;border-radius:6px;cursor:pointer;font-size:0.75rem;margin-right:0.4rem">Pagar</button>
       <button class="btn-del" onclick="removeStudent('${s.id}', '${s.name}')"><i class="fa-solid fa-trash"></i></button>
     </td>
   </tr>
@@ -348,7 +349,18 @@ document.getElementById('addBtn').addEventListener('click', async () => {
     document.getElementById('newName').value = '';
     document.getElementById('newEmail').value = '';
     document.getElementById('newReferredBy').value = '';
-    msgEl.innerHTML = `<i class="fa-solid fa-circle-check"></i> <strong>${name}</strong> agregado. Recibirá un correo para crear su contraseña.`;
+
+    let baseMsg = `<i class="fa-solid fa-circle-check"></i> <strong>${name}</strong> agregado. Recibirá un correo para crear su contraseña.`;
+
+    if (result.commissionStatus) {
+      if (result.commissionStatus.ok) {
+        baseMsg += `<br><i class="fa-solid fa-circle-dollar-to-slot" style="color:#6BCB77"></i> Comisión de $${result.commissionStatus.amount} asignada a <strong>${result.commissionStatus.referrerName}</strong>.`;
+      } else {
+        baseMsg += `<br><i class="fa-solid fa-triangle-exclamation" style="color:#F5C842"></i> ${result.commissionStatus.reason}`;
+      }
+    }
+
+    msgEl.innerHTML = baseMsg;
     msgEl.className = 'msg-box ok';
     loadStudents();
 
@@ -372,11 +384,11 @@ async function removeStudent(id, name) {
   }
   loadStudents();
 }
-async function markPaid(id, amount) {
-  if (!amount || amount <= 0) { alert('No hay comisión pendiente.'); return; }
-  if (!confirm(`¿Marcar $${amount} como pagado?`)) return;
+async function markPaid(id, pendingAmount, alreadyPaid) {
+  if (!pendingAmount || pendingAmount <= 0) { alert('No hay comisión pendiente.'); return; }
+  if (!confirm(`¿Marcar $${pendingAmount} como pagado? (Total acumulado pasará a $${alreadyPaid + pendingAmount})`)) return;
   await sb.from('students').update({
-    commission_paid: amount,
+    commission_paid: alreadyPaid + pendingAmount,
     commission_earned: 0
   }).eq('id', id);
   loadStudents();
