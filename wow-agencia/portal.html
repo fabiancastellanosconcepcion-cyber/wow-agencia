@@ -363,6 +363,48 @@ const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 // Cuando tengas tus videos: reemplaza videoId con el ID de YouTube o Vimeo
 const LESSONS = [
   // ── INTRODUCCIÓN ──
+  
+  {
+  id: 60,
+  module: 'Introducción',
+  title: 'Bienvenida: cómo usar este curso para sacarle el máximo provecho',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Bienvenida a UGC 360°</h3>
+    <p>Si estás leyendo esto, ya tomaste la decisión más importante: empezar. Este curso fue diseñado para llevarte de cero a tu primera colaboración con marcas, paso a paso, sin importar desde dónde empiezas ni cuántos seguidores tienes ahora mismo.</p>
+    <p>Antes de ir a la primera lección, lee esto. Te va a ahorrar tiempo y confusión.</p>
+
+    <h3>¿En qué orden estudiar?</h3>
+    <ul>
+      <li><strong>Si eres completamente nueva en UGC:</strong> Sigue el orden del menú de arriba hacia abajo. Cada parte construye sobre la anterior. Saltarte módulos en este punto puede generar confusión.</li>
+      <li><strong>Si ya tienes algo de experiencia:</strong> Puedes ir directamente a la Parte III (Ingresos) o la Parte IV (Herramientas Avanzadas) según lo que necesites resolver ahora mismo.</li>
+      <li><strong>Si ya trabajas con marcas y quieres escalar:</strong> Ve directo a la Parte V (Plan de Crecimiento) y al módulo de Herramientas Avanzadas.</li>
+    </ul>
+
+    <h3>¿Cuánto tiempo dedicar?</h3>
+    <ul>
+      <li><strong>Mínimo recomendado:</strong> 30 minutos al día, 5 días a la semana.</li>
+      <li><strong>Ritmo ideal:</strong> 1 a 2 lecciones por día + al menos una acción práctica por semana.</li>
+      <li><strong>Resultado esperado a los 30 días:</strong> Portafolio creado, perfiles optimizados y primeras aplicaciones enviadas.</li>
+    </ul>
+    <div class="highlight">⚠️ Leer sin actuar no produce resultados. Cada lección tiene un ejercicio o una acción concreta. Hazla antes de pasar a la siguiente.</div>
+
+    <h3>Cómo aprovechar el Kit de Acción Rápida</h3>
+    <p>Al final del curso encontrarás el Kit de Acción Rápida con los 5 pasos más importantes. Úsalo como lista de verificación. Cuando lo completes, habrás terminado la parte más crítica del proceso de arranque.</p>
+
+    <h3>El botón "Marcar como completada"</h3>
+    <p>Cada lección tiene ese botón al final. Úsalo. No porque sea obligatorio, sino porque ver tu progreso avanzar es una de las formas más simples de mantenerte motivada. El porcentaje en la barra lateral te muestra en tiempo real cuánto has avanzado.</p>
+
+    <h3>Si tienes dudas</h3>
+    <p>Al final de cada lección encontrarás el botón de WhatsApp para escribirle directamente a Chavelys. No acumules dudas — pregunta. Una duda resuelta a tiempo puede cambiar el resultado de una aplicación a una marca.</p>
+
+    <h3>Material descargable</h3>
+    <p>En el menú lateral encontrarás el PDF <em>"No es Marketing, Es Percepción"</em> disponible para descargar. Léelo en paralelo al curso — complementa perfectamente los fundamentos de la Parte I.</p>
+
+    <div class="highlight">🚀 Todo lo que necesitas para empezar está aquí. No esperes sentirte lista. Empieza y la preparación llegará en el camino. <strong>Nos vemos en la primera lección.</strong></div>
+  `
+},
   {
     id: 0,
     module: 'Introducción',
@@ -443,6 +485,30 @@ const LESSONS = [
         <li>Miles de marcas destinan presupuestos cada vez mayores a este tipo de contenido</li>
       </ul>
       <div class="highlight">🎯 Las marcas no están comprando popularidad. <strong>Están comprando confianza.</strong> Y eso significa que tú también puedes participar.</div>
+    <h3>Datos que demuestran por qué las marcas invierten en UGC</h3>
+<ul>
+  <li>El UGC genera tasas de conversión <strong>4 veces más altas</strong> que los anuncios tradicionales.</li>
+  <li>El <strong>92% de los consumidores</strong> confía más en el UGC que en la publicidad de marca.</li>
+  <li>Los anuncios con estilo UGC generan hasta <strong>8 veces más interacciones</strong> que el contenido de marca convencional.</li>
+  <li>El mercado del UGC en Latinoamérica creció un <strong>340% en los últimos 18 meses</strong>.</li>
+  <li>El <strong>80% de las personas</strong> admite que el UGC influye positivamente en su decisión de compra.</li>
+</ul>
+<h3>Tipos de contenido UGC que existen</h3>
+<ul>
+  <li><strong>Videos cortos:</strong> Reels, TikToks, YouTube Shorts — el formato más demandado.</li>
+  <li><strong>Fotografías lifestyle:</strong> Imágenes de producto en contexto real.</li>
+  <li><strong>Reseñas escritas:</strong> Para ecommerce (Amazon, Etsy, Shopify).</li>
+  <li><strong>Testimonios en cámara:</strong> El formato que más genera confianza.</li>
+  <li><strong>Unboxing:</strong> Apertura de productos, muy popular en belleza y tecnología.</li>
+  <li><strong>Tutoriales:</strong> Cómo usar un producto paso a paso.</li>
+  <li><strong>Antes y después:</strong> Muy usado en belleza, fitness y hogar.</li>
+  <li><strong>Canvas UGC:</strong> Para apps y software — sin necesidad de recibir productos físicos.</li>
+</ul>
+<h3>UGC orgánico vs. UGC para anuncios pagados</h3>
+<ul>
+  <li><strong>UGC orgánico:</strong> La marca lo publica en sus propias redes como contenido normal. Precio base.</li>
+  <li><strong>UGC para paid ads:</strong> La marca lo usa como anuncio en Meta, TikTok Ads o Google. Se cobra entre 2 y 3 veces más porque el alcance es mayor y el impacto en ventas es directo.</li>
+</ul>
     `
   },
   {
@@ -493,9 +559,24 @@ const LESSONS = [
         <li><strong>Meta Brand Collabs Manager:</strong> La herramienta oficial de Meta (Instagram y Facebook) para colaboraciones.</li>
         <li><strong>Trend.io:</strong> Trabaja con marcas medianas y grandes reconocidas.</li>
       </ul>
-      <div class="highlight">📌 Consejo: No dependas de una sola plataforma. Crea perfiles en varias, actualízalos y aplica constantemente.</div>
-      <h3>Ejercicio del capítulo</h3>
-      <p>Haz una lista de las plataformas donde abrirás perfil esta semana. Objetivo mínimo: ✅ 5 plataformas registradas.</p>
+      <h3>Plataformas para hispanohablantes y LATAM</h3>
+<ul>
+  <li><strong>HICARI</strong> — Plataforma española con creadores de España y Latinoamérica. Registro gratuito, pagas solo por video. Muy recomendada si hablas español.</li>
+  <li><strong>Influee</strong> — Opera en 24 países. Más de 100,000 creadores activos. Incluye protección de pago. Promedio de $150–$300 por proyecto.</li>
+  <li><strong>UGC LATAM (ofertasugc.com)</strong> — Comunidad de más de 3,000 creadores de 18 países. Cursos gratuitos, acceso a campañas y conexión con marcas.</li>
+  <li><strong>BrandMe</strong> — Pionera en México, Centroamérica y LATAM. Ha trabajado con Coca-Cola, Pepsi, Google, Heineken, Uber.</li>
+</ul>
+<h3>Cómo elegir la plataforma correcta según tu situación</h3>
+<ul>
+  <li><strong>Si estás empezando:</strong> Kale, JoinBrands, Influenster. Son las más accesibles para perfiles nuevos.</li>
+  <li><strong>Si hablas español y quieres marcas latinas:</strong> HICARI, SocialPubli, BrandMe, UGC LATAM.</li>
+  <li><strong>Si quieres paid ads (lo que más paga):</strong> Billo, Minisocial, Insense, Trend.io.</li>
+  <li><strong>Si quieres trabajo freelance directo:</strong> Fiverr, Upwork, Contra.</li>
+  <li><strong>Si quieres afiliados:</strong> Amazon Influencer, Impact, PartnerStack.</li>
+</ul>
+<div class="highlight">📌 Consejo: No dependas de una sola plataforma. Crea perfiles en varias, actualízalos y aplica constantemente.</div>
+<h3>Ejercicio del capítulo</h3>
+<p>Haz una lista de las plataformas donde abrirás perfil esta semana. Objetivo mínimo: ✅ 5 plataformas registradas.</p>
     `
   },
 
@@ -553,6 +634,33 @@ const LESSONS = [
         <li><strong>Antes y después</strong> — Muy utilizado por marcas</li>
       </ul>
       <div class="highlight">🎯 Regla de oro: No busques perfección. Busca claridad. La autenticidad vende más que la perfección.</div>
+    <h3>Equipo básico recomendado (todo económico)</h3>
+<ul>
+  <li><strong>Trípode de teléfono:</strong> Desde $5–$15 en tiendas online. Imprescindible para estabilidad.</li>
+  <li><strong>Aro de luz:</strong> Mejora radicalmente la calidad visual. Desde $10–$20.</li>
+  <li><strong>Micrófono de solapa:</strong> Para audio limpio. Los hay desde $8 que se conectan al jack del teléfono.</li>
+  <li><strong>Fondo de tela o pared lisa:</strong> Neutro o con tu color de marca. Elimina distracciones.</li>
+</ul>
+<h3>Configuración de cámara que debes usar</h3>
+<ul>
+  <li><strong>Resolución:</strong> Graba siempre en <strong>1080p</strong> como mínimo. Si tu teléfono soporta 4K, mejor.</li>
+  <li><strong>Formato:</strong> Vertical (9:16) para TikTok, Reels e Instagram Stories. Cuadrado (1:1) para Facebook. Horizontal (16:9) solo para YouTube.</li>
+  <li><strong>Velocidad:</strong> 30 fps es suficiente. 60 fps si grabas movimiento rápido.</li>
+  <li><strong>Modo retrato:</strong> Úsalo para testimonios y hablar a cámara — da efecto profesional.</li>
+</ul>
+<h3>Edición básica: las apps que necesitas</h3>
+<ul>
+  <li><strong>CapCut</strong> — Gratuita, con plantillas, subtítulos automáticos y efectos en tendencia. La más usada por UGC creators.</li>
+  <li><strong>VN Editor</strong> — Potente, sin marca de agua, muy usado por creadores profesionales.</li>
+  <li><strong>InShot</strong> — Ideal para edición rápida y ajustes de formato.</li>
+</ul>
+<h3>Elementos de edición que siempre debes incluir</h3>
+<ul>
+  <li><strong>Subtítulos:</strong> El 85% del contenido en redes se consume sin sonido. CapCut los genera automáticamente.</li>
+  <li><strong>Música sin copyright:</strong> CapCut y TikTok tienen librerías gratuitas. Evita música con derechos si el video será para anuncios.</li>
+  <li><strong>Transiciones suaves:</strong> No abuses de los efectos. La naturalidad es la clave del UGC.</li>
+  <li><strong>Texto en pantalla:</strong> Refuerza los mensajes clave. Especialmente el hook y el CTA.</li>
+</ul>
     `
   },
   {
@@ -738,6 +846,33 @@ const LESSONS = [
         <li><strong>Fotografías UGC (por foto):</strong> $15 – $50</li>
         <li><strong>Canvas UGC (por proyecto):</strong> $50 – $300</li>
       </ul>
+      <h3>Derechos de uso: el multiplicador de precio</h3>
+<ul>
+  <li><strong>Uso orgánico</strong> (se publica en el feed de la marca): tarifa base.</li>
+  <li><strong>Uso en anuncios pagados</strong> (Meta Ads, TikTok Ads): tarifa base × 2.</li>
+  <li><strong>Derechos extendidos</strong> (6–12 meses, múltiples plataformas): +30% a +50%.</li>
+  <li><strong>Whitelisting / Spark Ads</strong> (anuncios desde tu propia cuenta): fee mensual adicional de 20–30%.</li>
+  <li><strong>Derechos perpetuos e internacionales</strong>: tarifa base × 3 o más.</li>
+</ul>
+<h3>Errores de precio que debes evitar</h3>
+<ul>
+  <li>❌ Cobrar solo por el tiempo de grabación, sin incluir edición ni derechos.</li>
+  <li>❌ Aceptar productos como único pago sistemáticamente — sin una estrategia clara.</li>
+  <li>❌ No preguntar para qué van a usar el contenido (orgánico vs. anuncios cambia todo).</li>
+  <li>❌ Dar descuentos agresivos sin reducir entregables — genera expectativas incorrectas.</li>
+  <li>❌ No tener nada por escrito — sin contrato ni acuerdo básico.</li>
+</ul>
+<h3>Cómo presentar tu tarifa profesionalmente</h3>
+<p>En vez de decir solo el número, presenta un paquete. Ejemplo:</p>
+<div class="highlight">
+  📦 <strong>Paquete Básico — $120 USD</strong><br>
+  • 1 video UGC de 30–60 segundos<br>
+  • 1 ronda de revisiones incluida<br>
+  • Entrega en formato MP4 en 5 días hábiles<br>
+  • Derechos de uso orgánico por 3 meses<br>
+  <br>
+  <em>Uso en anuncios pagados: +$80 USD adicionales.</em>
+</div>
       <h3>Cuándo aumentar tus precios</h3>
       <ul>
         <li>✅ Cuando tengas mejores resultados</li>
@@ -1300,6 +1435,1233 @@ const LESSONS = [
     <div class="highlight">🎯 La creadora que entrega a tiempo, responde rápido y tiene todo organizado consigue más trabajo recurrente que la creadora más talentosa pero caótica. La confiabilidad es una ventaja competitiva enorme.</div>
   `
 },
+{
+  id: 47,
+  module: 'Parte III · Convirtiendo en Ingresos',
+  title: 'UGC desde Cuba: cómo trabajar con el mundo desde la isla',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>La realidad sin adornos</h3>
+    <p>Cuba presenta desafíos únicos para trabajar como creadora UGC internacional. Conocerlos con honestidad es la única forma de encontrar soluciones reales. No es imposible — pero requiere más creatividad que en otros países.</p>
+    <div class="highlight">⚠️ Las principales pasarelas de pago internacionales — PayPal, Stripe, Payoneer y Wise — no operan directamente con cuentas registradas en Cuba por las sanciones del OFAC (Office of Foreign Assets Control) de EE.UU.</div>
+
+    <h3>¿Qué opciones reales existen para cobrar?</h3>
+    <ul>
+      <li><strong>A través de un familiar o contacto de confianza en el exterior:</strong> La vía más usada por freelancers cubanos. El dinero llega a la cuenta de esa persona (PayPal, Wise, cuenta bancaria en otro país) y luego te lo envían por remesa o en efectivo. Requiere absoluta confianza y claridad en los acuerdos.</li>
+      <li><strong>Cuentas en el exterior a tu nombre:</strong> Si tienes residencia, ciudadanía o estatus migratorio en otro país, abrir una cuenta bancaria digital allí (Revolut en Europa, por ejemplo) es la solución más sólida a largo plazo.</li>
+      <li><strong>Criptomonedas (USDT / Bitcoin):</strong> Una alternativa que usan algunos freelancers cubanos. No requiere banco. Permite recibir pagos internacionales y cambiarlos localmente. Requiere educación básica en el tema antes de usarla.</li>
+      <li><strong>Transferencias directas acordadas con la marca:</strong> Para marcas latinas o pequeñas que no usen plataformas específicas, a veces es posible negociar el pago por Western Union, Zelle desde una cuenta exterior, o métodos alternativos. Depende de la disposición de cada marca.</li>
+    </ul>
+
+    <h3>Plataformas freelance: la situación real</h3>
+    <p>Upwork, Fiverr y plataformas similares tienen restricciones por IP cubana o no permiten registros directos desde Cuba. Muchos freelancers cubanos operan a través de cuentas gestionadas por familiares en el exterior. Es una práctica extendida, no exenta de riesgo si la plataforma detecta la inconsistencia. Si optas por esta vía, la persona debe entender completamente la responsabilidad que implica.</p>
+
+    <h3>¿En qué tipo de UGC tienes más ventaja desde Cuba?</h3>
+    <ul>
+      <li><strong>Canvas UGC (apps y software):</strong> No necesitas recibir productos físicos. Grabas desde tu pantalla o haces testimonios de herramientas digitales. Es la modalidad más accesible desde Cuba — no depende de envíos internacionales.</li>
+      <li><strong>Marcas cubanas:</strong> Un mercado que está creciendo. Los negocios privados (mipymes, cuentapropistas) en Cuba necesitan contenido UGC para sus redes. Puedes ser pionera en este nicho.</li>
+      <li><strong>Marcas latinas que paguen en efectivo o por métodos alternativos:</strong> Especialmente negocios de Miami, México o España que tengan conexión con Cuba y estén dispuestos a acordar métodos de pago alternativos.</li>
+    </ul>
+
+    <h3>Conectividad: planifica en torno a la realidad</h3>
+    <p>El acceso a internet en Cuba es limitado y caro. Para trabajar como UGC creator desde Cuba de forma seria, necesitas incorporar esto a tu flujo de trabajo:</p>
+    <ul>
+      <li>Descarga los briefs y referencias cuando tengas conexión, trabaja offline, y sube cuando tengas señal.</li>
+      <li>Ten siempre los archivos guardados localmente — nunca confíes solo en la nube.</li>
+      <li>Usa herramientas que funcionen sin internet constante: CapCut, VN Editor, Canva offline.</li>
+      <li>Comunica a tus clientes los posibles retrasos de respuesta por conectividad — una nota profesional en tu media kit genera comprensión.</li>
+    </ul>
+
+    <h3>Tu ventaja real</h3>
+    <p>Ser cubana no es solo un obstáculo. También es una historia poderosa. Las marcas que valoran la autenticidad conectan con creadores que tienen contextos únicos, perspectivas diferentes y resiliencia real. Tu acento, tu historia y tu capacidad de adaptación son parte de tu propuesta de valor.</p>
+    <div class="highlight">🎯 El camino desde Cuba es más estrecho, pero existe. Comienza con Canvas UGC y marcas latinas mientras construyes tus vías de cobro. Paso a paso.</div>
+  `
+},
+{
+  id: 48,
+  module: 'Parte I · Fundamentos del UGC',
+  title: 'Marcas que buscan UGC: por nicho y dónde encontrarlas',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Qué tipos de marcas contratan UGC creators?</h3>
+    <p>Prácticamente cualquier empresa que venda online necesita UGC. Estas son las categorías con mayor demanda y los tipos de marcas más activos en cada una:</p>
+
+    <h3>🧴 Belleza y Skincare</h3>
+    <p>El nicho con mayor volumen de campañas UGC del mundo. Las marcas buscan testimonios, rutinas, antes/después y unboxings.</p>
+    <ul>
+      <li>Farmasi, Mary Kay, Yanbal — accesibles para principiantes, muchas trabajan por gifting.</li>
+      <li>The Ordinary, CeraVe, Neutrogena — marcas medianas que usan UGC para ads.</li>
+      <li>Marcas indie de skincare en Shopify — las más dispuestas a trabajar con creadores emergentes.</li>
+      <li>YesStyle, Stylevana — tiendas de K-beauty que frecuentemente buscan creadoras en Instagram/TikTok.</li>
+    </ul>
+
+    <h3>👗 Moda y Accesorios</h3>
+    <ul>
+      <li>Tiendas de ropa en Shopify o Instagram — muchas buscan modelos-creadoras para mostrar outfits.</li>
+      <li>SHEIN — tiene programa oficial de colaboraciones para creadores con distintos niveles de seguidores.</li>
+      <li>Temu — programa de influencer con comisiones (ver bono especial del curso).</li>
+      <li>Marcas locales y boutiques — excelente punto de entrada con alta probabilidad de respuesta.</li>
+    </ul>
+
+    <h3>💊 Salud, Fitness y Suplementos</h3>
+    <ul>
+      <li>Marcas de suplementos — uno de los presupuestos más altos en paid ads UGC.</li>
+      <li>Apps de fitness (Freeletics, Noom, etc.) — Canvas UGC perfecto, sin producto físico.</li>
+      <li>Equipamiento deportivo pequeño — pesas, bandas de resistencia, accesorios.</li>
+    </ul>
+
+    <h3>🏠 Hogar y Estilo de Vida</h3>
+    <ul>
+      <li>Productos de limpieza y organización del hogar — demanda constante y alta rotación de contenido.</li>
+      <li>Gadgets de cocina — muy populares en TikTok, formato tutorial/demostración.</li>
+      <li>Decoración de interiores — marcas en Etsy y Amazon especialmente.</li>
+    </ul>
+
+    <h3>📱 Tecnología y Apps</h3>
+    <ul>
+      <li>Aplicaciones móviles — el nicho perfecto para Canvas UGC desde Cuba. Sin envíos, pago digital.</li>
+      <li>Herramientas de productividad, edición, diseño — siempre buscan testimonios de usuarios reales.</li>
+      <li>Accesorios de teléfono, auriculares, cargadores — Amazon y TikTok Shop son los canales principales.</li>
+    </ul>
+
+    <h3>🍕 Alimentos y Bebidas</h3>
+    <ul>
+      <li>Snacks saludables, suplementos alimenticios — muchas marcas DTC (direct to consumer) con presupuesto para UGC.</li>
+      <li>Cafeterías y restaurantes locales — oportunidad para empezar con marcas cercanas.</li>
+    </ul>
+
+    <h3>💻 Software y Educación Online</h3>
+    <ul>
+      <li>Plataformas de cursos online — testimonios de estudiantes reales.</li>
+      <li>Herramientas SaaS — Canva, Notion, herramientas de marketing buscan UGC constantemente.</li>
+      <li>Plataformas de IA — el nicho más nuevo y con mayor crecimiento de presupuesto.</li>
+    </ul>
+
+    <h3>Cómo encontrar marcas activas en tu nicho</h3>
+    <ul>
+      <li><strong>TikTok Creator Search Insights:</strong> Muestra qué marcas están invirtiendo en contenido de creadores ahora mismo. Busca tu nicho y filtra por "marcas que pagan".</li>
+      <li><strong>Instagram Ads Library:</strong> Busca la marca en la librería de anuncios de Meta. Si ya tienen anuncios con estilo UGC, significa que buscan más creadores como tú.</li>
+      <li><strong>Amazon:</strong> Busca productos en tu nicho con muchas reseñas. Los vendedores activos suelen tener programas para creadores.</li>
+      <li><strong>Plataformas UGC:</strong> Kale, JoinBrands, Insense, Cohley — mira qué marcas están publicando campañas activamente.</li>
+    </ul>
+
+    <div class="highlight">🎯 Regla de oro: Antes de contactar una marca, revisa si ya usa UGC en sus redes o anuncios. Si lo hace, tu trabajo es decirles que tú puedes crear más. Si no lo hace, tu trabajo es explicarles por qué deberían empezar.</div>
+  `
+},
+{
+  id: 49,
+  module: 'Parte V · Tu Plan de Crecimiento',
+  title: 'De creadora a agencia: cómo escalar tu negocio UGC',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Cuándo es momento de pensar en escalar?</h3>
+    <p>Cuando tienes más trabajo del que puedes manejar sola, y rechazar proyectos se convierte en algo habitual, es la señal de que puedes dar el siguiente paso: dejar de ser solo una creadora y convertirte en quien coordina a otras creadoras.</p>
+
+    <h3>Modelo de agencia UGC: cómo funciona</h3>
+    <p>En lugar de ser tú quien graba todos los videos, actúas como intermediaria entre las marcas (que necesitan contenido) y los creadores (que producen el contenido). Tu margen es la diferencia entre lo que cobra el creador y lo que paga la marca.</p>
+    <ul>
+      <li><strong>Ejemplo:</strong> La marca te paga $300 por un video. Tú contratas a un creador por $150. Tu margen: $150 por proyecto.</li>
+      <li>Puedes gestionar 5, 10 o 20 proyectos simultáneos sin grabar un solo video tú misma.</li>
+    </ul>
+
+    <h3>Pasos para construir una micro-agencia UGC</h3>
+    <ul>
+      <li><strong>Paso 1 — Construye tu reputación primero:</strong> Ninguna marca quiere trabajar con una agencia sin historial. Necesitas al menos 3 meses de experiencia como creadora antes de pensar en esto.</li>
+      <li><strong>Paso 2 — Crea tu red de creadores:</strong> Identifica 5–10 creadores confiables en diferentes nichos. Deben cumplir plazos y tener buena calidad.</li>
+      <li><strong>Paso 3 — Estandariza tu proceso:</strong> Plantillas de brief, contratos claros, sistema de revisiones y política de pagos. Sin proceso, no hay agencia — hay caos.</li>
+      <li><strong>Paso 4 — Posiciona la agencia:</strong> Crea un perfil diferenciado. No eres solo "una creadora más". Eres quien conecta marcas con el creador correcto para cada campaña.</li>
+      <li><strong>Paso 5 — Consigue tu primer cliente de agencia:</strong> Generalmente sale de tus contactos actuales. Una marca con la que ya trabajaste como creadora y que necesita más volumen de contenido.</li>
+    </ul>
+
+    <h3>Servicios que puede ofrecer una micro-agencia UGC</h3>
+    <ul>
+      <li>Paquetes de 5–20 videos mensuales para una sola marca.</li>
+      <li>UGC para paid ads con diferentes creatividades (A/B testing).</li>
+      <li>Gestión completa de contenido UGC de una cuenta (estrategia + producción + entrega).</li>
+    </ul>
+
+    <div class="highlight">🚀 WoW Agencia es un ejemplo exactamente de este modelo: empezaste gestionando contenido para clientes, desarrollaste procesos, y construiste un equipo. El UGC puede ser otra línea de servicio dentro de esa misma estructura.</div>
+  `
+},
+{
+  id: 50,
+  module: 'Parte I · Fundamentos del UGC',
+  title: 'Cómo elegir tu nicho UGC (y por qué es la decisión más importante)',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>El error más común al empezar</h3>
+    <p>La mayoría de las personas que comienzan en UGC quieren hacer de todo: belleza, tecnología, comida, fitness, apps. El resultado es un portafolio sin identidad que no convence a ninguna marca. Las marcas buscan creadores que entiendan su mundo, no creadores genéricos.</p>
+    <div class="highlight">💡 Cuanto más específica seas, más fácil es que una marca te encuentre, te elija y repita contigo.</div>
+
+    <h3>¿Qué es un nicho en UGC?</h3>
+    <p>Es la categoría de productos o servicios sobre la que te especializas. No tiene que ser para siempre — puede evolucionar. Pero al principio necesitas un punto de entrada claro.</p>
+
+    <h3>Los nichos con mayor demanda y mejor pago en 2025–2026</h3>
+    <ul>
+      <li><strong>Belleza y Skincare:</strong> El de mayor volumen de campañas. Marcas desde pequeñas indie hasta grandes corporaciones. Formatos: testimonios, rutinas, antes/después, unboxing.</li>
+      <li><strong>Salud y Suplementos:</strong> Presupuestos altos en paid ads. Muy demandado para anuncios en Meta y TikTok.</li>
+      <li><strong>Apps y Software (Canvas UGC):</strong> Ideal desde Cuba — sin envíos físicos. Las empresas tecnológicas pagan bien y necesitan contenido constante.</li>
+      <li><strong>Fitness:</strong> Equipamiento, apps deportivas, suplementos. Funciona especialmente bien en TikTok.</li>
+      <li><strong>Hogar y Organización:</strong> Gadgets, limpieza, decoración. Gran demanda en Amazon y TikTok Shop.</li>
+      <li><strong>Mascotas:</strong> Uno de los nichos con mayor crecimiento. Pocas creadoras, mucha demanda.</li>
+      <li><strong>Finanzas personales y Productividad:</strong> Apps, cursos, herramientas. Público muy específico y dispuesto a comprar.</li>
+      <li><strong>Alimentación saludable:</strong> Snacks, suplementos, recetas. Formato tutorial muy efectivo.</li>
+    </ul>
+
+    <h3>Cómo elegir el tuyo: 3 preguntas que debes hacerte</h3>
+    <ul>
+      <li><strong>¿De qué podrías hablar durante horas sin aburrirte?</strong> La autenticidad se nota. Si el tema no te interesa, el video lo refleja.</li>
+      <li><strong>¿Qué productos consumes o usas en tu vida real?</strong> Los mejores videos UGC nacen de experiencias genuinas.</li>
+      <li><strong>¿Hay marcas activas en ese nicho buscando creadores?</strong> Valida antes de comprometerte. Busca en Kale, JoinBrands o Instagram si hay campañas activas.</li>
+    </ul>
+
+    <h3>¿Puedo tener más de un nicho?</h3>
+    <p>Sí, pero empieza con uno o dos relacionados. Ejemplo: belleza + bienestar. O tecnología + productividad. Nichos que comparten audiencia y tipo de contenido funcionan bien juntos. Nichos completamente opuestos (belleza + automóviles) confunden a las marcas.</p>
+
+    <h3>¿Y si quiero cambiar de nicho después?</h3>
+    <p>Puedes hacerlo. El portafolio se actualiza. Lo importante es que en cada momento tengas ejemplos sólidos del nicho en el que estás aplicando.</p>
+
+    <div class="highlight">🎯 Ejercicio: Escribe los 3 nichos que más te interesan. Luego investiga en JoinBrands o Kale cuál de ellos tiene más campañas activas ahora mismo. Ese es tu punto de partida.</div>
+  `
+},
+{
+  id: 51,
+  module: 'Parte II · Presencia Profesional',
+  title: 'Cómo leer y ejecutar un brief de marca perfectamente',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Qué es un brief?</h3>
+    <p>Es el documento que la marca te envía explicando qué necesita. Puede ser un PDF de 5 páginas o un mensaje de WhatsApp de 3 líneas. En ambos casos, tu trabajo es extraer toda la información relevante antes de grabar un solo segundo.</p>
+    <div class="highlight">⚠️ El 80% de las revisiones innecesarias ocurren porque el creador no leyó bien el brief. Cada revisión extra te cuesta tiempo y daña tu reputación.</div>
+
+    <h3>Lo que siempre debe estar en un brief (y qué hacer si falta)</h3>
+    <ul>
+      <li><strong>Descripción del producto:</strong> Qué es, qué hace, cuál es su beneficio principal. Si no está claro, pregunta: "¿Cuál es el beneficio número uno que quieren comunicar?"</li>
+      <li><strong>Público objetivo:</strong> A quién va dirigido el video. Mujer de 25–35 con piel sensible es diferente a hombre de 30–45 que hace ejercicio. El tono cambia completamente.</li>
+      <li><strong>Tono y estilo:</strong> ¿Divertido, serio, educativo, aspiracional, cercano? Si no lo especifican, mira su feed y pregunta: "¿Se parece más al video X o al video Y de su cuenta?"</li>
+      <li><strong>Duración y formato:</strong> 15 segundos, 30 segundos, 60 segundos. Vertical 9:16, cuadrado 1:1. Especificaciones técnicas.</li>
+      <li><strong>Mensajes clave:</strong> Frases o puntos que sí o sí deben aparecer en el video. Algunos briefs te dan el guión completo. Otros te dan libertad creativa.</li>
+      <li><strong>Lo que NO quieren:</strong> Mencionar a la competencia, ciertos colores, palabras que no pueden usar. Siempre pregunta si hay restricciones.</li>
+      <li><strong>Fecha de entrega:</strong> Del borrador y del video final aprobado. Son fechas distintas.</li>
+      <li><strong>Cómo entregar:</strong> Google Drive, WeTransfer, link de Dropbox, directamente en la plataforma.</li>
+    </ul>
+
+    <h3>Preguntas que debes hacer ANTES de grabar</h3>
+    <ul>
+      <li>"¿Tienen algún ejemplo de video que les haya funcionado bien y pueda usar como referencia?"</li>
+      <li>"¿El video es para uso orgánico, para anuncios pagados o ambos?"</li>
+      <li>"¿Cuántas revisiones incluye este proyecto?"</li>
+      <li>"¿El guión lo propongo yo o me lo envían ustedes?"</li>
+    </ul>
+
+    <h3>Cómo confirmar que entendiste el brief</h3>
+    <p>Antes de grabar, envía un resumen de lo que vas a hacer. Ejemplo:</p>
+    <div class="highlight">
+      "Hola [Nombre], para confirmar que estamos alineadas: voy a grabar un video de 30 segundos en formato vertical, mostrando [beneficio del producto], con tono cercano y natural, enfocado en [público objetivo]. El gancho será [tu idea de hook]. ¿Todo correcto o hay algo que ajustar antes de comenzar?"
+    </div>
+    <p>Este mensaje te protege. Si la marca aprueba y luego dice que no era lo que quería, tienes por escrito que confirmaron.</p>
+
+    <h3>Errores frecuentes al ejecutar un brief</h3>
+    <ul>
+      <li>Improvisar sin leer el brief completo primero.</li>
+      <li>Ignorar las restricciones (mencionar algo que dijeron que no).</li>
+      <li>Cambiar el tono sin avisar ("lo vi muy serio y lo hice más divertido").</li>
+      <li>Entregar en formato o duración incorrectos.</li>
+      <li>No preguntar las dudas antes — esperar a que la marca señale los errores.</li>
+    </ul>
+
+    <div class="highlight">🎯 Regla de oro: Un brief bien ejecutado a la primera vale más que diez videos creativos que no siguen las instrucciones. La confiabilidad es tu diferencial más poderoso.</div>
+  `
+},
+{
+  id: 52,
+  module: 'Parte III · Convirtiendo en Ingresos',
+  title: 'Cómo crear tu Rate Card: la hoja de tarifas que te hace ver profesional',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Qué es una Rate Card?</h3>
+    <p>Es un documento de una página que presenta tus servicios y precios de forma clara y organizada. Es diferente a simplemente "decir cuánto cobras" — es un menú profesional que las marcas pueden revisar, comparar y aprobar internamente.</p>
+    <div class="highlight">💡 Las marcas con presupuesto real esperan recibir una rate card. Si no tienes una, muchas te piden que "les cotices" y luego no responden porque el proceso es demasiado informal.</div>
+
+    <h3>Estructura de una Rate Card efectiva</h3>
+    <ul>
+      <li><strong>Tu nombre o nombre de marca personal</strong> y una línea de descripción: "UGC Creator especializada en [nicho]".</li>
+      <li><strong>Tabla de servicios y precios:</strong> Cada servicio con su descripción, duración, entregables y precio base.</li>
+      <li><strong>Política de derechos de uso:</strong> Explica que el precio base incluye uso orgánico y que los anuncios pagados tienen un costo adicional.</li>
+      <li><strong>Política de revisiones:</strong> Cuántas revisiones incluye cada paquete.</li>
+      <li><strong>Tiempos de entrega:</strong> Cuántos días hábiles desde que recibes el brief o el producto.</li>
+      <li><strong>Datos de contacto:</strong> Correo, Instagram, WhatsApp o el canal que prefieras.</li>
+    </ul>
+
+    <h3>Ejemplo de tabla de servicios</h3>
+    <div class="highlight">
+      <strong>Video UGC 30 segundos</strong> — $80 USD<br>
+      Incluye: guión, grabación y edición básica. 1 revisión. Entrega en 5 días.<br>
+      Derechos: uso orgánico en redes de la marca.<br><br>
+
+      <strong>Video UGC 60 segundos</strong> — $120 USD<br>
+      Incluye: guión, grabación y edición con subtítulos y texto en pantalla. 2 revisiones. Entrega en 7 días.<br>
+      Derechos: uso orgánico en redes de la marca.<br><br>
+
+      <strong>Paquete 3 videos (30–60 seg)</strong> — $300 USD<br>
+      Incluye: 3 videos con diferentes hooks y enfoques. 2 revisiones por video. Entrega en 10 días.<br>
+      Derechos: uso orgánico en redes de la marca.<br><br>
+
+      <strong>Fotografías lifestyle (x5)</strong> — $80 USD<br>
+      Incluye: 5 fotos editadas en contexto real. Entrega en 3 días.<br><br>
+
+      <strong>Adicional — Derechos para paid ads:</strong> +50% sobre cualquier paquete.<br>
+      <strong>Adicional — Revisión extra:</strong> $15 USD por ronda adicional.
+    </div>
+
+    <h3>¿Cómo se entrega?</h3>
+    <ul>
+      <li>Como PDF adjunto en tu correo de presentación.</li>
+      <li>Como link de Canva público (la opción más fácil).</li>
+      <li>Como parte de tu media kit (en la última página).</li>
+    </ul>
+
+    <h3>¿Cuándo se actualiza?</h3>
+    <p>Cada 2 o 3 meses, o cada vez que subas tus precios. Nunca envíes una rate card desactualizada — si tienes precios distintos a los del documento, genera confusión y desconfianza.</p>
+
+    <h3>¿Debo publicar mis precios en redes?</h3>
+    <p>Es opcional. Algunos creadores los publican para filtrar marcas que no tienen presupuesto. Otros prefieren mantenerlos privados y enviarlos solo cuando hay interés real. Ambas estrategias funcionan — elige según tu comodidad.</p>
+
+    <div class="highlight">🎯 Ejercicio: Esta semana crea tu primera Rate Card en Canva. Busca "rate card influencer" en las plantillas gratuitas y adáptala con tus servicios y precios. Una vez lista, adjúntala en tu próximo correo a una marca.</div>
+  `
+},
+{
+  id: 53,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'TikTok Shop y Live Shopping: la oportunidad que está explotando ahora',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Qué es TikTok Shop?</h3>
+    <p>Es la plataforma de comercio electrónico integrada dentro de TikTok. Permite a creadores recomendar productos directamente en sus videos y lives, y recibir una comisión cuando alguien compra sin salir de la app.</p>
+    <div class="highlight">💰 TikTok Shop ya generó más de $20 mil millones en ventas en 2024 y está expandiéndose activamente en Latinoamérica. Las creadoras que se posicionen ahora tienen ventaja enorme sobre quienes lleguen después.</div>
+
+    <h3>¿Cómo funciona para un creador?</h3>
+    <ul>
+      <li>Te registras como afiliada en TikTok Shop.</li>
+      <li>Eliges productos del catálogo de marcas que ya están en la plataforma.</li>
+      <li>Los enlazas en tus videos o los presentas en tus lives.</li>
+      <li>Cuando alguien compra usando tu enlace, recibes una comisión — normalmente entre el 5% y el 20% del precio del producto.</li>
+    </ul>
+
+    <h3>Diferencia entre TikTok Shop y UGC tradicional</h3>
+    <ul>
+      <li><strong>UGC tradicional:</strong> La marca te paga por el video. Tú entregas el contenido y eso es todo.</li>
+      <li><strong>TikTok Shop:</strong> Tú eliges los productos, creas el contenido, y ganas comisión por cada venta. No hay pago fijo — pero si el contenido convierte bien, puede generar más dinero que un pago único.</li>
+      <li><strong>Combinación:</strong> Muchas creadoras hacen ambas cosas — cobran por producir el video UGC y además tienen su enlace de afiliada activo por si algún seguidor compra.</li>
+    </ul>
+
+    <h3>Live Shopping: el formato que más convierte</h3>
+    <p>Es hacer un video en vivo mientras presentas y recomiendas productos en tiempo real. El espectador puede comprar mientras te ve. En Asia este modelo ya desplazó a la publicidad tradicional. En LATAM está en sus primeras etapas — lo que significa que hay muy poca competencia ahora mismo.</p>
+    <ul>
+      <li>No necesitas muchos seguidores para empezar — TikTok promueve activamente a nuevos creadores de live shopping.</li>
+      <li>La clave es la energía, la autenticidad y conocer bien el producto que presentas.</li>
+      <li>Los mejores horarios para lives de shopping en LATAM: noches de miércoles a domingo.</li>
+    </ul>
+
+    <h3>Requisitos para acceder a TikTok Shop como creador</h3>
+    <ul>
+      <li>Cuenta de TikTok con al menos 1,000 seguidores (en algunos países el umbral varía).</li>
+      <li>Cuenta en modo profesional o creador.</li>
+      <li>País habilitado — TikTok Shop está expandiéndose en LATAM. Verifica disponibilidad en tu país.</li>
+    </ul>
+
+    <h3>¿Desde Cuba?</h3>
+    <p>TikTok Shop no está disponible directamente en Cuba. Sin embargo, si tienes acceso a una cuenta gestionada desde otro país de LATAM o desde EE.UU., es una vía que vale explorar a medida que construyes tus contactos en el exterior.</p>
+
+    <h3>Cómo empezar hoy</h3>
+    <ul>
+      <li>Entra a TikTok y busca "TikTok Shop Affiliate" en la configuración de tu cuenta.</li>
+      <li>Únete a la comunidad UGC LATAM (ofertasugc.com) — tienen acceso anticipado a TikTok Shop LATAM y cursos gratuitos sobre live shopping.</li>
+      <li>Estudia los lives de creadoras exitosas en TikTok para entender el ritmo y formato.</li>
+    </ul>
+
+    <div class="highlight">🚀 El live shopping en LATAM está donde estaba TikTok en 2019: en sus primeras etapas. Las creadoras que aprendan el formato ahora serán las referentes en 2–3 años.</div>
+  `
+},
+{
+  id: 54,
+  module: 'Parte I · Fundamentos del UGC',
+  title: 'Por qué el UGC funciona: psicología del consumidor aplicada',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>No es solo un video. Es psicología.</h3>
+    <p>El UGC no funciona por accidente. Funciona porque activa mecanismos psicológicos profundos que llevan al ser humano a confiar, a desear y a comprar. Entender esto te convierte en una creadora estratégica, no solo en alguien que graba videos bonitos.</p>
+
+    <h3>1. Prueba social (Social Proof)</h3>
+    <p>Las personas miran lo que hacen otras personas para decidir qué es correcto hacer. Si ven que alguien como ellas usa y recomienda un producto, asumen que probablemente es bueno. Por eso un testimonio de una persona real convence más que un anuncio con actores perfectos.</p>
+    <div class="highlight">💡 Cuanto más se parezca el creador al consumidor ideal de la marca, más poderoso es el UGC. Una mujer de 28 años con piel mixta convence más a mujeres con piel mixta que una modelo con piel "perfecta".</div>
+
+    <h3>2. El principio de semejanza</h3>
+    <p>Confiamos más en personas que se parecen a nosotros. Mismo acento, mismo contexto, mismos problemas. Por eso el UGC de una persona "normal" muchas veces supera en resultados a una campaña millonaria con celebridades. Tu "ordinariness" es tu superpoder.</p>
+
+    <h3>3. Autenticidad percibida</h3>
+    <p>El cerebro humano detecta la falsedad muy rápido. Los anuncios perfectamente producidos activan una alerta inconsciente: "esto me están vendiendo". El UGC desactiva esa alerta porque parece una recomendación genuina, no publicidad. Las pequeñas imperfecciones — luz no perfecta, pausa natural, reacción espontánea — aumentan la credibilidad.</p>
+
+    <h3>4. Efecto de escasez y urgencia</h3>
+    <p>Los CTAs efectivos en UGC usan este principio: "Se me estaba acabando y tuve que reordenar", "Lo probé solo porque estaba en oferta y no lo suelto más", "No sé cuánto tiempo va a durar este precio". No se trata de mentir — se trata de ser honesta sobre experiencias reales que crean urgencia genuina.</p>
+
+    <h3>5. Relaciones parasociales</h3>
+    <p>Cuando alguien te ve hablar directamente a la cámara de forma cercana y consistente, el cerebro empieza a procesar esa relación como si fuera una amistad real. Por eso las recomendaciones de creadores de contenido se sienten como consejos de un amigo — no como publicidad. Y los consejos de amigos tienen un peso enorme en las decisiones de compra.</p>
+
+    <h3>6. El principio de reciprocidad</h3>
+    <p>Cuando un creador comparte información útil, un truco, una experiencia real — el espectador siente de forma inconsciente que "recibió algo". Eso lo predispone positivamente hacia lo que ese creador recomiende después. Por eso los mejores videos UGC no empiezan vendiendo — empiezan aportando valor.</p>
+
+    <h3>Cómo aplicar esto en tus videos</h3>
+    <ul>
+      <li>Muestra el problema real antes de mostrar el producto — activa la identificación.</li>
+      <li>Habla en primera persona y con emoción genuina — activa la confianza.</li>
+      <li>Incluye un detalle imperfecto — activa la autenticidad percibida.</li>
+      <li>Usa un CTA con urgencia natural — "lo sigo usando porque realmente funciona" convierte más que "compra ahora".</li>
+    </ul>
+
+    <div class="highlight">🎯 La próxima vez que veas un anuncio que te haga querer comprar algo, analízalo: ¿qué principio psicológico está activando? Esa conciencia es lo que separa a una creadora intuitiva de una creadora estratégica.</div>
+  `
+},
+{
+  id: 55,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'Métricas UGC: qué medir y cómo reportar resultados a las marcas',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Por qué las métricas te consiguen clientes recurrentes</h3>
+    <p>La mayoría de las creadoras entregan el video y desaparecen. Las creadoras profesionales hacen algo diferente: hacen seguimiento de los resultados y los reportan. Esa diferencia convierte una colaboración única en un contrato mensual.</p>
+    <div class="highlight">💡 Si puedes mostrarle a una marca que tu video generó X visualizaciones, Y% de retención y Z clics, eres indispensable. Si solo entregas el archivo sin datos, eres reemplazable.</div>
+
+    <h3>Métricas que debes conocer y entender</h3>
+    <ul>
+      <li><strong>Visualizaciones / Reproducciones:</strong> Cuántas veces se vio el video. Indica alcance, no conversión.</li>
+      <li><strong>Tasa de retención:</strong> Qué porcentaje del video vieron los usuarios en promedio. Si es mayor al 50%, el contenido engancha. Si cae antes del 30%, el hook no funciona.</li>
+      <li><strong>CTR (Click-Through Rate):</strong> Porcentaje de personas que hicieron clic en el enlace o botón de compra. El indicador más importante para UGC de paid ads.</li>
+      <li><strong>Engagement rate:</strong> Likes + comentarios + compartidos ÷ visualizaciones. Un 3–5% es bueno. Más de 8% es excelente.</li>
+      <li><strong>Conversiones:</strong> Cuántas personas compraron, se registraron o tomaron la acción que la marca quería. La métrica final que más le importa a la marca.</li>
+      <li><strong>Saves / Guardados:</strong> En Instagram, un guardado indica que el contenido tiene valor real. Es una de las señales más positivas del algoritmo.</li>
+    </ul>
+
+    <h3>Métricas según el tipo de UGC</h3>
+    <ul>
+      <li><strong>UGC orgánico (publicado en tu cuenta):</strong> Reportas visualizaciones, retención, engagement rate y comentarios relevantes.</li>
+      <li><strong>UGC para paid ads (publicado por la marca):</strong> La marca normalmente maneja estas métricas. Puedes preguntarles cómo funcionó — esa información fortalece tu portafolio.</li>
+      <li><strong>UGC entregado sin publicar (solo el archivo):</strong> Aquí no tienes acceso a métricas propias. Pregunta a la marca si pueden compartir los resultados una vez que lo usen.</li>
+    </ul>
+
+    <h3>Cómo hacer un reporte simple que impresione a una marca</h3>
+    <p>No tiene que ser complicado. Un mensaje o PDF con esto es suficiente:</p>
+    <div class="highlight">
+      "Hola [Nombre], quería compartirles los resultados del video que publicamos el [fecha]:<br><br>
+      📊 Visualizaciones: 12,400<br>
+      ⏱️ Retención promedio: 62%<br>
+      ❤️ Engagement rate: 5.8%<br>
+      💬 Comentarios destacados: [cita 2–3 comentarios positivos]<br><br>
+      Fue un placer trabajar con ustedes. Si en algún momento necesitan más contenido, con gusto continuamos. 🙏"
+    </div>
+
+    <h3>¿Qué hacer si los resultados no fueron buenos?</h3>
+    <p>Sé honesta y proactiva. Di qué crees que no funcionó y qué harías diferente. Las marcas valoran más a alguien que aprende y propone soluciones que a alguien que desaparece cuando los números no son perfectos.</p>
+
+    <div class="highlight">🎯 Desde tu próxima colaboración donde publiques en tu cuenta, guarda los datos a los 7 días y a los 30 días. Con el tiempo, tendrás un historial de resultados que es tu argumento más poderoso para cobrar más.</div>
+  `
+},
+{
+  id: 56,
+  module: 'Parte III · Convirtiendo en Ingresos',
+  title: 'Cómo manejar marcas difíciles, revisiones infinitas y situaciones complicadas',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Nadie te cuenta esto al principio</h3>
+    <p>Cuando empiezas en UGC todo parece sencillo: te contratan, grabas, cobras. Pero tarde o temprano aparecen situaciones que no estaban en el plan. Clientes que piden cambios interminables, marcas que no pagan, briefs que cambian a mitad del proyecto. Saber manejarlo es lo que te convierte en profesional.</p>
+
+    <h3>Situación 1: Revisiones infinitas</h3>
+    <p>La marca te pide cambio tras cambio aunque el contrato dice "2 revisiones incluidas".</p>
+    <div class="highlight">
+      ✅ Cómo responder:<br>
+      "Hola [Nombre], con gusto hago ese ajuste. Quiero avisarles que hemos superado las 2 revisiones incluidas en el proyecto. Cualquier cambio adicional tiene un costo de $[X]. ¿Confirman que quieren continuar con ese ajuste?"
+    </div>
+    <p>Dilo sin drama y sin disculparte. Es un límite profesional normal. Las marcas serias lo entienden. Las que se molestan por esto probablemente habrían seguido pidiendo cambios gratis indefinidamente.</p>
+
+    <h3>Situación 2: La marca no paga</h3>
+    <p>Entregaste el trabajo pero el pago no llega.</p>
+    <ul>
+      <li><strong>Día 1–3 de retraso:</strong> Mensaje amable recordando la fecha acordada.</li>
+      <li><strong>Día 7:</strong> Mensaje más directo: "Quiero confirmar el estado del pago del proyecto [X] que fue entregado el [fecha]. El plazo acordado fue [fecha]. Por favor confírmenmelo."</li>
+      <li><strong>Día 14:</strong> Notifica que pausas cualquier trabajo futuro hasta resolver el pendiente. Si tienes contrato, menciónalo.</li>
+      <li><strong>Lección para el futuro:</strong> Cobra siempre el 50% antes de empezar con clientes nuevos. Nunca entregues el archivo final sin haber recibido el pago completo.</li>
+    </ul>
+
+    <h3>Situación 3: El brief cambia a mitad del proyecto</h3>
+    <p>Ya grabaste siguiendo las instrucciones y ahora la marca quiere algo completamente diferente.</p>
+    <div class="highlight">
+      ✅ Cómo responder:<br>
+      "Entiendo el cambio de dirección. El video actual fue producido siguiendo el brief original que confirmamos el [fecha]. Para producir un video con el nuevo enfoque, necesitaría tratarlo como un proyecto nuevo con su costo correspondiente. ¿Cómo prefieren proceder?"
+    </div>
+
+    <h3>Situación 4: Una marca te pide trabajo "de prueba" gratis</h3>
+    <p>Algunas marcas piden "un video de muestra" sin pago para "ver si funcionas". Esto no es una práctica profesional estándar.</p>
+    <div class="highlight">
+      ✅ Cómo responder:<br>
+      "Muchas gracias por su interés. En lugar de un video de prueba, les comparto mi portafolio donde pueden ver ejemplos de mi trabajo: [link]. Si quieren proceder con una colaboración, estaré encantada de enviarles mi rate card."
+    </div>
+    <p>Tu portafolio existe precisamente para esto. No necesitas demostrar tu valía con trabajo gratuito.</p>
+
+    <h3>Situación 5: Una marca cancela después de que empezaste</h3>
+    <p>Por eso existe la cláusula de cancelación en el contrato. Si ya trabajaste, tienes derecho a cobrar por el tiempo invertido. Lo estándar es quedarte con el 50% del pago si cancela una vez iniciado el proyecto.</p>
+
+    <h3>Señales de alerta: marcas con las que mejor no trabajar</h3>
+    <ul>
+      <li>❌ No quieren firmar ningún acuerdo ni por correo.</li>
+      <li>❌ Piden el trabajo completo antes de pagar nada.</li>
+      <li>❌ No tienen presencia web ni redes activas verificables.</li>
+      <li>❌ Te presionan con urgencia extrema desde el primer mensaje.</li>
+      <li>❌ Sus mensajes tienen errores ortográficos graves o son incoherentes.</li>
+      <li>❌ Prometen pagos extraordinariamente altos por trabajo sencillo.</li>
+    </ul>
+
+    <div class="highlight">🎯 Regla final: Las marcas con las que vale la pena trabajar respetan tu tiempo, cumplen los acuerdos y pagan. Las que no hacen esto no merecen tu contenido. Aprende a reconocerlas rápido y a decir no sin culpa.</div>
+  `
+},
+{
+  id: 57,
+  module: 'Parte I · Fundamentos del UGC',
+  title: 'UGC para negocios cubanos: el mercado que tienes al lado',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>El mercado que muchas ignoran</h3>
+    <p>Mientras muchas creadoras enfocadas en UGC miran exclusivamente hacia el mercado internacional, hay un mercado real, creciente y accesible a pasos de distancia: los negocios privados cubanos. Mipymes, cuentapropistas, restaurantes, salones de belleza, tiendas de ropa, clínicas estéticas. Todos necesitan contenido. Y casi ninguno lo tiene de calidad.</p>
+    <div class="highlight">💡 Ser la primera UGC creator profesional que llega a un negocio cubano te posiciona como referencia en ese nicho local. Es una ventaja que no puedes tener en el mercado internacional donde ya hay miles de creadoras.</div>
+
+    <h3>¿Qué tipo de contenido necesitan los negocios cubanos?</h3>
+    <ul>
+      <li><strong>Restaurantes y cafeterías:</strong> Videos de platos, ambiente, proceso de preparación, testimonios de clientes. El cliente que muestra su experiencia real genera más reservas que cualquier foto del menú.</li>
+      <li><strong>Salones de belleza y estéticas:</strong> Antes/después, proceso de tratamiento, testimonios de clientas. Exactamente el mismo UGC que funciona globalmente, aplicado al contexto local.</li>
+      <li><strong>Tiendas de ropa y accesorios:</strong> Lookbooks, hauls, "cómo combinar", videos de producto en contexto real.</li>
+      <li><strong>Servicios profesionales (abogados, contadores, médicos privados):</strong> Testimonios, explicaciones de servicios, contenido educativo que genera confianza.</li>
+      <li><strong>Productos artesanales o de producción local:</strong> Historia detrás del producto, proceso de fabricación, unboxing.</li>
+    </ul>
+
+    <h3>Cómo presentar la propuesta a un negocio cubano</h3>
+    <p>El concepto de "UGC creator" puede ser desconocido. No uses el término técnico — explica el beneficio directamente:</p>
+    <div class="highlight">
+      "Hola, me llamo [nombre]. Creo videos para negocios como el tuyo que parecen recomendaciones reales, no anuncios. Este tipo de contenido genera más confianza en los clientes y funciona mucho mejor en redes sociales que las fotos estáticas. ¿Te gustaría ver ejemplos de lo que hago?"
+    </div>
+
+    <h3>¿Cómo cobrar en el contexto cubano?</h3>
+    <ul>
+      <li><strong>En USD o MLC:</strong> Para negocios con acceso a moneda extranjera, es la opción más estable para ti.</li>
+      <li><strong>En CUP a tasa de mercado:</strong> Para negocios que operen en pesos, negocia un precio que tenga sentido según la tasa del día. Define siempre el equivalente en USD para protegerte de la devaluación.</li>
+      <li><strong>Pago en productos o servicios:</strong> Para construir portafolio al inicio, aceptar productos o servicios del negocio es válido — pero establece un límite de tiempo. No puedes construir un negocio sostenible sin ingresos en efectivo.</li>
+    </ul>
+
+    <h3>Paquetes que funcionan para este mercado</h3>
+    <ul>
+      <li><strong>Paquete de inicio:</strong> 3 videos cortos (15–30 segundos) + 5 fotos de producto. Precio sugerido: $30–60 USD o equivalente.</li>
+      <li><strong>Paquete mensual:</strong> 8 videos + 10 fotos al mes. Precio sugerido: $100–150 USD. Este modelo de retención mensual es el más estable para ti.</li>
+      <li><strong>Video especial de lanzamiento:</strong> Para aperturas, nuevos productos, eventos. Precio sugerido: $50–80 USD.</li>
+    </ul>
+
+    <h3>Cómo encontrar clientes locales</h3>
+    <ul>
+      <li>Negocios con Instagram o Facebook activos pero con contenido de baja calidad — son tu cliente ideal.</li>
+      <li>Negocios nuevos que acaban de abrir — necesitan contenido urgente y están más abiertos a propuestas.</li>
+      <li>Referidos: un cliente satisfecho en Cuba habla con otros negocios. El boca a boca sigue siendo el canal más efectivo.</li>
+    </ul>
+
+    <div class="highlight">🎯 El mercado cubano no te va a pagar lo que paga una marca internacional. Pero te va a dar algo igual de valioso al principio: portafolio real, experiencia y confianza. Con eso construyes el camino hacia el mercado internacional.</div>
+  `
+},
+{
+  id: 58,
+  module: 'Parte V · Tu Plan de Crecimiento',
+  title: 'Cómo crecer en redes mientras haces UGC: dos negocios en uno',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>UGC y audiencia propia no son lo mismo — pero se potencian</h3>
+    <p>Hacer UGC para marcas y construir tu propia audiencia son dos caminos diferentes. Pero si los combinas inteligentemente, uno acelera al otro. Las marcas pagan más a creadoras que tienen audiencia propia. Y tener audiencia es más fácil cuando ya sabes crear contenido que convierte — que es exactamente lo que aprendes haciendo UGC.</p>
+
+    <h3>La estrategia del "aprender en público"</h3>
+    <p>No necesitas posicionarte como experta para crecer. El contenido que más conecta en 2025–2026 es el de personas que muestran su proceso real: lo que están aprendiendo, los errores que cometieron, los pequeños avances.</p>
+    <ul>
+      <li>"Hoy grabé mi primer video UGC para una marca — esto es lo que aprendí."</li>
+      <li>"Me rechazaron en 3 plataformas. Esto fue lo que cambié en mi portafolio."</li>
+      <li>"Así se ve mi setup de grabación con $0 de inversión."</li>
+      <li>"Primera colaboración pagada: cómo fue el proceso completo."</li>
+    </ul>
+    <p>Este tipo de contenido te posiciona como referente en UGC para otras personas que quieren empezar — y eso tiene valor de marca personal enorme.</p>
+
+    <h3>Qué publicar en tu cuenta mientras haces UGC</h3>
+    <ul>
+      <li><strong>Behind the scenes:</strong> Cómo grabas, qué equipo usas, cómo editas. El proceso interesa tanto como el resultado.</li>
+      <li><strong>Resultados de tus colaboraciones:</strong> Sin revelar información confidencial, puedes mostrar que trabajaste con una marca y qué aprendiste.</li>
+      <li><strong>Educación sobre UGC:</strong> Tips, errores comunes, cómo se hace. Te posiciona como referente y atrae a otras creadoras que querrán tu guía o tus servicios.</li>
+      <li><strong>Tu historia personal:</strong> Por qué empezaste, desde dónde lo haces, qué te motiva. La historia humana siempre conecta.</li>
+    </ul>
+
+    <h3>Frecuencia recomendada para empezar</h3>
+    <ul>
+      <li><strong>TikTok:</strong> 3–5 videos por semana. La constancia importa más que la perfección.</li>
+      <li><strong>Instagram Reels:</strong> 3–4 por semana. Reutiliza el contenido de TikTok adaptando el texto si es necesario.</li>
+      <li><strong>Stories:</strong> A diario si puedes. Las stories construyen la relación más cercana con tu audiencia.</li>
+    </ul>
+
+    <h3>El círculo virtuoso</h3>
+    <ul>
+      <li>Haces UGC → aprendes a crear contenido que convierte.</li>
+      <li>Publicas tu proceso → creces tu audiencia.</li>
+      <li>Tienes audiencia → las marcas te ofrecen más y mejor pagado.</li>
+      <li>Cobras más → puedes invertir en mejorar tu setup y habilidades.</li>
+      <li>Mejor setup y habilidades → mejor UGC → más marcas.</li>
+    </ul>
+
+    <div class="highlight">🎯 No tienes que elegir entre ser UGC creator y construir tu audiencia. Usa tu proceso de aprendizaje como contenido. Las personas que más rápido crecen en este espacio son las que muestran el camino mientras lo recorren.</div>
+  `
+},
+{
+  id: 59,
+  module: '🎁 Bonos Exclusivos',
+  title: 'Glosario UGC: todos los términos que debes conocer',
+  duration: 'Referencia',
+  videoId: null,
+  content: `
+    <h3>Tu diccionario de referencia</h3>
+    <p>Guarda esta lección. Cuando una marca o plataforma use un término que no conozcas, aquí lo encuentras.</p>
+
+    <h3>A</h3>
+    <ul>
+      <li><strong>Afiliado / Affiliate:</strong> Persona que recibe una comisión por recomendar un producto usando un enlace o código personalizado.</li>
+      <li><strong>Ads (Anuncios pagados):</strong> Publicidad que una marca paga para distribuir en plataformas como Meta, TikTok o Google. El UGC para ads es el tipo mejor pagado.</li>
+      <li><strong>Aspire / Aspire IQ:</strong> Plataforma que conecta marcas con creadores UGC e influencers.</li>
+    </ul>
+
+    <h3>B</h3>
+    <ul>
+      <li><strong>B-roll:</strong> Tomas secundarias que acompañan el video principal. Ejemplo: manos usando el producto, close-up de la textura, el empaque. Dan dinamismo al video sin necesitar que aparezcas en pantalla todo el tiempo.</li>
+      <li><strong>Brief:</strong> Documento que la marca te envía con las instrucciones del proyecto: qué grabar, cómo, para qué plataforma, en qué tono y para cuándo.</li>
+      <li><strong>Billo:</strong> Plataforma UGC especializada en video, muy usada para paid ads.</li>
+    </ul>
+
+    <h3>C</h3>
+    <ul>
+      <li><strong>Canvas UGC:</strong> Contenido creado para aplicaciones, software y herramientas digitales. Sin productos físicos — todo se graba desde la pantalla o con testimonio directo.</li>
+      <li><strong>CTR (Click-Through Rate):</strong> Porcentaje de personas que hacen clic en un enlace o botón después de ver el contenido. Métrica clave en paid ads.</li>
+      <li><strong>CTA (Call to Action):</strong> Llamado a la acción al final del video. "Compra ahora", "Link en bio", "Pruébalo hoy".</li>
+      <li><strong>Cohley:</strong> Plataforma UGC que trabaja con marcas reconocidas.</li>
+    </ul>
+
+    <h3>D</h3>
+    <ul>
+      <li><strong>Derechos de uso / Usage rights:</strong> Los términos que definen dónde y por cuánto tiempo puede usar la marca tu contenido. Uso orgánico, paid ads, territorial, duración.</li>
+      <li><strong>DTC (Direct to Consumer):</strong> Marcas que venden directamente al consumidor sin intermediarios. Suelen tener presupuesto activo para UGC.</li>
+    </ul>
+
+    <h3>E</h3>
+    <ul>
+      <li><strong>Engagement rate:</strong> Porcentaje de interacciones (likes, comentarios, compartidos, guardados) en relación al alcance del contenido.</li>
+      <li><strong>Entregables / Deliverables:</strong> Los archivos finales que debes entregar al cliente: videos en MP4, fotos en JPG, versiones con y sin subtítulos, etc.</li>
+    </ul>
+
+    <h3>G</h3>
+    <ul>
+      <li><strong>Gifting:</strong> Colaboración donde la marca te envía productos gratis a cambio de contenido, sin pago monetario. Válido para construir portafolio al inicio.</li>
+    </ul>
+
+    <h3>H</h3>
+    <ul>
+      <li><strong>Hook:</strong> Los primeros 1–3 segundos del video. El elemento más importante — si no captura la atención de inmediato, el usuario hace scroll.</li>
+    </ul>
+
+    <h3>I</h3>
+    <ul>
+      <li><strong>Insense:</strong> Plataforma UGC muy usada para conseguir contenido para anuncios de Meta.</li>
+    </ul>
+
+    <h3>J</h3>
+    <ul>
+      <li><strong>JoinBrands:</strong> Una de las plataformas UGC más conocidas. Campañas constantes de diferentes categorías.</li>
+    </ul>
+
+    <h3>K</h3>
+    <ul>
+      <li><strong>Kale:</strong> Plataforma UGC ideal para principiantes.</li>
+    </ul>
+
+    <h3>L</h3>
+    <ul>
+      <li><strong>Licencia perpetua:</strong> Derechos de uso sin fecha de vencimiento. La marca puede usar el contenido indefinidamente. Se cobra significativamente más que una licencia temporal.</li>
+    </ul>
+
+    <h3>M</h3>
+    <ul>
+      <li><strong>Media Kit:</strong> Documento de 1–2 páginas que presenta quién eres, qué haces, con qué marcas has trabajado y cuáles son tus tarifas.</li>
+      <li><strong>Meta Ads:</strong> Sistema de anuncios pagados de Facebook e Instagram (Meta). Una de las principales plataformas donde se usa UGC para paid ads.</li>
+    </ul>
+
+    <h3>O</h3>
+    <ul>
+      <li><strong>Orgánico:</strong> Contenido que se publica en las redes de la marca sin inversión en publicidad pagada. Más barato de licenciar que el uso en ads.</li>
+      <li><strong>Outreach:</strong> La acción de contactar marcas de forma proactiva para proponer una colaboración.</li>
+    </ul>
+
+    <h3>P</h3>
+    <ul>
+      <li><strong>Paid ads / Paid media:</strong> Publicidad pagada en plataformas digitales. Cuando tu UGC se usa en ads, la tarifa aumenta.</li>
+      <li><strong>Portafolio / Portfolio:</strong> Colección de tus mejores trabajos UGC que muestras a las marcas para demostrar tu capacidad.</li>
+      <li><strong>PR (Public Relations):</strong> En el contexto UGC, se refiere al envío de productos por parte de una marca para que los reseñes.</li>
+    </ul>
+
+    <h3>R</h3>
+    <ul>
+      <li><strong>Rate Card:</strong> Documento con tus servicios y precios. Tu "menú" profesional.</li>
+      <li><strong>Retención:</strong> Porcentaje del video que los usuarios ven en promedio. Alta retención = contenido que engancha.</li>
+      <li><strong>ROI (Return on Investment):</strong> Retorno sobre la inversión. Las marcas miden si el dinero gastado en UGC generó más ventas.</li>
+    </ul>
+
+    <h3>S</h3>
+    <ul>
+      <li><strong>Spark Ads:</strong> Formato de TikTok que permite a las marcas impulsar como anuncio un video publicado en la cuenta del creador. Requiere autorización del creador y tiene un costo adicional.</li>
+    </ul>
+
+    <h3>T</h3>
+    <ul>
+      <li><strong>Testimonial / Testimonio:</strong> Video donde el creador habla directamente a cámara describiendo su experiencia con un producto. Uno de los formatos de mayor conversión.</li>
+      <li><strong>TikTok Shop:</strong> Plataforma de comercio dentro de TikTok donde los creadores pueden ganar comisiones recomendando productos.</li>
+    </ul>
+
+    <h3>U</h3>
+    <ul>
+      <li><strong>UGC (User Generated Content):</strong> Contenido generado por usuarios. En su versión profesional, es contenido creado por creadoras especializadas para que las marcas usen en sus canales.</li>
+      <li><strong>Unboxing:</strong> Video mostrando la apertura de un producto por primera vez. Muy popular en belleza, tecnología y suscripciones.</li>
+      <li><strong>Usage rights:</strong> Ver Derechos de uso.</li>
+    </ul>
+
+    <h3>W</h3>
+    <ul>
+      <li><strong>Whitelisting:</strong> Cuando la marca corre anuncios pagados usando tu cuenta como origen — como si el anuncio viniera de ti. Requiere que les des acceso temporal a tu cuenta y se cobra extra.</li>
+    </ul>
+
+    <div class="highlight">📌 Guarda este glosario. Con el tiempo estos términos serán parte de tu vocabulario natural — y usarlos correctamente con las marcas proyecta profesionalismo desde el primer mensaje.</div>
+  `
+},
+{
+  id: 61,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'UGC para hombres: guía completa con ejemplos y estrategia por nicho',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Por qué el mercado masculino es una oportunidad real</h3>
+    <p>La mayoría de los cursos UGC están escritos para mujeres y sobre nichos femeninos. Eso significa que en los nichos masculinos hay menos competencia, más facilidad para destacar y marcas que tienen presupuesto pero dificultad para encontrar creadores adecuados.</p>
+    <div class="highlight">💡 En nichos como tecnología, barbería o fitness masculino, una marca puede recibir 200 aplicaciones de creadoras mujeres y solo 5 de hombres. Tu posibilidad de ser seleccionado aumenta dramáticamente.</div>
+
+    <h3>Nicho 1: Tecnología y Gadgets</h3>
+    <p><strong>Qué marcas buscan:</strong> Reseñas honestas, comparaciones, tutoriales de uso, unboxings de accesorios. El tono debe ser directo, técnico sin ser aburrido, y con opinión genuina.</p>
+    <p><strong>Tipos de video que funcionan:</strong></p>
+    <ul>
+      <li>"Probé [producto] durante 30 días — esto es lo que nadie te dice."</li>
+      <li>"¿Vale la pena? Comparé [producto A] vs [producto B]."</li>
+      <li>"Setup completo de trabajo desde casa por menos de $X."</li>
+      <li>Unboxing con reacción genuina y análisis de calidad.</li>
+    </ul>
+    <p><strong>Dónde encontrar estas marcas:</strong> Amazon, TikTok Shop, Billo, JoinBrands. Busca en Amazon productos de tecnología con más de 500 reseñas — esos vendedores tienen presupuesto para UGC.</p>
+
+    <h3>Nicho 2: Barbería y Cuidado Personal Masculino</h3>
+    <p><strong>Qué marcas buscan:</strong> Hombres reales usando productos de barba, cabello, skincare masculino. El tono es casual, sin poses — como un amigo recomendando algo.</p>
+    <p><strong>Tipos de video que funcionan:</strong></p>
+    <ul>
+      <li>Rutina de barba de 60 segundos usando el producto.</li>
+      <li>"Antes y después" de usar una crema, aceite o cera durante 2 semanas.</li>
+      <li>"Los 3 productos que uso todos los días" — formato lista.</li>
+      <li>Testimonio directo: "Tenía la piel seca y esto cambió todo."</li>
+    </ul>
+    <p><strong>Marcas accesibles para principiantes:</strong> Marcas indie de barbería en Shopify, tiendas de productos naturales para hombre, marcas en Amazon con programa de afiliados activo.</p>
+
+    <h3>Nicho 3: Fitness y Suplementos</h3>
+    <p><strong>Qué marcas buscan:</strong> Creadores con apariencia activa o atlética mostrando resultados reales. No tienes que ser un atleta profesional — la autenticidad importa más que el físico perfecto.</p>
+    <p><strong>Tipos de video que funcionan:</strong></p>
+    <ul>
+      <li>"Lo tomé durante 4 semanas — esto cambió en mi entrenamiento."</li>
+      <li>Tutorial de uso del producto antes o después del gym.</li>
+      <li>"¿Funciona realmente? Lo probé y esto pasó."</li>
+      <li>Comparación de dos suplementos o productos similares.</li>
+    </ul>
+    <p><strong>Importante:</strong> En este nicho las marcas son muy cuidadosas con las afirmaciones. Nunca prometas resultados médicos ni hagas afirmaciones que el producto no pueda respaldar. Habla siempre desde tu experiencia personal.</p>
+
+    <h3>Nicho 4: Perfumes y Fragancias</h3>
+    <p>Uno de los nichos con mayor crecimiento en TikTok. La comunidad de perfumes — llamada "Fragrance TikTok" — es enorme y muy activa.</p>
+    <p><strong>Tipos de video que funcionan:</strong></p>
+    <ul>
+      <li>"Los 3 perfumes que más complimentos me dan."</li>
+      <li>"Probé el perfume viral de $X — ¿vale la pena?"</li>
+      <li>Reseña honesta describiendo el olor, la durabilidad y la proyección.</li>
+      <li>"El perfume que uso para [ocasión] — guía para hombres."</li>
+    </ul>
+
+    <h3>Nicho 5: Productividad y Tecnología de Trabajo</h3>
+    <p>Apps, herramientas digitales, accesorios de oficina, cursos online. Perfecto para Canvas UGC — sin productos físicos, ideal desde Cuba.</p>
+    <p><strong>Tipos de video que funcionan:</strong></p>
+    <ul>
+      <li>"Las 5 apps que uso para trabajar desde casa."</li>
+      <li>"Probé [app o herramienta] durante una semana — esto es lo que encontré."</li>
+      <li>Tutorial corto mostrando cómo usar una función específica.</li>
+    </ul>
+
+    <h3>Cómo contactar marcas en nichos masculinos</h3>
+    <ul>
+      <li>Busca en Instagram marcas del nicho que tengan entre 5,000 y 100,000 seguidores — son las más abiertas a trabajar con creadores nuevos.</li>
+      <li>Revisa si ya tienen contenido con estilo UGC en su feed — si lo tienen, solo necesitas decirles que tú puedes hacer más.</li>
+      <li>En el DM: sé directo y breve. Los equipos de marketing masculinos valoran la eficiencia sobre las formalidades.</li>
+    </ul>
+
+    <div class="highlight">🎯 Si eres hombre y estás leyendo esto: tienes una ventaja real en este mercado ahora mismo. No la desperdicies esperando. El momento de entrar es cuando hay poca competencia, no cuando ya todos están adentro.</div>
+  `
+},
+{
+  id: 62,
+  module: 'Parte II · Presencia Profesional',
+  title: 'Cómo escribir tu biografía profesional para atraer marcas',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Tu bio es tu primer filtro</h3>
+    <p>Antes de revisar tu portafolio, antes de leer tu correo, antes de cualquier conversación — la marca va a mirar tu perfil de Instagram o TikTok. Tienen menos de 10 segundos para decidir si siguen leyendo o pasan al siguiente creador. Tu biografía es lo que determina esa decisión.</p>
+    <div class="highlight">💡 Una bio mal escrita puede hacerte perder colaboraciones incluso si tu contenido es excelente. Una bio bien escrita puede abrirte puertas incluso con un portafolio pequeño.</div>
+
+    <h3>Lo que debe comunicar tu bio en esos 10 segundos</h3>
+    <ul>
+      <li><strong>Quién eres:</strong> UGC Creator, creador de contenido para marcas.</li>
+      <li><strong>En qué te especializas:</strong> Tu nicho o nichos principales.</li>
+      <li><strong>Qué ofreces:</strong> El tipo de contenido que produces.</li>
+      <li><strong>Cómo contactarte:</strong> Correo electrónico visible o enlace directo.</li>
+    </ul>
+
+    <h3>Fórmula de bio que funciona</h3>
+    <div class="highlight">
+      <strong>[Quién eres]</strong> + <strong>[qué haces]</strong> + <strong>[para quién]</strong> + <strong>[cómo contactarte]</strong><br><br>
+      Ejemplo:<br>
+      "UGC Creator 🎥 | Contenido auténtico para marcas de belleza y lifestyle ✨ | Videos que convierten, no que interrumpen 📩 tucorreo@gmail.com"
+    </div>
+
+    <h3>Ejemplos reales por nicho</h3>
+    <ul>
+      <li><strong>Belleza:</strong> "Creo UGC para marcas de skincare y belleza 🧴 | Testimonios, unboxings y tutoriales auténticos | Colaboraciones: correo@gmail.com"</li>
+      <li><strong>Tecnología:</strong> "UGC Creator Tech 📱 | Reseñas y tutoriales honestos para marcas de gadgets y apps | DM o correo@gmail.com"</li>
+      <li><strong>Fitness:</strong> "Contenido UGC para marcas de fitness y bienestar 💪 | Videos reales, sin filtros ni poses | correo@gmail.com"</li>
+      <li><strong>Hogar:</strong> "UGC Creator 🏠 | Videos de producto para marcas de hogar y organización | Colaboraciones: correo@gmail.com"</li>
+      <li><strong>General / Sin nicho definido aún:</strong> "Creo contenido UGC auténtico para marcas 🎬 | Videos que generan confianza y ventas | Portafolio y contacto: [link]"</li>
+    </ul>
+
+    <h3>Errores de bio que alejan a las marcas</h3>
+    <ul>
+      <li>❌ Bio vacía o con solo emojis sin información.</li>
+      <li>❌ "Mamá de 2 🐶 amante del café ☕" — sin mención de UGC ni colaboraciones.</li>
+      <li>❌ Sin correo electrónico ni forma de contacto visible.</li>
+      <li>❌ Demasiado larga y difícil de leer en móvil.</li>
+      <li>❌ Mencionar que eres "principiante" o "aprendiendo" — aunque sea verdad, proyecta falta de confianza.</li>
+      <li>❌ No incluir la palabra "UGC" o "contenido para marcas" — las marcas no van a adivinar qué ofreces.</li>
+    </ul>
+
+    <h3>El enlace en bio: úsalo bien</h3>
+    <p>Instagram y TikTok permiten un solo enlace en la bio. Úsalo para una de estas opciones:</p>
+    <ul>
+      <li><strong>Tu portafolio en Canva:</strong> La opción más directa — la marca ve tu trabajo en un clic.</li>
+      <li><strong>Linktree o similar:</strong> Si quieres poner varios links — portafolio, correo, WhatsApp, media kit.</li>
+      <li><strong>Tu media kit en PDF:</strong> Para creadoras más avanzadas con historial de colaboraciones.</li>
+    </ul>
+
+    <h3>Bio para TikTok vs Instagram</h3>
+    <ul>
+      <li><strong>Instagram:</strong> Tienes más espacio. Puedes usar saltos de línea para organizar mejor la información. Incluye siempre el correo visible.</li>
+      <li><strong>TikTok:</strong> Espacio más limitado. Prioriza lo más importante: UGC Creator + nicho + forma de contacto. El resto va en el portafolio o media kit.</li>
+    </ul>
+
+    <div class="highlight">🎯 Ejercicio: Abre tu perfil ahora mismo. Léelo como si fueras una marca que no te conoce. ¿Queda claro en 5 segundos qué haces y cómo contactarte? Si la respuesta es no, reescribe tu bio hoy antes de continuar con el siguiente módulo.</div>
+  `
+},
+{
+  id: 63,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'Cómo hacer un unboxing que realmente convierta en ventas',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>El unboxing: el formato más solicitado en UGC</h3>
+    <p>El unboxing es el video donde muestras la apertura de un producto por primera vez, con reacción genuina. Es uno de los formatos más pedidos por las marcas porque combina tres elementos que generan ventas: curiosidad, prueba social y experiencia de usuario real.</p>
+    <div class="highlight">💡 El 62% de los consumidores mira videos de unboxing antes de hacer una compra online. Las marcas lo saben — por eso pagan bien por este formato.</div>
+
+    <h3>La estructura de un unboxing que convierte</h3>
+    <ul>
+      <li><strong>Segundos 0–3 (Hook):</strong> No empieces mostrando la caja cerrada en silencio. Empieza con una frase que genere expectativa. Ejemplos:<br>
+        "Llevaba meses queriendo probar esto y por fin llegó."<br>
+        "Me mandaron el producto del que todo el mundo está hablando."<br>
+        "Pedí esto hace 3 semanas y finalmente llegó — veamos si valió la pena."</li>
+      <li><strong>Segundos 3–10 (Presentación del empaque):</strong> Muestra la caja o el empaque. Comenta el packaging — si es bonito, dilo. Si es sencillo, dilo también. La autenticidad importa más que el elogio.</li>
+      <li><strong>Segundos 10–25 (La apertura):</strong> Abre lentamente. No cortes esta parte — la gente quiere ver el momento. Comenta en tiempo real lo que ves, hueles o tocas.</li>
+      <li><strong>Segundos 25–45 (Primera impresión):</strong> ¿Qué sientes al sostenerlo? ¿Cómo es la textura, el olor, el peso? Las marcas quieren que el espectador sienta que está ahí contigo.</li>
+      <li><strong>Segundos 45–60 (CTA):</strong> "El link está en bio", "Lo voy a probar esta semana y cuento cómo me fue", "Si quieres saber si vale la pena, sigue mi cuenta."</li>
+    </ul>
+
+    <h3>Cómo filmarlo con el teléfono</h3>
+    <ul>
+      <li><strong>Ángulo principal:</strong> Cámara a la altura de tu cara o ligeramente por encima. No filmes desde abajo.</li>
+      <li><strong>Toma de manos (B-roll):</strong> Filma también un plano cerrado de tus manos abriendo el producto. Lo usas en la edición para darle dinamismo.</li>
+      <li><strong>Iluminación:</strong> Cerca de una ventana o con aro de luz frontal. El producto debe verse claramente — evita sombras sobre él.</li>
+      <li><strong>Fondo:</strong> Limpio y neutro. Un fondo desordenado distrae del producto.</li>
+      <li><strong>Sonido:</strong> Si el producto hace algún sonido al abrirse — papel crujiente, clic de cierre, burbuja de aire — no lo cortes. Ese sonido genera satisfacción en el espectador.</li>
+    </ul>
+
+    <h3>Errores comunes en unboxings que debes evitar</h3>
+    <ul>
+      <li>❌ Empezar con la caja ya abierta — pierde todo el efecto de sorpresa.</li>
+      <li>❌ Silencio total durante la apertura — comenta en tiempo real.</li>
+      <li>❌ Reacción exagerada y falsa — el espectador lo detecta inmediatamente.</li>
+      <li>❌ No mostrar todos los elementos que vienen en la caja — los espectadores quieren ver todo.</li>
+      <li>❌ Video demasiado largo — un unboxing efectivo no necesita más de 60–90 segundos.</li>
+      <li>❌ No mencionar ningún beneficio del producto — no es solo "abrir la caja", es conectar la experiencia con el valor del producto.</li>
+    </ul>
+
+    <h3>Unboxing sin haber recibido el producto físico</h3>
+    <p>Si estás construyendo tu portafolio y no tienes productos de marcas aún, puedes hacer unboxings de productos que ya tienes en casa. Un perfume, una crema, un gadget, un libro. Lo importante es practicar el formato — la marca con la que apliques no sabe que no te lo enviaron ellos.</p>
+
+    <h3>Hooks específicos para unboxing que funcionan en 2025–2026</h3>
+    <ul>
+      <li>"Por fin llegó el producto que llevo semanas esperando."</li>
+      <li>"Me mandaron esto gratis para probarlo — aquí va mi opinión honesta."</li>
+      <li>"Gasté $X en esto. ¿Valió la pena? Veamos juntos."</li>
+      <li>"El empaque ya me dijo todo lo que necesitaba saber."</li>
+      <li>"Primera impresión — sin filtros ni guión."</li>
+    </ul>
+
+    <div class="highlight">🎯 Ejercicio: Esta semana elige un producto que ya tengas en casa y graba un unboxing siguiendo exactamente la estructura de esta lección. No lo borres aunque no te guste — analiza qué funcionó y qué cambiarías. Ese análisis es parte del aprendizaje.</div>
+  `
+},
+{
+  id: 64,
+  module: 'Parte III · Convirtiendo en Ingresos',
+  title: 'Qué hacer cuando tú cometiste el error: cómo recuperarte profesionalmente',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Va a pasar. La pregunta es cómo respondes.</h3>
+    <p>Entregaste tarde. El video no siguió el brief. La edición quedó mal. La marca quedó insatisfecha. Cualquier creadora que trabaje durante suficiente tiempo va a vivir alguna de estas situaciones. Lo que separa a las profesionales no es no cometer errores — es saber manejarlos cuando ocurren.</p>
+    <div class="highlight">💡 Una marca puede perdonar un error. Casi nunca perdona la falta de responsabilidad o la desaparición después del error.</div>
+
+    <h3>Situación 1: Entregaste tarde</h3>
+    <p>Lo primero que debes hacer es avisar antes de que se venza el plazo, no después. Si ves que no vas a llegar a tiempo, escribe con al menos 24 horas de anticipación:</p>
+    <div class="highlight">
+      "Hola [Nombre], quiero avisarles con anticipación que el proyecto necesitará [X días adicionales] por [razón breve y honesta]. Les confirmo la nueva fecha de entrega: [fecha]. Disculpen el inconveniente y gracias por su comprensión."
+    </div>
+    <p>Si ya se venció el plazo sin avisar, escribe igualmente — tarde es mejor que nunca. Asume la responsabilidad sin excusas excesivas y da una fecha concreta.</p>
+
+    <h3>Situación 2: El video no siguió el brief</h3>
+    <p>Antes de que la marca lo señale, revisa el brief contra tu video entregado. Si detectas tú misma el error, escribe inmediatamente:</p>
+    <div class="highlight">
+      "Hola [Nombre], revisando el video entregado me di cuenta de que [descripción del error]. Voy a corregirlo y les envío la versión correcta el [fecha]. Disculpen el inconveniente."
+    </div>
+    <p>Si la marca lo señala primero, responde sin ponerte a la defensiva:</p>
+    <div class="highlight">
+      "Tienen toda la razón, cometí un error al [descripción]. Lo corrijo de inmediato y les entrego la versión actualizada el [fecha]. Gracias por señalarlo."
+    </div>
+
+    <h3>Situación 3: La marca quedó insatisfecha con el resultado</h3>
+    <p>Primero escucha. Pide que te expliquen exactamente qué no funcionó. Luego pregunta qué necesitarían para que el resultado sea el correcto. Después decide si puedes solucionarlo dentro del proyecto actual o si requiere un nuevo acuerdo.</p>
+    <ul>
+      <li>Si el error fue tuyo por no seguir el brief: corrígelo sin costo adicional.</li>
+      <li>Si el brief era ambiguo y hubo malentendido: negocia una solución intermedia.</li>
+      <li>Si la marca cambió de opinión sobre lo que quería: es válido cobrar por el trabajo adicional.</li>
+    </ul>
+
+    <h3>Situación 4: Desapareciste por problemas personales o técnicos</h3>
+    <p>Conectividad en Cuba, problemas de salud, emergencia familiar. Cuando regresas, escribe aunque haya pasado tiempo:</p>
+    <div class="highlight">
+      "Hola [Nombre], quiero disculparme por no haber podido comunicarme antes. Tuve [razón general sin entrar en detalles excesivos]. Estoy disponible nuevamente y quiero resolver el proyecto pendiente. ¿Podemos acordar una nueva fecha?"
+    </div>
+
+    <h3>Cómo evitar que un error dañe la relación a largo plazo</h3>
+    <ul>
+      <li>Responde rápido — cada hora sin respuesta empeora la situación.</li>
+      <li>Asume la responsabilidad sin excusas largas — una disculpa breve y honesta funciona mejor que una explicación extensa.</li>
+      <li>Propón una solución concreta — no solo "lo siento", sino "lo corrijo el martes".</li>
+      <li>Cumple lo que prometiste para solucionar el error — esa segunda oportunidad vale más que la primera.</li>
+      <li>Aprende qué causó el error y ajusta tu proceso para que no vuelva a ocurrir.</li>
+    </ul>
+
+    <h3>El aprendizaje más valioso</h3>
+    <p>Las marcas con las que mejor vas a trabajar a largo plazo no son las que nunca te van a ver cometer un error. Son las que van a ver cómo lo manejas cuando ocurre. La responsabilidad y la rapidez de respuesta construyen más confianza que la perfección.</p>
+
+    <div class="highlight">🎯 Crea ahora una carpeta en tu teléfono o computadora llamada "Lecciones aprendidas". Cada vez que algo salga mal, anota qué pasó y qué harías diferente. En seis meses esa carpeta va a ser una de tus herramientas más valiosas.</div>
+  `
+},
+{
+  id: 65,
+  module: 'Parte II · Presencia Profesional',
+  title: 'Cómo establecer tus límites como creadora UGC',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>Los límites no son obstáculos. Son parte de tu marca.</h3>
+    <p>Una de las cosas que más diferencia a una creadora que dura en este negocio de una que se agota y abandona es la capacidad de establecer límites claros desde el principio. Los límites no te hacen difícil de trabajar — te hacen predecible y profesional.</p>
+    <div class="highlight">💡 Las marcas serias respetan los límites. Las que no los respetan te están mostrando cómo va a ser toda la relación de trabajo.</div>
+
+    <h3>Límites de comunicación</h3>
+    <ul>
+      <li><strong>Horario de respuesta:</strong> Define en qué horas respondes mensajes de trabajo. No tienes que estar disponible las 24 horas. Ejemplo: "Respondo mensajes de lunes a viernes de 9am a 7pm." Puedes incluirlo en tu media kit o mencionarlo al inicio de cada colaboración.</li>
+      <li><strong>Canal de comunicación preferido:</strong> ¿Correo, WhatsApp, DM? Elige uno principal y comunícalo. Mezclar canales genera confusión y mensajes perdidos.</li>
+      <li><strong>Tiempo de respuesta realista:</strong> Si estás en Cuba y la conectividad es limitada, es completamente válido aclarar desde el principio: "Mi tiempo de respuesta habitual es de 24 horas hábiles."</li>
+    </ul>
+
+    <h3>Límites de contenido</h3>
+    <p>Decide con anticipación qué tipo de contenido no vas a producir, independientemente de cuánto paguen. Esto incluye:</p>
+    <ul>
+      <li>Productos o marcas que van en contra de tus valores personales.</li>
+      <li>Contenido que requiera afirmaciones falsas o engañosas sobre un producto.</li>
+      <li>Categorías con las que no te sientes cómoda — contenido político, productos controvertidos, etc.</li>
+      <li>Situaciones donde te pidan mostrar más de lo que quieres mostrar de tu vida personal.</li>
+    </ul>
+    <p>No tienes que explicar en detalle por qué. Un "ese tipo de contenido no está dentro de mis servicios" es suficiente y profesional.</p>
+
+    <h3>Límites de precio</h3>
+    <ul>
+      <li>Define tu tarifa mínima y no la bajes por presión. Si una marca no puede pagarte lo que vales ahora mismo, no es el cliente correcto para ahora mismo.</li>
+      <li>Establece cuántos proyectos puedes manejar simultáneamente sin sacrificar calidad. Cuando llegas a ese límite, dices no a nuevos proyectos — aunque sean tentadores.</li>
+    </ul>
+
+    <h3>Límites de revisiones</h3>
+    <p>Ya lo cubrimos en otras lecciones, pero vale repetirlo aquí: el número de revisiones incluidas en cada proyecto debe estar claro antes de empezar. Nunca después. Una vez que lo acuerdas, cumplirlo es un límite que protege tu tiempo y tu energía.</p>
+
+    <h3>Cómo comunicar un límite sin perder la colaboración</h3>
+    <p>Los límites no tienen que sonar como conflicto. Pueden sonar así:</p>
+    <div class="highlight">
+      "Ese tipo de ajuste no está incluido en el paquete acordado, pero con gusto lo resolvemos con un pequeño adicional."<br><br>
+      "Respondo mensajes hasta las 7pm — cualquier cosa que llegue después la atiendo a primera hora del día siguiente."<br><br>
+      "Ese tipo de contenido no está dentro de mis servicios, pero puedo ofrecerte [alternativa] que creo que puede funcionar igual de bien."
+    </div>
+
+    <h3>El límite más importante: tu energía</h3>
+    <p>El UGC puede volverse agotador si dices sí a todo, a toda hora, a cualquier precio. La sostenibilidad de tu negocio depende de que protejas tu energía creativa. Un creador agotado produce contenido mediocre. Y el contenido mediocre no genera colaboraciones recurrentes.</p>
+
+    <div class="highlight">🎯 Ejercicio: Escribe ahora mismo tres límites que vas a establecer en tu negocio UGC. Uno de comunicación, uno de contenido y uno de precio. Guárdalos. La próxima vez que sientas que los estás cruzando, léelos.</div>
+  `
+},
+{
+  id: 66,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'El poder del inglés en UGC: cómo acceder al mercado que más paga',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>El mercado anglófono paga entre 3 y 5 veces más</h3>
+    <p>Un video UGC para una marca hispanohablante puede pagarte entre $30 y $100. El mismo tipo de video, en inglés, para una marca estadounidense o del Reino Unido, puede pagarte entre $150 y $500. La diferencia no es la calidad del video — es el idioma y el mercado al que accedes.</p>
+    <div class="highlight">💡 El 85% del presupuesto global de UGC se mueve en inglés. Las creadoras latinoamericanas que pueden producir contenido en inglés acceden a ese mercado sin necesidad de vivir en otro país.</div>
+
+    <h3>¿Qué nivel de inglés necesitas realmente?</h3>
+    <p>No necesitas inglés perfecto. Necesitas inglés funcional y natural. Las marcas anglófonas que contratan UGC buscan autenticidad — un acento latino ligero no es un problema, es parte de la diversidad que muchas marcas valoran activamente.</p>
+    <ul>
+      <li><strong>Nivel mínimo para empezar:</strong> Poder describir un producto con fluidez básica durante 30–60 segundos sin pausas largas.</li>
+      <li><strong>Nivel intermedio:</strong> Improvisar, responder preguntas del brief y adaptar el tono según la marca.</li>
+      <li><strong>Nivel avanzado:</strong> Escribir tus propios guiones en inglés y adaptarte a diferentes estilos de comunicación de marca.</li>
+    </ul>
+
+    <h3>Cómo empezar aunque tu inglés no sea perfecto</h3>
+    <ul>
+      <li><strong>Usa guiones escritos:</strong> Escribe lo que vas a decir, córrigelo con ChatGPT o Claude, practícalo varias veces antes de grabar. El guión no tiene que ser memorizado — puedes leerlo desde el teléfono con naturalidad.</li>
+      <li><strong>Empieza con formatos sin voz:</strong> Videos con texto en pantalla y música de fondo, o contenido visual donde no necesitas hablar. Muchos formatos UGC no requieren voz en off.</li>
+      <li><strong>Usa subtítulos automáticos:</strong> CapCut genera subtítulos en inglés automáticamente. Corrígelos antes de publicar — esto compensa cualquier limitación de pronunciación.</li>
+      <li><strong>Practica en privado:</strong> Graba videos en inglés que no publiques. Solo para practicar la fluidez. En 30 días vas a notar una diferencia enorme.</li>
+    </ul>
+
+    <h3>Cómo usar IA para mejorar tu inglés en UGC</h3>
+    <ul>
+      <li><strong>ChatGPT o Claude:</strong> Escribe tu guión en español, pídele que lo traduzca a un inglés natural y conversacional para UGC. Especifica el tono: "casual y auténtico, como alguien recomendando a un amigo".</li>
+      <li><strong>Práctica de pronunciación:</strong> Usa Google Translate para escuchar la pronunciación correcta de palabras clave del nicho.</li>
+      <li><strong>Corrección de bio y correos:</strong> Antes de enviar cualquier mensaje en inglés a una marca, pásalo por Claude o ChatGPT para pulir el idioma.</li>
+    </ul>
+
+    <h3>Plataformas donde el inglés abre más puertas</h3>
+    <ul>
+      <li><strong>JoinBrands:</strong> Mayormente marcas anglófonas. Tener contenido en inglés en tu portafolio multiplica tus aplicaciones exitosas.</li>
+      <li><strong>Billo:</strong> Especializada en marcas de EE.UU. El inglés es casi requisito.</li>
+      <li><strong>Minisocial:</strong> Trabaja con marcas medianas y grandes de EE.UU. principalmente.</li>
+      <li><strong>Amazon Influencer:</strong> El programa está orientado principalmente al mercado anglófono.</li>
+      <li><strong>Fiverr:</strong> Tener gigs en inglés multiplica tu visibilidad global.</li>
+    </ul>
+
+    <h3>Una estrategia práctica si empiezas desde cero en inglés</h3>
+    <ul>
+      <li>Mes 1: Construye tu portafolio en español. Perfecciona el contenido y el proceso.</li>
+      <li>Mes 2: Recrea los mismos videos en inglés. No tienen que ser perfectos — tienen que existir.</li>
+      <li>Mes 3: Aplica a plataformas anglófonas con el portafolio en inglés. Ajusta según el feedback que recibas.</li>
+    </ul>
+
+    <div class="highlight">🎯 No esperes a tener inglés perfecto para empezar. Empieza con lo que tienes y mejora en el camino. Las creadoras que esperan el momento perfecto para dar el salto al mercado anglófono nunca lo dan. Las que empiezan imperfectas aprenden más rápido que todas las demás.</div>
+  `
+},
+{
+  id: 67,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'Pinterest para UGC: la plataforma que casi nadie está usando',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>¿Por qué Pinterest cuando todos hablan de TikTok e Instagram?</h3>
+    <p>Exactamente por eso. Porque mientras todas las creadoras están concentradas en TikTok e Instagram, Pinterest sigue siendo una plataforma con demanda real de UGC, muy poca competencia de creadoras hispanohablantes y un tipo de usuario con alta intención de compra.</p>
+    <div class="highlight">💡 El usuario de Pinterest no está buscando entretenimiento — está buscando ideas para comprar, decorar, cocinar o mejorar su vida. Eso lo convierte en el comprador más predispuesto de todas las plataformas.</div>
+
+    <h3>¿Qué tipo de marcas buscan UGC en Pinterest?</h3>
+    <ul>
+      <li><strong>Hogar y decoración:</strong> El nicho más fuerte en Pinterest. Muebles, organización, artículos de cocina, decoración estacional.</li>
+      <li><strong>Moda y accesorios:</strong> Especialmente marcas en Etsy y tiendas DTC independientes.</li>
+      <li><strong>Belleza y skincare:</strong> Rutinas, antes/después, tutoriales de maquillaje.</li>
+      <li><strong>Recetas y alimentación:</strong> Uno de los contenidos más guardados en toda la plataforma.</li>
+      <li><strong>Bodas y eventos:</strong> Inspiración, decoración, detalles. Presupuesto alto en este nicho.</li>
+      <li><strong>Bebés y maternidad:</strong> Productos para bebés, organización del cuarto, ropa infantil.</li>
+    </ul>
+
+    <h3>Formato de contenido para Pinterest</h3>
+    <ul>
+      <li><strong>Pins estáticos:</strong> Fotografías verticales (proporción 2:3, idealmente 1000x1500 px). Imagen de alta calidad con texto superpuesto claro.</li>
+      <li><strong>Video Pins:</strong> Videos cortos de 15–60 segundos en formato vertical. Funcionan muy bien para tutoriales y demostraciones de producto.</li>
+      <li><strong>Idea Pins:</strong> Formato de múltiples páginas, similar a las Stories. Muy usado para recetas, tutoriales paso a paso y listas.</li>
+    </ul>
+
+    <h3>Características del buen contenido UGC para Pinterest</h3>
+    <ul>
+      <li>Estética cuidada — Pinterest es una plataforma visual donde la primera impresión lo es todo.</li>
+      <li>Título descriptivo con palabras clave — los usuarios buscan por texto, no por hashtags como en Instagram.</li>
+      <li>Descripción útil que aporte contexto — no solo el nombre del producto sino para qué sirve y cómo se usa.</li>
+      <li>Colores coherentes y paleta visual clara — el contenido que se ve ordenado recibe más saves.</li>
+    </ul>
+
+    <h3>Cómo encontrar marcas que quieran UGC para Pinterest</h3>
+    <ul>
+      <li>Busca marcas en Etsy de tu nicho — la mayoría necesita contenido visual de calidad y muchas no tienen equipo creativo propio.</li>
+      <li>Busca tiendas Shopify pequeñas con menos de 50,000 seguidores en Instagram — suelen tener presupuesto moderado y apertura a propuestas.</li>
+      <li>Contacta directamente por correo mencionando específicamente que ofreces contenido para Pinterest — diferencia tu propuesta de las que solo ofrecen TikTok e Instagram.</li>
+    </ul>
+
+    <h3>Pinterest como complemento de tu servicio UGC</h3>
+    <p>No tienes que especializarte solo en Pinterest. Puedes ofrecerlo como un servicio adicional a marcas con las que ya trabajas en otras plataformas:</p>
+    <div class="highlight">
+      "Además de los videos para Instagram y TikTok, puedo crear también Pins optimizados para Pinterest usando el mismo contenido adaptado al formato de la plataforma. ¿Les interesaría incluirlo como un servicio adicional?"
+    </div>
+    <p>Muchas marcas no han pensado en Pinterest porque nadie se lo ha propuesto. Ser la primera en mencionarlo ya te diferencia.</p>
+
+    <div class="highlight">🎯 Si tu nicho es hogar, belleza, recetas o moda, abre una cuenta de Pinterest esta semana y empieza a publicar pins de tu contenido existente. Es una inversión de 30 minutos que puede abrirte un mercado completamente diferente.</div>
+  `
+},
+{
+  id: 68,
+  module: 'Parte IV · Herramientas Avanzadas',
+  title: 'Tendencias UGC 2025–2026: lo que está funcionando ahora mismo',
+  duration: 'Lectura',
+  videoId: null,
+  content: `
+    <h3>El mercado UGC no se detiene</h3>
+    <p>Los formatos que funcionaban hace dos años ya no convierten igual. Los algoritmos cambian, la atención del usuario evoluciona y las marcas ajustan sus estrategias constantemente. Conocer las tendencias actuales te da una ventaja real sobre creadoras que siguen haciendo lo mismo de siempre.</p>
+
+    <h3>Tendencia 1: Raw y sin filtros (Lo imperfecto convierte más)</h3>
+    <p>El contenido ultra producido está perdiendo efectividad. Lo que está funcionando en 2025–2026 es lo que parece grabado en el momento, sin preparación excesiva — grabaciones en el carro, en la cocina, con luz imperfecta. Las marcas llaman a esto "raw UGC" y muchas lo están pidiendo específicamente en sus briefs.</p>
+    <div class="highlight">💡 "Imperfecto a propósito" es ahora una habilidad que las marcas buscan. Saber cuándo NO editar demasiado es tan valioso como saber editar bien.</div>
+
+    <h3>Tendencia 2: POV Videos (Point of View)</h3>
+    <p>Videos grabados desde la perspectiva del usuario, como si el espectador estuviera viviendo la experiencia. "POV: recibes el paquete que llevas semanas esperando." "POV: tu rutina de skincare de las 6am." Este formato genera inmersión y conexión emocional muy efectiva.</p>
+
+    <h3>Tendencia 3: Deinfluencing</h3>
+    <p>Contenido donde el creador dice honestamente que un producto NO vale la pena o que hay alternativas mejores. Puede parecer contradictorio para UGC pagado, pero muchas marcas lo usan de forma inteligente: "probé 5 productos de esta categoría y solo uno realmente funciona — este." La honestidad sobre lo que no funciona hace que la recomendación de lo que sí funciona sea más creíble.</p>
+
+    <h3>Tendencia 4: Storytelling extendido</h3>
+    <p>Videos de 60–90 segundos donde el creador cuenta una historia completa con el producto como parte del relato. No es un anuncio — es una experiencia. "Estaba pasando por un momento muy difícil y encontré este producto que..." Las marcas están pagando más por este formato porque convierte mejor que los videos puramente demostrativos.</p>
+
+    <h3>Tendencia 5: UGC con texto en pantalla sin voz</h3>
+    <p>Videos donde el mensaje se comunica completamente a través de texto animado en pantalla, sin que el creador hable. Funciona perfectamente para el 85% de usuarios que consumen contenido sin sonido. Es también ideal para creadoras que no se sienten cómodas hablando a cámara todavía.</p>
+
+    <h3>Tendencia 6: Series de contenido para una misma marca</h3>
+    <p>En lugar de un video único, las marcas están contratando a creadoras para producir series de 3 a 6 videos que cuentan una historia progresiva. "Semana 1 con el producto", "Semana 2: primeros resultados", "Semana 4: conclusión honesta". Este formato genera contenido recurrente y contratos más largos.</p>
+
+    <h3>Tendencia 7: UGC generado con IA como complemento</h3>
+    <p>Las marcas están usando herramientas de IA para generar variaciones de guiones y hooks, pero siguen necesitando creadoras reales para grabarlos. La IA no reemplaza la cara humana — optimiza el proceso detrás de ella. Creadoras que entienden cómo trabajar con briefs generados por IA tienen ventaja.</p>
+
+    <h3>Lo que está perdiendo fuerza</h3>
+    <ul>
+      <li>Videos demasiado pulidos que parecen anuncios tradicionales.</li>
+      <li>Hooks genéricos sin personalidad propia.</li>
+      <li>Testimonios que suenan completamente escritos y memorizados.</li>
+      <li>Contenido sin subtítulos — ya es casi un requisito básico.</li>
+      <li>Videos de más de 90 segundos sin una narrativa muy sólida que los justifique.</li>
+    </ul>
+
+    <div class="highlight">🎯 Una vez al mes, dedica 30 minutos a revisar qué está funcionando en TikTok e Instagram en tu nicho. No para copiar — para entender hacia dónde se mueve la atención. Esa conciencia es lo que mantiene tu contenido relevante mes tras mes.</div>
+  `
+},
+{
+  id: 69,
+  module: '🎁 Bonos Exclusivos',
+  title: 'FAQ: Las 20 preguntas más frecuentes de una UGC creator',
+  duration: 'Referencia',
+  videoId: null,
+  content: `
+    <h3>Las respuestas que necesitas antes de que surjan las dudas</h3>
+
+    <h3>Sobre los fundamentos</h3>
+    <ul>
+      <li><strong>1. ¿Cuántos seguidores necesito para empezar?</strong><br>Ninguno. El UGC se vende por la calidad del contenido, no por el tamaño de la audiencia. Las marcas compran videos, no seguidores.</li>
+      <li><strong>2. ¿Necesito cámara profesional?</strong><br>No. Un smartphone de gama media que grabe en 1080p es suficiente. La iluminación y el audio importan más que la cámara.</li>
+      <li><strong>3. ¿Cuánto tiempo tarda en llegar la primera colaboración?</strong><br>Depende de la constancia. Con un portafolio básico y aplicaciones diarias, muchas creadoras consiguen su primera colaboración entre 2 y 6 semanas.</li>
+      <li><strong>4. ¿Tengo que publicar el contenido en mi cuenta?</strong><br>No necesariamente. En la mayoría de las colaboraciones UGC, tú grabas y entregas el archivo a la marca y ella lo publica en sus propios canales. Solo publicas en tu cuenta si el acuerdo lo especifica.</li>
+    </ul>
+
+    <h3>Sobre el portafolio</h3>
+    <ul>
+      <li><strong>5. ¿Qué hago si no tengo colaboraciones previas para el portafolio?</strong><br>Crea contenido especulativo — videos con productos que ya tienes en casa, como si fuera una colaboración real. Las marcas no saben que no te enviaron el producto.</li>
+      <li><strong>6. ¿Cuántos videos necesito en el portafolio para empezar a aplicar?</strong><br>Con 3 a 5 videos de diferentes formatos es suficiente para empezar. Calidad sobre cantidad.</li>
+      <li><strong>7. ¿Dónde alojar el portafolio?</strong><br>Canva (link público), Google Drive, Notion o un PDF. Lo importante es que cargue rápido y se vea bien en móvil.</li>
+    </ul>
+
+    <h3>Sobre precios y cobros</h3>
+    <ul>
+      <li><strong>8. ¿Cuánto cobro por mi primer video?</strong><br>Entre $30 y $80 USD para principiantes. El objetivo inicial es construir portafolio y experiencia, no maximizar ingresos todavía.</li>
+      <li><strong>9. ¿Cuándo subo mis precios?</strong><br>Cuando tengas demanda constante, mejores resultados demostrables o más habilidades. Subir un 10–20% cada 3 a 6 meses es razonable.</li>
+      <li><strong>10. ¿Cómo cobro si estoy en Cuba?</strong><br>A través de familiares o contactos de confianza en el exterior con PayPal o Wise, criptomonedas como USDT, o acuerdos directos con marcas latinas que acepten métodos alternativos. Ver la lección específica sobre cobros desde Cuba.</li>
+      <li><strong>11. ¿Cuándo pido el pago?</strong><br>50% antes de empezar, 50% al entregar el archivo final aprobado. Con clientes recurrentes de confianza puedes ajustar este esquema.</li>
+    </ul>
+
+    <h3>Sobre las marcas</h3>
+    <ul>
+      <li><strong>12. ¿Cómo sé si una marca es confiable antes de trabajar con ella?</strong><br>Verifica que tenga web o redes activas y verificables, busca su nombre en Google, pide el pago anticipado del 50% antes de empezar. Si se niegan a cualquier acuerdo por escrito, es señal de alerta.</li>
+      <li><strong>13. ¿Qué hago si una marca no me responde?</strong><br>Espera 5 a 7 días y envía un seguimiento breve. Si sigue sin responder, sigue con otras marcas. No todas las oportunidades son para ti en ese momento.</li>
+      <li><strong>14. ¿Puedo trabajar con marcas de la competencia al mismo tiempo?</strong><br>Revisa si el contrato incluye una cláusula de exclusividad. Si no la menciona, en principio puedes. Si tienes dudas, pregunta directamente a la marca.</li>
+      <li><strong>15. ¿Tengo que usar el producto antes de hacer el video?</strong><br>Depende del tipo de video. Para un testimonio genuino, sí es ideal. Para un unboxing, el brief puede pedir la primera impresión real. Para algunos formatos, no es necesario — el brief lo especificará.</li>
+    </ul>
+
+    <h3>Sobre el proceso de trabajo</h3>
+    <ul>
+      <li><strong>16. ¿Cuántas revisiones debo incluir?</strong><br>Lo estándar es 1 a 2 revisiones por proyecto. Más de eso se cobra como adicional.</li>
+      <li><strong>17. ¿Tengo que firmar un contrato?</strong><br>Para proyectos pagados, sí — aunque sea un correo donde ambas partes confirman los términos por escrito. Para gifting básico, un mensaje de confirmación puede ser suficiente.</li>
+      <li><strong>18. ¿En qué formato entrego los videos?</strong><br>MP4 es el estándar. Resolución mínima 1080p. Si el brief no especifica, pregunta antes de entregar.</li>
+    </ul>
+
+    <h3>Sobre el crecimiento</h3>
+    <ul>
+      <li><strong>19. ¿Cuánto puede ganar una UGC creator al mes?</strong><br>Varía enormemente. Principiantes: $100–$300/mes. Con 6 meses de experiencia: $500–$1,500/mes. Creadoras establecidas con varios clientes recurrentes: $2,000–$5,000/mes o más. No hay límite fijo — depende de tu dedicación, nicho, calidad y número de clientes.</li>
+      <li><strong>20. ¿Cuánto tiempo lleva vivir del UGC?</strong><br>Para la mayoría, entre 6 y 18 meses de trabajo constante. No es un ingreso inmediato — es un negocio que se construye. Las que esperan resultados en 2 semanas se frustran. Las que trabajan consistentemente durante 6 meses casi siempre encuentran su camino.</li>
+    </ul>
+
+    <div class="highlight">📌 ¿Tu pregunta no está aquí? Escríbele directamente a Chavelys por WhatsApp usando el botón al final de cualquier lección. Ninguna duda es demasiado pequeña para preguntar.</div>
+  `
+},
   {
     id: 26,
     module: '💌 Mensaje Final',
@@ -1338,6 +2700,9 @@ const LESSONS = [
     duration: 'Lectura',
     videoId: null,
     content: `
+    <div class="highlight" style="border-left-color:#F5C842">
+  ⚠️ <strong>Nota importante para creadoras en Cuba:</strong> Este proceso requiere VPN activa y configuración de zona horaria en EE.UU. Psiphon es la VPN más usada en Cuba por su capacidad de sortear restricciones de red. ProtonVPN (plan gratuito) es una alternativa más estable cuando hay buena señal. Asegúrate de tener conexión estable antes de comenzar el proceso de registro.
+</div>
       <h3>Programa de Influencer de Temu</h3>
       <div class="highlight">✅ <strong>Requisito principal:</strong> Tener mínimo 1,000 seguidores en Instagram, TikTok, Facebook o YouTube.</div>
 
